@@ -52,11 +52,13 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-EasyPostApi_Tests/Alamofire.framework'
   install_framework 'Pods-EasyPostApi_Tests/EasyPostApi.framework'
   install_framework 'Pods-EasyPostApi_Tests/Nimble.framework'
   install_framework 'Pods-EasyPostApi_Tests/Quick.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-EasyPostApi_Tests/Alamofire.framework'
   install_framework 'Pods-EasyPostApi_Tests/EasyPostApi.framework'
   install_framework 'Pods-EasyPostApi_Tests/Nimble.framework'
   install_framework 'Pods-EasyPostApi_Tests/Quick.framework'
