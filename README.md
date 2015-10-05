@@ -22,7 +22,7 @@ pod "EasyPostApi"
 
 ## Author
 
-William Welbes, williamj@gmail.com
+[William Welbes](http://www.twitter.com/welbes)
 
 ## License
 
