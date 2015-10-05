@@ -11,6 +11,8 @@ import Alamofire
 
 public class EasyPostApi {
     
+    let errorDomain = "com.technomagination.EasyPostApi"
+    
     var apiToken = ""               //Pass in via setCredentials
     var apiBaseUrl = ""             //Pass in via setCredentials
     
@@ -108,6 +110,21 @@ public class EasyPostApi {
         return parameters
     }
     
+    func checkForApiResultError(resultDict:NSDictionary) -> NSError? {
+        var error:NSError? = nil
+        if let errorDict = resultDict["error"] as? NSDictionary {
+            var userInfo = [String : AnyObject]()
+            if let code = errorDict["code"] as? String {
+                userInfo.updateValue(code, forKey: NSLocalizedFailureReasonErrorKey)
+            }
+            if let message = errorDict["message"] as? String {
+                userInfo.updateValue(message, forKey: NSLocalizedDescriptionKey)
+            }
+            error = NSError(domain: "com.technomagination.EasyPostApi", code: 1, userInfo: userInfo)
+        }
+        return error
+    }
+    
     //Post and address model and get an address object with id populated back
     public func postAddress(address:EasyPostAddress, completion: (result: EasyPostResult<EasyPostAddress>) -> ()) {
         
@@ -118,10 +135,18 @@ public class EasyPostApi {
                 
                 if(result.isSuccess) {
                     
-                    if let addressDict = result.value as? NSDictionary {
-                        let address = EasyPostAddress(jsonDictionary: addressDict)
+                    if let resultDict = result.value as? NSDictionary {
+                        
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            let address = EasyPostAddress(jsonDictionary: resultDict)
                     
-                        completion(result: EasyPostResult.Success(address))
+                            completion(result: EasyPostResult.Success(address))
+                        }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
@@ -141,11 +166,21 @@ public class EasyPostApi {
                 if(result.isSuccess) {
                     
                     if let resultDict = result.value as? NSDictionary {
-                        if let addressDict = resultDict["address"] as? NSDictionary {
-                            let address = EasyPostAddress(jsonDictionary: addressDict)
-                        
-                            completion(result: EasyPostResult.Success(address))
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            if let addressDict = resultDict["address"] as? NSDictionary {
+                                let address = EasyPostAddress(jsonDictionary: addressDict)
+                            
+                                completion(result: EasyPostResult.Success(address))
+                            } else {
+                                let userInfo = [NSLocalizedDescriptionKey : "address element was not found in results"]
+                                completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: userInfo)))
+                            }
                         }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
