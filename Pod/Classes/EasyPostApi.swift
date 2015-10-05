@@ -133,7 +133,27 @@ public class EasyPostApi {
         }
     }
     
-    public func verifyAddress() {
+    public func verifyAddress(addressId:String, completion: (result: EasyPostResult<EasyPostAddress>) -> ()) {
         
+        alamofireManager.request(.GET, apiBaseUrl + "addresses/\(addressId)/verify", headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        if let addressDict = resultDict["address"] as? NSDictionary {
+                            let address = EasyPostAddress(jsonDictionary: addressDict)
+                        
+                            completion(result: EasyPostResult.Success(address))
+                        }
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
     }
 }
