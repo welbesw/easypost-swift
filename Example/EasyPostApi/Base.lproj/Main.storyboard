@@ -185,6 +185,54 @@
                                     <action selector="didTapVerifyAddress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yqj-Sz-fqu"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parcel length" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8a-NR-K3i">
+                                <rect key="frame" x="20" y="324" width="560" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a9g-FE-gvv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parcel width" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0r-2r-Wd4">
+                                <rect key="frame" x="20" y="362" width="560" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="geS-aR-8BY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parcel height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-qN-l2n">
+                                <rect key="frame" x="20" y="400" width="560" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gxW-lX-JxV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parcel weight (oz)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDo-P1-SxT">
+                                <rect key="frame" x="20" y="438" width="560" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nm9-Ta-F6p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfY-Oj-4xn">
+                                <rect key="frame" x="20" y="476" width="100" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rdy-Kx-8nB"/>
+                                    <constraint firstAttribute="width" constant="100" id="jQQ-KU-nTC"/>
+                                </constraints>
+                                <state key="normal" title="Post Parcel"/>
+                                <connections>
+                                    <action selector="didTapPostParcel:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fN5-p1-9st"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -194,30 +242,48 @@
                             <constraint firstItem="zl1-YS-LWp" firstAttribute="top" secondItem="pt7-Jp-Xng" secondAttribute="bottom" constant="8" id="8TX-WR-vqY"/>
                             <constraint firstItem="Rft-1D-BNg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="96a-I2-mE8"/>
                             <constraint firstItem="oIf-JH-wID" firstAttribute="top" secondItem="Rft-1D-BNg" secondAttribute="bottom" constant="8" id="9AK-d6-WFy"/>
+                            <constraint firstItem="b0r-2r-Wd4" firstAttribute="top" secondItem="l8a-NR-K3i" secondAttribute="bottom" constant="8" id="Bxf-Yf-Vc3"/>
                             <constraint firstItem="zl1-YS-LWp" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Ca6-C3-ShL"/>
                             <constraint firstItem="zl1-YS-LWp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Czi-fs-us3"/>
+                            <constraint firstItem="b0r-2r-Wd4" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="D3m-Cw-mEW"/>
                             <constraint firstItem="Odw-Fo-Kmo" firstAttribute="top" secondItem="Q06-2c-Wdj" secondAttribute="bottom" constant="8" id="JL5-OV-l9v"/>
                             <constraint firstItem="GRv-tZ-jF8" firstAttribute="top" secondItem="oIf-JH-wID" secondAttribute="bottom" constant="8" id="Jgk-Lf-OPi"/>
+                            <constraint firstItem="BfY-Oj-4xn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="KlY-Re-Y5d"/>
+                            <constraint firstItem="wDo-P1-SxT" firstAttribute="top" secondItem="yxj-qN-l2n" secondAttribute="bottom" constant="8" id="Mpq-E7-qfH"/>
                             <constraint firstItem="pt7-Jp-Xng" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OFz-1D-F3u"/>
+                            <constraint firstItem="yxj-qN-l2n" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="WAc-g4-otJ"/>
                             <constraint firstItem="Q06-2c-Wdj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="WeF-RT-lZb"/>
+                            <constraint firstItem="yxj-qN-l2n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XNX-Qx-E5T"/>
                             <constraint firstItem="Rft-1D-BNg" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Yix-vK-zCI"/>
                             <constraint firstItem="Q06-2c-Wdj" firstAttribute="top" secondItem="GRv-tZ-jF8" secondAttribute="bottom" constant="8" id="aJ1-Hi-Vbw"/>
                             <constraint firstItem="oIf-JH-wID" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bv9-gX-YZu"/>
+                            <constraint firstItem="BfY-Oj-4xn" firstAttribute="top" secondItem="wDo-P1-SxT" secondAttribute="bottom" constant="8" id="cLU-TV-G8Y"/>
                             <constraint firstItem="GRv-tZ-jF8" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="cp0-DO-u36"/>
                             <constraint firstItem="Odw-Fo-Kmo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="jjG-jU-UK9"/>
                             <constraint firstItem="pt7-Jp-Xng" firstAttribute="top" secondItem="XVy-U0-bR9" secondAttribute="bottom" constant="8" id="k6q-UA-CUP"/>
                             <constraint firstItem="XVy-U0-bR9" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="kdO-b9-hbJ"/>
+                            <constraint firstItem="wDo-P1-SxT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="laH-dg-vIh"/>
                             <constraint firstItem="Rft-1D-BNg" firstAttribute="top" secondItem="zl1-YS-LWp" secondAttribute="bottom" constant="8" id="odr-dW-QuQ"/>
+                            <constraint firstItem="b0r-2r-Wd4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="pGt-1q-GBK"/>
                             <constraint firstItem="GRv-tZ-jF8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="q8U-Ti-aPv"/>
                             <constraint firstItem="Q06-2c-Wdj" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qm7-Fh-u1G"/>
+                            <constraint firstItem="wDo-P1-SxT" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ryq-er-uHH"/>
                             <constraint firstItem="XVy-U0-bR9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="sGa-Sn-MMR"/>
                             <constraint firstItem="XVy-U0-bR9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sag-NX-LNk"/>
+                            <constraint firstItem="l8a-NR-K3i" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tFG-Bc-sAy"/>
+                            <constraint firstItem="yxj-qN-l2n" firstAttribute="top" secondItem="b0r-2r-Wd4" secondAttribute="bottom" constant="8" id="tkx-dQ-9vQ"/>
+                            <constraint firstItem="l8a-NR-K3i" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="wgx-Bt-uxd"/>
+                            <constraint firstItem="l8a-NR-K3i" firstAttribute="top" secondItem="Odw-Fo-Kmo" secondAttribute="bottom" constant="8" id="yye-3P-rRp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityTextField" destination="oIf-JH-wID" id="frL-zu-T4v"/>
                         <outlet property="companyTextField" destination="pt7-Jp-Xng" id="uyC-c1-rYi"/>
                         <outlet property="nameTextField" destination="XVy-U0-bR9" id="ogI-3S-Tm2"/>
+                        <outlet property="parcelHeight" destination="yxj-qN-l2n" id="qqr-hn-U67"/>
+                        <outlet property="parcelLength" destination="l8a-NR-K3i" id="R7l-q9-jh3"/>
+                        <outlet property="parcelWeight" destination="wDo-P1-SxT" id="V54-8L-CtO"/>
+                        <outlet property="parcelWidth" destination="b0r-2r-Wd4" id="igS-Sb-P3z"/>
                         <outlet property="stateTextField" destination="GRv-tZ-jF8" id="tre-YV-rNW"/>
                         <outlet property="street1TextField" destination="zl1-YS-LWp" id="NPU-ha-Qr2"/>
                         <outlet property="street2TextField" destination="Rft-1D-BNg" id="EXu-wi-dj8"/>

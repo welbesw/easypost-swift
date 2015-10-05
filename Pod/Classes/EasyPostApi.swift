@@ -110,6 +110,30 @@ public class EasyPostApi {
         return parameters
     }
     
+    func paramtersFromParcel(parcel:EasyPostParcel) -> [String : AnyObject] {
+        var parameters = [String : AnyObject]()
+        
+        if let id = parcel.id {
+            parameters.updateValue(id, forKey: "parcel[id]")
+        }
+        if let length = parcel.length {
+            parameters.updateValue(length, forKey: "parcel[length]")
+        }
+        if let width = parcel.width {
+            parameters.updateValue(width, forKey: "parcel[width]")
+        }
+        if let height = parcel.height {
+            parameters.updateValue(height, forKey: "parcel[height]")
+        }
+        if let predefinedPackaged = parcel.predefinedPackage {
+            parameters.updateValue(predefinedPackaged, forKey: "parcel[predefined_package]")
+        }
+        
+        parameters.updateValue(parcel.weight, forKey: "parcel[weight]")
+        
+        return parameters
+    }
+    
     func checkForApiResultError(resultDict:NSDictionary) -> NSError? {
         var error:NSError? = nil
         if let errorDict = resultDict["error"] as? NSDictionary {
@@ -177,6 +201,37 @@ public class EasyPostApi {
                                 let userInfo = [NSLocalizedDescriptionKey : "address element was not found in results"]
                                 completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: userInfo)))
                             }
+                        }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
+    
+    public func postParcel(parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostParcel>) -> ()) {
+        let parameters = paramtersFromParcel(parcel)
+        
+        alamofireManager.request(.POST, apiBaseUrl + "parcels", parameters:parameters, headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            let parcel = EasyPostParcel(jsonDictionary: resultDict)
+                            
+                            completion(result: EasyPostResult.Success(parcel))
                         }
                     } else {
                         print("Result was successful, but blank.")

@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityTextField:UITextField!
     @IBOutlet weak var stateTextField:UITextField!
     @IBOutlet weak var zipTextField:UITextField!
+    
+    @IBOutlet weak var parcelLength:UITextField!
+    @IBOutlet weak var parcelWidth:UITextField!
+    @IBOutlet weak var parcelHeight:UITextField!
+    @IBOutlet weak var parcelWeight:UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +111,44 @@ class ViewController: UIViewController {
         }
         if let zip = address.zip {
             self.zipTextField.text = zip
+        }
+    }
+    
+    @IBAction func didTapPostParcel(sender:AnyObject?) {
+        let parcel = EasyPostParcel()
+        
+        let numberFormatter = NSNumberFormatter()
+        
+        if let stringValue = parcelLength.text {
+            parcel.length = numberFormatter.numberFromString(stringValue)
+        }
+        if let stringValue = parcelWidth.text {
+            parcel.width = numberFormatter.numberFromString(stringValue)
+        }
+        if let stringValue = parcelHeight.text {
+            parcel.height = numberFormatter.numberFromString(stringValue)
+        }
+        if let stringValue = parcelWeight.text {
+            if let numberValue = numberFormatter.numberFromString(stringValue) {
+                parcel.weight = numberValue
+            }
+        }
+        
+        EasyPostApi.sharedInstance.postParcel(parcel) { (result) -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                switch(result) {
+                case .Success(let value):
+                    
+                    print("Successfully posted parcel.")
+                    
+                    if let id = value.id {
+                        print("Parcel id: \(id)")
+                    }
+                    
+                case .Failure(let error):
+                    print("Error posting parcel: \((error as NSError).localizedDescription)")
+                }
+            })
         }
     }
 
