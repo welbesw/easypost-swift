@@ -1,0 +1,6 @@
+framework module EasyPostApi {
+  umbrella header "EasyPostApi-umbrella.h"
+
+  export *
+  module * { export * }
+}

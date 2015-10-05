@@ -1,0 +1,6 @@
+framework module Pods_EasyPostApi_Example {
+  umbrella header "Pods-EasyPostApi_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
