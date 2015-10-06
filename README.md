@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.9+ / watchOS 2
+- iOS 8.0+ / Mac OS X 10.9+
 - Xcode 7.0+
 
 ## Installation
@@ -124,6 +124,28 @@ EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, par
 }
 ```
 ### Buy Shipment
+
+Once you've created a shipment record, the rates records are returned inside the shipment object.  You can buy the shipping and get a url to a label with a call to buy the shipment.
+
+```swift
+EasyPostApi.sharedInstance.buyShipment(self.shipment.id!, rateId: rateId, completion: { (result) -> () in
+	//Handle results
+	dispatch_async(dispatch_get_main_queue(), { () -> Void in
+	    if(result.isSuccess) {
+	        print("Successfully bought shipment.")
+	        if let buyResponse = result.value {
+	            if let postageLabel = buyResponse.postageLabel {
+	                if let labelUrl = postageLabel.labelUrl {
+	                    print("Label url: \(labelUrl)")
+	                }
+	            }
+	        }
+	    } else {
+	        print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
+	    }
+	})
+})
+```
 
 ## Author
 
