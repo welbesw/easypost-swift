@@ -35,7 +35,7 @@ EasyPostApi.sharedInstance.setCredentials(apiToken, baseUrl: "https://api.easypo
 
 Save an address record and get back an id
 
-``swift
+```swift
 let address = EasyPostAddress()
 
 address.name = "Johnny Appleseed"
@@ -58,6 +58,27 @@ EasyPostApi.sharedInstance.postAddress(address) { (result) -> () in
     })
 }
 ```
+
+### Verify Shipment
+
+After posting an address to the API, use the verify call to verify the address with the address id that has been passed back from the API.
+
+```swift
+let addressId = "address-id-from-posting-address"
+
+EasyPostApi.sharedInstance.verifyAddress(addressId, completion: { (verifyResult) -> () in
+    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        switch(verifyResult) {
+        case .Success(let easyPostAddress):
+            print("Successfully verified address.")
+        case .Failure(let error):
+            print("Error verifying address: \((error as NSError).localizedDescription)")
+        
+        }
+    })
+})
+```
+
 ### Post Shipment
 
 Save a shipment record with a to address, from address, and parcel
@@ -102,6 +123,7 @@ EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, par
     })
 }
 ```
+### Buy Shipment
 
 ## Author
 
