@@ -304,4 +304,36 @@ public class EasyPostApi {
                 }
         }
     }
+    
+    public func buyShipment(shipmentId:String, rateId:String, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
+    
+        let parameters = ["rate[id]" : rateId]
+        
+        alamofireManager.request(.POST, apiBaseUrl + "shipments/\(shipmentId)/buy", parameters:parameters, headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            let buyResponse = EasyPostBuyResponse(jsonDictionary: resultDict)
+                            
+                            completion(result: EasyPostResult.Success(buyResponse))
+                        }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
 }

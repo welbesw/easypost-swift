@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var parcelWidth:UITextField!
     @IBOutlet weak var parcelHeight:UITextField!
     @IBOutlet weak var parcelWeight:UITextField!
+    
+    var currentShipment:EasyPostShipment?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,18 +177,34 @@ class ViewController: UIViewController {
         EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, parcel: parcel) { (result) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 switch(result) {
-                case .Success(let value):
+                case .Success(let shipment):
                     
                     print("Successfully posted shipment.")
                     
-                    if let id = value.id {
+                    if let id = shipment.id {
                         print("Shipment id: \(id)")
+                        
+                        self.currentShipment = shipment
+                        
+                        self.performSegueWithIdentifier("ModalShowRatesSegue", sender: nil)
                     }
                     
                 case .Failure(let error):
                     print("Error posting shipment: \((error as NSError).localizedDescription)")
                 }
             })
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "ModalShowRatesSegue") {
+            if let navController = segue.destinationViewController as? UINavigationController {
+                if let ratesViewController = navController.topViewController as? RatesViewController {
+                    if let shipment = self.currentShipment {
+                        ratesViewController.shipment = shipment
+                    }
+                }
+            }
         }
     }
 

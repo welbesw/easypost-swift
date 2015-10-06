@@ -56,6 +56,10 @@ public class EasyPostRate {
             deliveryDate = dateFormatter.dateFromString(stringValue)
         }
         
+        if let stringValue = jsonDictionary["rate"] as? String {
+            rate = stringValue
+        }
+        
         if let stringValue = jsonDictionary["created_at"] as? String {
             createdAt = dateFormatter.dateFromString(stringValue)
         }

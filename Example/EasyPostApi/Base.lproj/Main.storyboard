@@ -303,11 +303,98 @@
                         <outlet property="street2TextField" destination="Rft-1D-BNg" id="EXu-wi-dj8"/>
                         <outlet property="zipTextField" destination="Q06-2c-Wdj" id="b68-K3-5hu"/>
                         <segue destination="xK2-Te-Ere" kind="presentation" identifier="ModalCredentialsSegue" id="HNw-Vg-vVI"/>
+                        <segue destination="Esc-hJ-Ct6" kind="presentation" identifier="ModalShowRatesSegue" id="8Z6-pw-ecg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="368"/>
+        </scene>
+        <!--Choose Rate-->
+        <scene sceneID="yON-pc-YbZ">
+            <objects>
+                <tableViewController id="kqk-VC-eE7" customClass="RatesViewController" customModule="EasyPostApi_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iN-2T-Er2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rateCell" rowHeight="88" id="J6B-kC-34R" customClass="RateCell" customModule="EasyPostApi_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J6B-kC-34R" id="D0K-dS-rrI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrier Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsP-H8-hyP">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="eEL-MQ-XmN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rny-rK-EEz">
+                                            <rect key="frame" x="8" y="33" width="584" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="R0w-qu-L0v"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX4-uA-2bE">
+                                            <rect key="frame" x="8" y="59" width="584" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="F2F-Jp-7mP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="CsP-H8-hyP" firstAttribute="trailing" secondItem="D0K-dS-rrI" secondAttribute="trailingMargin" id="8Px-WJ-haQ"/>
+                                        <constraint firstItem="CsP-H8-hyP" firstAttribute="leading" secondItem="D0K-dS-rrI" secondAttribute="leadingMargin" id="I8K-ko-OWL"/>
+                                        <constraint firstItem="XX4-uA-2bE" firstAttribute="top" secondItem="rny-rK-EEz" secondAttribute="bottom" constant="5" id="XMX-0W-ggV"/>
+                                        <constraint firstItem="rny-rK-EEz" firstAttribute="trailing" secondItem="D0K-dS-rrI" secondAttribute="trailingMargin" id="Xc4-j9-pGI"/>
+                                        <constraint firstItem="CsP-H8-hyP" firstAttribute="top" secondItem="D0K-dS-rrI" secondAttribute="topMargin" id="bVE-9J-pFJ"/>
+                                        <constraint firstItem="XX4-uA-2bE" firstAttribute="leading" secondItem="D0K-dS-rrI" secondAttribute="leadingMargin" id="bhh-YR-tLc"/>
+                                        <constraint firstItem="rny-rK-EEz" firstAttribute="leading" secondItem="D0K-dS-rrI" secondAttribute="leadingMargin" id="iNJ-kQ-oQ7"/>
+                                        <constraint firstItem="rny-rK-EEz" firstAttribute="top" secondItem="CsP-H8-hyP" secondAttribute="bottom" constant="4" id="rVP-2E-Qf4"/>
+                                        <constraint firstItem="XX4-uA-2bE" firstAttribute="trailing" secondItem="D0K-dS-rrI" secondAttribute="trailingMargin" id="zN5-UL-4az"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="carrierLabel" destination="CsP-H8-hyP" id="SXf-0U-1d9"/>
+                                    <outlet property="rateLabel" destination="XX4-uA-2bE" id="wHn-26-zIg"/>
+                                    <outlet property="serviceLabel" destination="rny-rK-EEz" id="KRY-6g-s4V"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kqk-VC-eE7" id="iHX-YO-Nah"/>
+                            <outlet property="delegate" destination="kqk-VC-eE7" id="nNm-a9-LLq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Rate" id="QCB-wD-IDT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="lKz-8H-9tc">
+                            <connections>
+                                <action selector="didTapCancelButton:" destination="kqk-VC-eE7" id="Tqp-ZL-8as"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5io-1E-beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9h2-Pc-TaI">
@@ -327,6 +414,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fW5-Vg-RxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="-326"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="enT-pP-Wa6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Esc-hJ-Ct6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LER-26-2fe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kqk-VC-eE7" kind="relationship" relationship="rootViewController" id="hzT-yt-Csf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klh-Nu-TuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="387"/>
         </scene>
     </scenes>
 </document>
