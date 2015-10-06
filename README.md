@@ -59,7 +59,7 @@ EasyPostApi.sharedInstance.postAddress(address) { (result) -> () in
 }
 ```
 
-### Verify Shipment
+### Verify Address
 
 After posting an address to the API, use the verify call to verify the address with the address id that has been passed back from the API.
 
