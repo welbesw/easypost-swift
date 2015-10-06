@@ -114,7 +114,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapPostParcel(sender:AnyObject?) {
+    func parcelFromTextFields() -> EasyPostParcel {
         let parcel = EasyPostParcel()
         
         let numberFormatter = NSNumberFormatter()
@@ -133,6 +133,11 @@ class ViewController: UIViewController {
                 parcel.weight = numberValue
             }
         }
+        return parcel
+    }
+    
+    @IBAction func didTapPostParcel(sender:AnyObject?) {
+        let parcel = parcelFromTextFields()
         
         EasyPostApi.sharedInstance.postParcel(parcel) { (result) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -147,6 +152,39 @@ class ViewController: UIViewController {
                     
                 case .Failure(let error):
                     print("Error posting parcel: \((error as NSError).localizedDescription)")
+                }
+            })
+        }
+    }
+    
+    @IBAction func didTapPostShipment(sender:AnyObject?) {
+        let toAddress = EasyPostAddress()
+        
+        toAddress.name = nameTextField.text
+        toAddress.company = companyTextField.text
+        toAddress.street1 = street1TextField.text
+        toAddress.street2 = street2TextField.text
+        toAddress.city = cityTextField.text
+        toAddress.state = stateTextField.text
+        toAddress.zip = zipTextField.text
+        
+        let fromAddress = toAddress
+        
+        let parcel = parcelFromTextFields()
+        
+        EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, parcel: parcel) { (result) -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                switch(result) {
+                case .Success(let value):
+                    
+                    print("Successfully posted shipment.")
+                    
+                    if let id = value.id {
+                        print("Shipment id: \(id)")
+                    }
+                    
+                case .Failure(let error):
+                    print("Error posting shipment: \((error as NSError).localizedDescription)")
                 }
             })
         }

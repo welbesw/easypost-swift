@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8D-dG-ZP9" id="a9J-LH-ll4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="API Token" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pYX-1f-VXL">
@@ -52,7 +52,7 @@
                                         <rect key="frame" x="0.0" y="108" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS9-zA-Idy" id="rYm-bH-0O5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="API Base Url" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-DI-P7h">
@@ -233,6 +233,18 @@
                                     <action selector="didTapPostParcel:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fN5-p1-9st"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-5A-h98">
+                                <rect key="frame" x="128" y="476" width="114" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a33-OP-zen"/>
+                                    <constraint firstAttribute="width" constant="114" id="xwa-gS-f03"/>
+                                </constraints>
+                                <state key="normal" title="Post Shipment"/>
+                                <connections>
+                                    <action selector="didTapPostShipment:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0nP-2s-SgC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -254,6 +266,7 @@
                             <constraint firstItem="yxj-qN-l2n" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="WAc-g4-otJ"/>
                             <constraint firstItem="Q06-2c-Wdj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="WeF-RT-lZb"/>
                             <constraint firstItem="yxj-qN-l2n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XNX-Qx-E5T"/>
+                            <constraint firstItem="bt4-5A-h98" firstAttribute="leading" secondItem="BfY-Oj-4xn" secondAttribute="trailing" constant="8" id="YcA-83-LGs"/>
                             <constraint firstItem="Rft-1D-BNg" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Yix-vK-zCI"/>
                             <constraint firstItem="Q06-2c-Wdj" firstAttribute="top" secondItem="GRv-tZ-jF8" secondAttribute="bottom" constant="8" id="aJ1-Hi-Vbw"/>
                             <constraint firstItem="oIf-JH-wID" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bv9-gX-YZu"/>
@@ -272,6 +285,7 @@
                             <constraint firstItem="XVy-U0-bR9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sag-NX-LNk"/>
                             <constraint firstItem="l8a-NR-K3i" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tFG-Bc-sAy"/>
                             <constraint firstItem="yxj-qN-l2n" firstAttribute="top" secondItem="b0r-2r-Wd4" secondAttribute="bottom" constant="8" id="tkx-dQ-9vQ"/>
+                            <constraint firstItem="bt4-5A-h98" firstAttribute="top" secondItem="wDo-P1-SxT" secondAttribute="bottom" constant="8" id="vvZ-o7-jh0"/>
                             <constraint firstItem="l8a-NR-K3i" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="wgx-Bt-uxd"/>
                             <constraint firstItem="l8a-NR-K3i" firstAttribute="top" secondItem="Odw-Fo-Kmo" secondAttribute="bottom" constant="8" id="yye-3P-rRp"/>
                         </constraints>

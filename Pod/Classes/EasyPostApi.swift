@@ -67,69 +67,94 @@ public class EasyPostApi {
         return ["Authorization": "Basic \(base64Credentials)"]
     }
     
-    func paramtersFromAddress(address:EasyPostAddress) -> [String : AnyObject] {
+    //Use key string format for how the keys will be formed: "address[id]" should be address[%ELEMENT%]
+    func paramtersFromAddress(address:EasyPostAddress, keyStringFormat:String) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let id = address.id {
-            parameters.updateValue(id, forKey: "address[id]")
+            parameters.updateValue(id, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString: "id"))
         }
         if let street1 = address.street1 {
-            parameters.updateValue(street1, forKey: "address[street1]")
+            parameters.updateValue(street1, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"street1"))
         }
         if let street2 = address.street2 {
-            parameters.updateValue(street2, forKey: "address[street2]")
+            parameters.updateValue(street2, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"street2"))
         }
         if let city = address.city {
-            parameters.updateValue(city, forKey: "address[city]")
+            parameters.updateValue(city, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"city"))
         }
         if let state = address.state {
-            parameters.updateValue(state, forKey: "address[state]")
+            parameters.updateValue(state, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"state"))
         }
         if let zip = address.zip {
-            parameters.updateValue(zip, forKey: "address[zip]")
+            parameters.updateValue(zip, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"zip"))
         }
         if let country = address.country {
-            parameters.updateValue(country, forKey: "address[country]")
+            parameters.updateValue(country, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"country"))
         }
         if let name = address.name {
-            parameters.updateValue(name, forKey: "address[name]")
+            parameters.updateValue(name, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"name"))
         }
         if let company = address.company {
-            parameters.updateValue(company, forKey: "address[company]")
+            parameters.updateValue(company, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"company"))
         }
         if let phone = address.phone {
-            parameters.updateValue(phone, forKey: "address[phone]")
+            parameters.updateValue(phone, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"phone"))
         }
         if let email = address.email {
-            parameters.updateValue(email, forKey: "address[email]")
+            parameters.updateValue(email, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"email"))
         }
         if let isResidentatial = address.isResidential {
-            parameters.updateValue(isResidentatial, forKey: "address[residential]")
+            parameters.updateValue(isResidentatial, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"residential"))
         }
         
         return parameters
     }
     
-    func paramtersFromParcel(parcel:EasyPostParcel) -> [String : AnyObject] {
+    func paramtersFromParcel(parcel:EasyPostParcel, keyStringFormat:String) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let id = parcel.id {
-            parameters.updateValue(id, forKey: "parcel[id]")
+            parameters.updateValue(id, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"id"))
         }
         if let length = parcel.length {
-            parameters.updateValue(length, forKey: "parcel[length]")
+            parameters.updateValue(length, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"length"))
         }
         if let width = parcel.width {
-            parameters.updateValue(width, forKey: "parcel[width]")
+            parameters.updateValue(width, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"width"))
         }
         if let height = parcel.height {
-            parameters.updateValue(height, forKey: "parcel[height]")
+            parameters.updateValue(height, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"height"))
         }
         if let predefinedPackaged = parcel.predefinedPackage {
-            parameters.updateValue(predefinedPackaged, forKey: "parcel[predefined_package]")
+            parameters.updateValue(predefinedPackaged, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"predefined_package"))
         }
         
-        parameters.updateValue(parcel.weight, forKey: "parcel[weight]")
+        parameters.updateValue(parcel.weight, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"weight"))
+        
+        return parameters
+    }
+    
+    func parametersForShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel) -> [String : AnyObject] {
+        var parameters = [String : AnyObject]()
+        
+        if let toAddressId = toAddress.id {
+            parameters.updateValue(toAddressId, forKey: "shipment[to_address][id]")
+        } else {
+            parameters += paramtersFromAddress(toAddress, keyStringFormat: "shipment[to_address][%ELEMENT%]")
+        }
+        
+        if let fromAddressId = fromAddress.id {
+            parameters.updateValue(fromAddressId, forKey: "shipment[from_address][id]")
+        } else {
+            parameters += paramtersFromAddress(toAddress, keyStringFormat: "shipment[from_address][%ELEMENT%]")
+        }
+        
+        if let parcelId = parcel.id {
+            parameters.updateValue(parcelId, forKey: "shipment[parcel][id]")
+        } else {
+            parameters += paramtersFromParcel(parcel, keyStringFormat: "shipment[parcel][%ELEMENT%]")
+        }
         
         return parameters
     }
@@ -152,7 +177,7 @@ public class EasyPostApi {
     //Post and address model and get an address object with id populated back
     public func postAddress(address:EasyPostAddress, completion: (result: EasyPostResult<EasyPostAddress>) -> ()) {
         
-        let parameters = paramtersFromAddress(address)
+        let parameters = paramtersFromAddress(address, keyStringFormat:"address[%ELEMENT%]")
         
         alamofireManager.request(.POST, apiBaseUrl + "addresses", parameters:parameters, headers:getAuthHeader())
             .responseJSON { (request, response, result) in
@@ -217,7 +242,7 @@ public class EasyPostApi {
     }
     
     public func postParcel(parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostParcel>) -> ()) {
-        let parameters = paramtersFromParcel(parcel)
+        let parameters = paramtersFromParcel(parcel, keyStringFormat: "parcel[%ELEMENT%]")
         
         alamofireManager.request(.POST, apiBaseUrl + "parcels", parameters:parameters, headers:getAuthHeader())
             .responseJSON { (request, response, result) in
@@ -232,6 +257,39 @@ public class EasyPostApi {
                             let parcel = EasyPostParcel(jsonDictionary: resultDict)
                             
                             completion(result: EasyPostResult.Success(parcel))
+                        }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
+    
+    //If the shipment and parcel objects you pass in have id's defined, those will be used and the rest of the parameters will be ignored.  If you pass in objects that don't have id's defined, the parameters will be used to create the objects on the back end
+    public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+        
+        let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel)
+        
+        alamofireManager.request(.POST, apiBaseUrl + "shipments", parameters:parameters, headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            let shipment = EasyPostShipment(jsonDictionary: resultDict)
+                            
+                            completion(result: EasyPostResult.Success(shipment))
                         }
                     } else {
                         print("Result was successful, but blank.")

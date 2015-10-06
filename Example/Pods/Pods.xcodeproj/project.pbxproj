@@ -77,6 +77,9 @@
 		BE2DE3ED1BC2F93200A7523A /* EasyPostAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3E51BC2401F00A7523A /* EasyPostAddress.swift */; settings = {ASSET_TAGS = (); }; };
 		BE2DE3EE1BC2F93900A7523A /* EasyPostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3E71BC2EC2D00A7523A /* EasyPostResult.swift */; settings = {ASSET_TAGS = (); }; };
 		BE2DE3F01BC31DE400A7523A /* EasyPostParcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3EF1BC31DE400A7523A /* EasyPostParcel.swift */; settings = {ASSET_TAGS = (); }; };
+		BE2DE3F21BC3830200A7523A /* EasyPostShipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3F11BC3830200A7523A /* EasyPostShipment.swift */; settings = {ASSET_TAGS = (); }; };
+		BE2DE3F41BC3839300A7523A /* EasyPostRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3F31BC3839300A7523A /* EasyPostRate.swift */; settings = {ASSET_TAGS = (); }; };
+		BE2DE3F61BC4223A00A7523A /* EasyPostExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3F51BC4223A00A7523A /* EasyPostExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		BF55A5B6BA83DA14D3595075FC3B917D /* EasyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66ABC21C872BA32CE5E6998C2D04C0 /* EasyPostApi.swift */; };
 		BFC83EE83FACEEA70CD41DD43D1A923F /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B45295D56C93615808FF0E4F73E69E /* Alamofire.swift */; };
 		C6F573C0283FFFF083D5644A5C8CB536 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B84B337000D51DE9C481E80E8797D /* RaisesException.swift */; };
@@ -278,6 +281,9 @@
 		BE2DE3E51BC2401F00A7523A /* EasyPostAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostAddress.swift; sourceTree = "<group>"; };
 		BE2DE3E71BC2EC2D00A7523A /* EasyPostResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostResult.swift; sourceTree = "<group>"; };
 		BE2DE3EF1BC31DE400A7523A /* EasyPostParcel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostParcel.swift; sourceTree = "<group>"; };
+		BE2DE3F11BC3830200A7523A /* EasyPostShipment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostShipment.swift; sourceTree = "<group>"; };
+		BE2DE3F31BC3839300A7523A /* EasyPostRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostRate.swift; sourceTree = "<group>"; };
+		BE2DE3F51BC4223A00A7523A /* EasyPostExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostExtensions.swift; sourceTree = "<group>"; };
 		C0D40C64B1D2487F5A2AE5CCA35D4F4A /* Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
 		C205F3CC690596305A071BEB5AFB00ED /* World+DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "World+DSL.h"; path = "Quick/DSL/World+DSL.h"; sourceTree = "<group>"; };
 		C414D73D3BDC8F94CB4670D2557E1FC2 /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Quick/QuickSpec.m; sourceTree = "<group>"; };
@@ -439,6 +445,9 @@
 				BE2DE3E51BC2401F00A7523A /* EasyPostAddress.swift */,
 				BE2DE3E71BC2EC2D00A7523A /* EasyPostResult.swift */,
 				BE2DE3EF1BC31DE400A7523A /* EasyPostParcel.swift */,
+				BE2DE3F11BC3830200A7523A /* EasyPostShipment.swift */,
+				BE2DE3F31BC3839300A7523A /* EasyPostRate.swift */,
+				BE2DE3F51BC4223A00A7523A /* EasyPostExtensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -971,6 +980,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2DE3F01BC31DE400A7523A /* EasyPostParcel.swift in Sources */,
+				BE2DE3F21BC3830200A7523A /* EasyPostShipment.swift in Sources */,
+				BE2DE3F41BC3839300A7523A /* EasyPostRate.swift in Sources */,
+				BE2DE3F61BC4223A00A7523A /* EasyPostExtensions.swift in Sources */,
 				BE2DE3ED1BC2F93200A7523A /* EasyPostAddress.swift in Sources */,
 				B9C11D107E81600704C338501096703B /* EasyPostApi-dummy.m in Sources */,
 				BE2DE3EE1BC2F93900A7523A /* EasyPostResult.swift in Sources */,
