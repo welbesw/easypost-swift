@@ -12,15 +12,11 @@
   },
   "social_media_url": "https://twitter.com/welbes",
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "osx": "10.9"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "EasypostApi": [
-      "Pod/Assets/*.png"
-    ]
-  },
   "frameworks": "Foundation",
   "dependencies": {
     "Alamofire": [

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EasyPostApi"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A simple Swift library to access the Easypost API."
 
 # This description is used to generate tags and improve search results.
@@ -29,12 +29,13 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/welbes'
 
   s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.9"
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'EasypostApi' => ['Pod/Assets/*.png']
-  }
+  # s.resource_bundles = {
+  #  'EasypostApi' => ['Pod/Assets/*.png']
+  #}
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation'

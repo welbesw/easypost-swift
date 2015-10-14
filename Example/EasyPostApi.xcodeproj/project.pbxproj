@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC154FDD017763CD3E60860 /* Pods_EasyPostApi_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDDD9F5153BB5959A2A1B8D /* Pods_EasyPostApi_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		1FEF644E6A6CD59C1021B7D1 /* Pods_EasyPostApi_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A440546FC7B3CEC5C32C2F5 /* Pods_EasyPostApi_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1AC154FDD017763CD3E60860 /* Pods_EasyPostApi_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDDD9F5153BB5959A2A1B8D /* Pods_EasyPostApi_Example.framework */; };
+		1FEF644E6A6CD59C1021B7D1 /* Pods_EasyPostApi_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A440546FC7B3CEC5C32C2F5 /* Pods_EasyPostApi_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
