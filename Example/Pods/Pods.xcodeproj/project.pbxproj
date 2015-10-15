@@ -81,6 +81,7 @@
 		BBADDE19F9194771C6407F942DA3FFCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC88435BCD090DDE25C4A5D36AF743 /* Foundation.framework */; };
 		BC0CF55A707E45FA6237F81B2C67AB88 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48377FA3E2B6AFB6684AF19856A607 /* Functional.swift */; };
 		BDF2E6990522B45545263608DEFC9729 /* EasyPostApi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EE164B25AC33ADCD4BF0EC64C893D4 /* EasyPostApi-dummy.m */; };
+		BEEC12291BD0540200E8FD72 /* EasyPostBuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEC12271BD053E300E8FD72 /* EasyPostBuyResponse.swift */; settings = {ASSET_TAGS = (); }; };
 		C196A8A222E159C9B024FDA918A3D2FD /* Pods-EasyPostApi_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2A6C4D6CED3F65E5CEF563C9E59B2A /* Pods-EasyPostApi_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C597DCBA329FC9AC22E99F24EFDAD087 /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 71F5F1F282377F60EC78EF5225C7BC77 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C97DB72373477E81BB740EDCDC41D9EB /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76E567F3E3470A2207B169E73C71D8 /* ExampleHooks.swift */; };
@@ -277,6 +278,7 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB678C1BDB9527764120F33AD669CB4F /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Nimble/FailureMessage.swift; sourceTree = "<group>"; };
 		BED8B36D53A0259CA9723682499C4615 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Nimble/Wrappers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
+		BEEC12271BD053E300E8FD72 /* EasyPostBuyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostBuyResponse.swift; sourceTree = "<group>"; };
 		BF002733793E3BA7BD93BD0DB4B31A55 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		C2AF00C3E0A877477652763517C76E82 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		C32E4753C455E1E1405B036920256E43 /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 			children = (
 				212D7C6A2F65EA5475677E390E01749E /* EasyPostAddress.swift */,
 				42EF8015E9C62B09B4A1CD11DE7D9971 /* EasyPostApi.swift */,
+				BEEC12271BD053E300E8FD72 /* EasyPostBuyResponse.swift */,
 				448B06340C696A7BAAD0ACAD0F4B5227 /* EasyPostExtensions.swift */,
 				B71FC85CEA520E0DAAEDF943F94DA092 /* EasyPostLabel.swift */,
 				84134FE6E65D65EC7B14C11E44155277 /* EasyPostParcel.swift */,
@@ -987,6 +990,7 @@
 				E962665449AB82E864F2658B02B0B28E /* EasyPostLabel.swift in Sources */,
 				543A496D89ADC63D80BD85E4538E7E7C /* EasyPostParcel.swift in Sources */,
 				7DE74965B7A0B64C3BC76551B78CCC11 /* EasyPostRate.swift in Sources */,
+				BEEC12291BD0540200E8FD72 /* EasyPostBuyResponse.swift in Sources */,
 				1A41EEF275D4916A9549096F607042D9 /* EasyPostResult.swift in Sources */,
 				753C7E41466A25894DFFEB5698F3F533 /* EasyPostShipment.swift in Sources */,
 			);

@@ -305,11 +305,11 @@ public class EasyPostApi {
         }
     }
     
-    public func buyShipment(shipmentId:String, rateId:String, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    public func buyShipment(shipmentId:String, rateId:String, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
         buyShipment(shipmentId, rateId: rateId, labelFormat: nil, completion: completion)
     }
     
-    public func buyShipment(shipmentId:String, rateId:String, labelFormat:String?, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    public func buyShipment(shipmentId:String, rateId:String, labelFormat:String?, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
     
         var parameters = ["rate[id]" : rateId]
 
@@ -327,7 +327,7 @@ public class EasyPostApi {
                         if let error = self.checkForApiResultError(resultDict) {
                             completion(result: EasyPostResult.Failure(error))
                         } else {
-                            let buyResponse = EasyPostShipment(jsonDictionary: resultDict)
+                            let buyResponse = EasyPostBuyResponse(jsonDictionary: resultDict)
                             
                             completion(result: EasyPostResult.Success(buyResponse))
                         }
