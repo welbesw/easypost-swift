@@ -112,7 +112,6 @@
 		F4ED851C84866AC96B995896531583DC /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB037B9174373B43309110235899E3 /* Stringers.swift */; };
 		F4FCB84B09C0FCEE15E16C5FA269A870 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF002733793E3BA7BD93BD0DB4B31A55 /* BeLessThan.swift */; };
 		F5A15FA54F22CF5B091C711BA47BE14E /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A52E44BE807E7735160C98337A46FB /* Quick-dummy.m */; };
-		F9EBF034BE1718166958E36AC3BAD1C3 /* EasyPostBuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74898CB97E018E316278529933C7CEDB /* EasyPostBuyResponse.swift */; };
 		FC13F7FE5661FF7939E4140728E15A62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89D294FC77627C031FC6DD0039D1B8B /* XCTest.framework */; };
 		FE1F95F519342B9266EB69B23B4336CF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C46F0B73E62606590143F7B91E84 /* Error.swift */; };
 /* End PBXBuildFile section */
@@ -228,7 +227,6 @@
 		7266072EE653A3CB050A5ABF4F84408E /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		72C5451F861E7E776C62C93EFB415322 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7416551B48A564E33B9419CE4776ED2B /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Nimble/objc/DSL.m; sourceTree = "<group>"; };
-		74898CB97E018E316278529933C7CEDB /* EasyPostBuyResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EasyPostBuyResponse.swift; sourceTree = "<group>"; };
 		749F56E7740556B44A8032680DA0DB7A /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
 		74B860BB4529D214C905EB909CADF061 /* World.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = World.h; path = Quick/World.h; sourceTree = "<group>"; };
 		758A5C592BF2827DE3CCFE70FCD0C155 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
@@ -634,7 +632,6 @@
 			children = (
 				212D7C6A2F65EA5475677E390E01749E /* EasyPostAddress.swift */,
 				42EF8015E9C62B09B4A1CD11DE7D9971 /* EasyPostApi.swift */,
-				74898CB97E018E316278529933C7CEDB /* EasyPostBuyResponse.swift */,
 				448B06340C696A7BAAD0ACAD0F4B5227 /* EasyPostExtensions.swift */,
 				B71FC85CEA520E0DAAEDF943F94DA092 /* EasyPostLabel.swift */,
 				84134FE6E65D65EC7B14C11E44155277 /* EasyPostParcel.swift */,
@@ -986,7 +983,6 @@
 				1D5B46EB7DE8CBA36473D9C2B997F3B0 /* EasyPostAddress.swift in Sources */,
 				BDF2E6990522B45545263608DEFC9729 /* EasyPostApi-dummy.m in Sources */,
 				A789107A5098303FAAEADB52781EB448 /* EasyPostApi.swift in Sources */,
-				F9EBF034BE1718166958E36AC3BAD1C3 /* EasyPostBuyResponse.swift in Sources */,
 				8225093A09D820FA59E47083BCAB4BF7 /* EasyPostExtensions.swift in Sources */,
 				E962665449AB82E864F2658B02B0B28E /* EasyPostLabel.swift in Sources */,
 				543A496D89ADC63D80BD85E4538E7E7C /* EasyPostParcel.swift in Sources */,
