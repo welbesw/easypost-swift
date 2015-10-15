@@ -306,8 +306,16 @@ public class EasyPostApi {
     }
     
     public func buyShipment(shipmentId:String, rateId:String, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
+        buyShipment(shipmentId, rateId: rateId, labelFormat: nil, completion: completion)
+    }
     
-        let parameters = ["rate[id]" : rateId]
+    public func buyShipment(shipmentId:String, rateId:String, labelFormat:String?, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
+    
+        var parameters = ["rate[id]" : rateId]
+
+        if let format = labelFormat {
+            parameters.updateValue(format, forKey: "label_format")
+        }
         
         alamofireManager.request(.POST, apiBaseUrl + "shipments/\(shipmentId)/buy", parameters:parameters, headers:getAuthHeader())
             .responseJSON { (request, response, result) in
@@ -322,6 +330,37 @@ public class EasyPostApi {
                             let buyResponse = EasyPostBuyResponse(jsonDictionary: resultDict)
                             
                             completion(result: EasyPostResult.Success(buyResponse))
+                        }
+                    } else {
+                        print("Result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
+    
+    public func labelForShipment(shipmentId:String, labelFormat:String, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+        let parameters = ["file_format" : labelFormat]
+        
+        alamofireManager.request(.GET, apiBaseUrl + "shipments/\(shipmentId)/label", parameters:parameters, headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            let shipment = EasyPostShipment(jsonDictionary: resultDict)
+                            
+                            completion(result: EasyPostResult.Success(shipment))
                         }
                     } else {
                         print("Result was successful, but blank.")

@@ -20,6 +20,12 @@ public class EasyPostShipment {
     
     public var rates:[EasyPostRate] = []
     
+    public var postageLabel:EasyPostLabel?
+    
+    public var trackingCode:String?
+    
+    public var selectedRate:EasyPostRate?
+    
     public var createdAt:NSDate?
     public var updatedAt:NSDate?
     
@@ -60,6 +66,18 @@ public class EasyPostShipment {
                     self.rates.append(rate)
                 }
             }
+        }
+        
+        if let postageLabelDict = jsonDictionary["postage_label"] as? NSDictionary {
+            postageLabel = EasyPostLabel(jsonDictionary: postageLabelDict)
+        }
+        
+        if let stringValue = jsonDictionary["tracking_code"] as? String {
+            trackingCode = stringValue
+        }
+        
+        if let rateDict = jsonDictionary["selected_rate"] as? NSDictionary {
+            selectedRate = EasyPostRate(jsonDictionary: rateDict)
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
