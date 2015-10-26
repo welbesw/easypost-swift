@@ -1,14 +1,10 @@
 PODS:
   - Alamofire (2.0.2)
-  - EasyPostApi (0.1.0):
+  - EasyPostApi (0.3.0):
     - Alamofire (~> 2.0)
-  - Nimble (2.0.0-rc.3)
-  - Quick (0.6.0)
 
 DEPENDENCIES:
   - EasyPostApi (from `../`)
-  - Nimble (= 2.0.0-rc.3)
-  - Quick (~> 0.6.0)
 
 EXTERNAL SOURCES:
   EasyPostApi:
@@ -16,8 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  EasyPostApi: 77827a28ec07e141d408cc1344b71c139b17ec0b
-  Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
-  Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
+  EasyPostApi: ef675e6fcb445e1863437e111e9de623bb402914
 
 COCOAPODS: 0.39.0

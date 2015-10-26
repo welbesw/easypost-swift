@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '883317E5E924C87176DE745C'
+               BlueprintIdentifier = 'BB18658869CA6944163AD3B0'
                BlueprintName = 'EasyPostApi'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'EasyPostApi.framework'>
