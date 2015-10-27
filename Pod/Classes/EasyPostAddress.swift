@@ -126,6 +126,10 @@ public class EasyPostAddress {
             dict.updateValue(name!, forKey: "name")
         }
         
+        if company != nil {
+            dict.updateValue(company!, forKey: "company")
+        }
+        
         if phone != nil {
             dict.updateValue(phone!, forKey: "phone")
         }
