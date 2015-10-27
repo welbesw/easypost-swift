@@ -386,6 +386,44 @@ public class EasyPostApi {
         }
     }
     
+    public func getCarrierAccounts(completion: (result: EasyPostResult<[EasyPostCarrierAccount]>) -> ()) {
+        
+        alamofireManager.request(.GET, apiBaseUrl + "carrier_accounts", headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultArray = result.value as? NSArray {
+                        
+                        var carrierAccounts = [EasyPostCarrierAccount]()
+                    
+                        for carrierItem in resultArray {
+                            if let carrierDict = carrierItem as? NSDictionary {
+                                let carrierAccount = EasyPostCarrierAccount(jsonDictionary: carrierDict)
+                                carrierAccounts.append(carrierAccount)
+                            }
+                        }
+                        completion(result: EasyPostResult.Success(carrierAccounts))
+                    } else if let resultDict = result.value as? NSDictionary {
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
+                        }
+                    } else {
+                        print("getCarrierAccounts result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
+    
     public func getCarrierTypes(completion: (result: EasyPostResult<[EasyPostCarrierType]>) -> ()) {
         
         alamofireManager.request(.GET, apiBaseUrl + "carrier_types", headers:getAuthHeader())
