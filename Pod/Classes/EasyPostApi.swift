@@ -404,6 +404,12 @@ public class EasyPostApi {
                             }
                         }
                         completion(result: EasyPostResult.Success(carrierTypes))
+                    } else if let resultDict = result.value as? NSDictionary {
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
+                        }
                     } else {
                         print("getCarrierTypes result was successful, but blank.")
                         completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
