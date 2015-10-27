@@ -90,5 +90,55 @@ public class EasyPostAddress {
             updatedAt = dateFormatter.dateFromString(stringValue)
         }
     }
+    
+    func jsonDict() -> NSDictionary {
+        var dict = [String : AnyObject]()
+        
+        if id != nil {
+            dict.updateValue(id!, forKey: "id")
+        }
+        
+        if street1 != nil {
+            dict.updateValue(street1!, forKey: "street1")
+        }
+        
+        if street2 != nil {
+            dict.updateValue(street2!, forKey: "street2")
+        }
+        
+        if city != nil {
+            dict.updateValue(city!, forKey: "city")
+        }
+        
+        if state != nil {
+            dict.updateValue(state!, forKey: "state")
+        }
+        
+        if zip != nil {
+            dict.updateValue(zip!, forKey: "zip")
+        }
+        
+        if country != nil {
+            dict.updateValue(country!, forKey: "country")
+        }
+        
+        if name != nil {
+            dict.updateValue(name!, forKey: "name")
+        }
+        
+        if phone != nil {
+            dict.updateValue(phone!, forKey: "phone")
+        }
+        
+        if email != nil {
+            dict.updateValue(email!, forKey: "email")
+        }
+        
+        if isResidential != nil {
+            dict.updateValue(isResidential!, forKey: "residential")
+        }
+        
+        return dict
+    }
 
 }
