@@ -91,7 +91,7 @@ public class EasyPostAddress {
         }
     }
     
-    func jsonDict() -> NSDictionary {
+    public func jsonDict() -> NSDictionary {
         var dict = [String : AnyObject]()
         
         if id != nil {
