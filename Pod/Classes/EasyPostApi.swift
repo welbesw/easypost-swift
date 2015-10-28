@@ -355,6 +355,46 @@ public class EasyPostApi {
         }
     }
     
+    public func getShipments(completion: (result: EasyPostResult<[EasyPostShipment]>) -> ()) {
+        
+        alamofireManager.request(.GET, apiBaseUrl + "shipments", headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            if let shipmentsArray = resultDict["shipments"] as? NSArray {
+                                var shipments = [EasyPostShipment]()
+                                
+                                for shipmentItem in shipmentsArray {
+                                    if let shipmentDict = shipmentItem as? NSDictionary {
+                                        let shipment = EasyPostShipment(jsonDictionary: shipmentDict)
+                                        shipments.append(shipment)
+                                    }
+                                }
+                                completion(result: EasyPostResult.Success(shipments))
+                            } else {
+                                print("getShipments result was successful, but shipments array was not found.")
+                                completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
+                            }
+                        }
+                    } else {
+                        print("getShipments result was successful, but not as expected.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
+    
     public func labelForShipment(shipmentId:String, labelFormat:String, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
         let parameters = ["file_format" : labelFormat]
         

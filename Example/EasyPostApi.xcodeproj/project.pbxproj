@@ -17,6 +17,7 @@
 		BE2DE3EC1BC2F6E000A7523A /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3EA1BC2F6E000A7523A /* DefaultsManager.swift */; };
 		BE2DE3FC1BC449F700A7523A /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3FB1BC449F700A7523A /* RatesViewController.swift */; };
 		BE2DE3FE1BC44A5B00A7523A /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2DE3FD1BC44A5B00A7523A /* RateCell.swift */; };
+		BEFFC8161BE14B3C009F51C4 /* ShipmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFC8151BE14B3C009F51C4 /* ShipmentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BE2DE3EA1BC2F6E000A7523A /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		BE2DE3FB1BC449F700A7523A /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		BE2DE3FD1BC44A5B00A7523A /* RateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		BEFFC8151BE14B3C009F51C4 /* ShipmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsViewController.swift; sourceTree = "<group>"; };
 		F6163745F058E58AABB0163F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F83E0CF2AEEC94DA2A4BD34B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F93A31EA0CE07A4CBC41CFDA /* Pods-EasyPostApi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				BE2DE3FB1BC449F700A7523A /* RatesViewController.swift */,
 				BE2DE3FD1BC44A5B00A7523A /* RateCell.swift */,
+				BEFFC8151BE14B3C009F51C4 /* ShipmentsViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -253,6 +256,7 @@
 			files = (
 				BE2DE3FC1BC449F700A7523A /* RatesViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				BEFFC8161BE14B3C009F51C4 /* ShipmentsViewController.swift in Sources */,
 				BE2DE3EB1BC2F6E000A7523A /* CredentialsViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				BE2DE3EC1BC2F6E000A7523A /* DefaultsManager.swift in Sources */,
