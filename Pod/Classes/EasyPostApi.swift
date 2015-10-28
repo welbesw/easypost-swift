@@ -135,7 +135,7 @@ public class EasyPostApi {
         return parameters
     }
     
-    func parametersForShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierTypeIds:[String]?) -> [String : AnyObject] {
+    func parametersForShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let toAddressId = toAddress.id {
@@ -156,7 +156,7 @@ public class EasyPostApi {
             parameters += paramtersFromParcel(parcel, keyStringFormat: "shipment[parcel][%ELEMENT%]")
         }
         
-        if let carriers = carrierTypeIds {
+        if let carriers = carrierAccountIds {
             for var index = 0; index < carriers.count; ++index {
                 parameters.updateValue(carriers[index], forKey: "[carrier_accounts][\(index)][id]")
             }
@@ -280,12 +280,12 @@ public class EasyPostApi {
     
     //If the shipment and parcel objects you pass in have id's defined, those will be used and the rest of the parameters will be ignored.  If you pass in objects that don't have id's defined, the parameters will be used to create the objects on the back end
     public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
-        postShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierTypeIds: nil, completion: completion)
+        postShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: nil, completion: completion)
     }
     
-    public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierTypeIds:[String]?, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
         
-        let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierTypeIds: carrierTypeIds)
+        let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: carrierAccountIds)
         
         alamofireManager.request(.POST, apiBaseUrl + "shipments", parameters:parameters, headers:getAuthHeader())
             .responseJSON { (request, response, result) in
