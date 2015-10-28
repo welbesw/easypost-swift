@@ -158,7 +158,7 @@ public class EasyPostApi {
         
         if let carriers = carrierAccountIds {
             for var index = 0; index < carriers.count; ++index {
-                parameters.updateValue(carriers[index], forKey: "[carrier_accounts][\(index)][id]")
+                parameters.updateValue(carriers[index], forKey: "shipment[carrier_accounts][\(index)][id]")
             }
         }
         
