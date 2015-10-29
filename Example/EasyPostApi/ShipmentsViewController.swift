@@ -25,7 +25,7 @@ class ShipmentsViewController: UITableViewController {
     }
     
     func loadShipments() {
-        EasyPostApi.sharedInstance.getShipments { (result) -> () in
+        EasyPostApi.sharedInstance.getShipments(onlyPurchased:true, pageSize: 50, beforeShipmentId: nil) { (result) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 switch(result) {
                 case .Success(let resultShipments):

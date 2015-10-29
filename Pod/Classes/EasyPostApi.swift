@@ -355,9 +355,14 @@ public class EasyPostApi {
         }
     }
     
-    public func getShipments(completion: (result: EasyPostResult<[EasyPostShipment]>) -> ()) {
+    public func getShipments(onlyPurchased onlyPurchased:Bool, pageSize:Int, beforeShipmentId:String?, completion: (result: EasyPostResult<[EasyPostShipment]>) -> ()) {
         
-        alamofireManager.request(.GET, apiBaseUrl + "shipments", headers:getAuthHeader())
+        var parameters:[String : AnyObject] = ["purchased" : NSNumber(bool: onlyPurchased), "page_size" : pageSize]
+        if let beforeId = beforeShipmentId {
+            parameters.updateValue(beforeId, forKey: "before_id")
+        }
+        
+        alamofireManager.request(.GET, apiBaseUrl + "shipments", parameters:parameters, headers:getAuthHeader())
             .responseJSON { (request, response, result) in
                 
                 if(result.isSuccess) {
