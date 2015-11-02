@@ -23,6 +23,10 @@ public class EasyPostShipment {
     public var postageLabel:EasyPostLabel?
     
     public var trackingCode:String?
+    public var referenceNumber:String?
+    public var refundStatus:String?
+    public var batchStatus:String?
+    public var batchMessage:String?
     
     public var selectedRate:EasyPostRate?
     
@@ -74,6 +78,22 @@ public class EasyPostShipment {
         
         if let stringValue = jsonDictionary["tracking_code"] as? String {
             trackingCode = stringValue
+        }
+        
+        if let stringValue = jsonDictionary["reference"] as? String {
+            referenceNumber = stringValue
+        }
+        
+        if let stringValue = jsonDictionary["refund_status"] as? String {
+            refundStatus = stringValue
+        }
+        
+        if let stringValue = jsonDictionary["batch_status"] as? String {
+            batchStatus = stringValue
+        }
+        
+        if let stringValue = jsonDictionary["batch_message"] as? String {
+            batchMessage = stringValue
         }
         
         if let rateDict = jsonDictionary["selected_rate"] as? NSDictionary {
