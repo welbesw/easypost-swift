@@ -26,6 +26,7 @@
 		A8B5EDB7371475F62767B297B1A10CDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1B2B7A117D61C0D1B7CD07C84BDEEC /* ParameterEncoding.swift */; };
 		BBADDE19F9194771C6407F942DA3FFCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
 		BDF2E6990522B45545263608DEFC9729 /* EasyPostApi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EE164B25AC33ADCD4BF0EC64C893D4 /* EasyPostApi-dummy.m */; };
+		BEA5B1A81BE9378900AFCE1E /* EasyPostUserApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5B1A71BE9378900AFCE1E /* EasyPostUserApiKeys.swift */; };
 		BEFFC8121BDF1648009F51C4 /* EasyPostCarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFC8111BDF1648009F51C4 /* EasyPostCarrierType.swift */; };
 		BEFFC8141BE02773009F51C4 /* EasyPostCarrierAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFC8131BE02773009F51C4 /* EasyPostCarrierAccount.swift */; };
 		C196A8A222E159C9B024FDA918A3D2FD /* Pods-EasyPostApi_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -112,6 +113,7 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BC42ABD052DF209D0761A0BF74AAD24E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		BCB9ECB2184FAB2BAE8AFA754F30C90B /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		BEA5B1A71BE9378900AFCE1E /* EasyPostUserApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostUserApiKeys.swift; sourceTree = "<group>"; };
 		BEFFC8111BDF1648009F51C4 /* EasyPostCarrierType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostCarrierType.swift; sourceTree = "<group>"; };
 		BEFFC8131BE02773009F51C4 /* EasyPostCarrierAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPostCarrierAccount.swift; sourceTree = "<group>"; };
 		E5F3FC5D877738CFD3367D01550D0C70 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				A17D1BE2B9798BF30DD01D38E2577192 /* EasyPostShipment.swift */,
 				BEFFC8111BDF1648009F51C4 /* EasyPostCarrierType.swift */,
 				BEFFC8131BE02773009F51C4 /* EasyPostCarrierAccount.swift */,
+				BEA5B1A71BE9378900AFCE1E /* EasyPostUserApiKeys.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				8225093A09D820FA59E47083BCAB4BF7 /* EasyPostExtensions.swift in Sources */,
 				E962665449AB82E864F2658B02B0B28E /* EasyPostLabel.swift in Sources */,
 				543A496D89ADC63D80BD85E4538E7E7C /* EasyPostParcel.swift in Sources */,
+				BEA5B1A81BE9378900AFCE1E /* EasyPostUserApiKeys.swift in Sources */,
 				7DE74965B7A0B64C3BC76551B78CCC11 /* EasyPostRate.swift in Sources */,
 				1A41EEF275D4916A9549096F607042D9 /* EasyPostResult.swift in Sources */,
 				BEFFC8121BDF1648009F51C4 /* EasyPostCarrierType.swift in Sources */,

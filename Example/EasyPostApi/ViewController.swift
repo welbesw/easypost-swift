@@ -43,6 +43,15 @@ class ViewController: UIViewController {
         } else {
             //Set the API credentials
             EasyPostApi.sharedInstance.setCredentials(defaultsManager.apiToken!, baseUrl: defaultsManager.apiBaseUrl!)
+            
+            EasyPostApi.sharedInstance.getUserApiKeys({ (result) -> () in
+                switch(result) {
+                case .Failure(let error):
+                    print("Error getting user api keys: \((error as NSError).localizedDescription)")
+                case .Success(let keys):
+                    print("Got API keys: production:\(keys.productionKey) : test: \(keys.testKey)")
+                }
+            })
         }
     }
 

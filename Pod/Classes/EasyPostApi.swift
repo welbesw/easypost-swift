@@ -510,4 +510,34 @@ public class EasyPostApi {
                 }
         }
     }
+    
+    public func getUserApiKeys( completion: (result: EasyPostResult<EasyPostUserApiKeys>) -> ()) {
+        
+        alamofireManager.request(.GET, apiBaseUrl + "api_keys", headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            
+                            let userApiKeys = EasyPostUserApiKeys(jsonDictionary: resultDict)
+                            completion(result: EasyPostResult.Success(userApiKeys))
+                            
+                        }
+                    } else {
+                        print("getUserApiKeys result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 6, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
 }
