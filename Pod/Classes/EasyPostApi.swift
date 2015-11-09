@@ -540,4 +540,33 @@ public class EasyPostApi {
                 }
         }
     }
+    
+    public func requestRefund(shipmentId:String, completion: (result: EasyPostResult<EasyPostRefund>) -> ()) {
+        alamofireManager.request(.GET, apiBaseUrl + "shipments/\(shipmentId)/refund", headers:getAuthHeader())
+            .responseJSON { (request, response, result) in
+                
+                if(result.isSuccess) {
+                    
+                    if let resultDict = result.value as? NSDictionary {
+                        if let error = self.checkForApiResultError(resultDict) {
+                            completion(result: EasyPostResult.Failure(error))
+                        } else {
+                            
+                            let refund = EasyPostRefund(jsonDictionary: resultDict)
+                            completion(result: EasyPostResult.Success(refund))
+                            
+                        }
+                    } else {
+                        print("requestRefund result was successful, but blank.")
+                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 7, userInfo: nil)))
+                    }
+                    
+                    
+                } else {
+                    print(result.error)
+                    
+                    completion(result: EasyPostResult.Failure(result.error!))
+                }
+        }
+    }
 }

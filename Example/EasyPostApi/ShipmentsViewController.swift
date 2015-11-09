@@ -66,6 +66,34 @@ class ShipmentsViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        
+        let shipment = shipments[indexPath.row]
+        if let shipmentId = shipment.id {
+        
+            //Ask to refund
+            let alertController = UIAlertController(title: "Request Refund?", message: "Request a refund for this shipment?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alertController.addAction(UIAlertAction(title: "Request Refund", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+                //Request the refund
+                EasyPostApi.sharedInstance.requestRefund(shipmentId, completion: { (result) -> () in
+                    //Check for error
+                    switch(result) {
+                    case .Success(let refund):
+                        print("Refund requested: \(refund.id)")
+                    case .Failure(let error):
+                        print("Error requesting refund: \((error as NSError).localizedDescription)")
+                    }
+                })
+            }))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
