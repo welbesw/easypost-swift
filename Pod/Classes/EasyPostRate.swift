@@ -13,11 +13,13 @@ public class EasyPostRate {
     
     public var service:String?
     public var carrier:String?
+    public var carrierAccountId:String?
     public var currency:String?
     public var deliveryDays:NSNumber?
     public var deliveryDate:NSDate?
     public var deliveryDateGuaranteed:Bool = false
     public var rate:String?
+    public var shipmentId:String?
     
     public var createdAt:NSDate?
     public var updatedAt:NSDate?
@@ -44,6 +46,10 @@ public class EasyPostRate {
             carrier = stringValue
         }
         
+        if let stringValue = jsonDictionary["carrier_account_id"] as? String {
+            carrierAccountId = stringValue
+        }
+        
         if let stringValue = jsonDictionary["currency"] as? String {
             currency = stringValue
         }
@@ -56,8 +62,16 @@ public class EasyPostRate {
             deliveryDate = dateFormatter.dateFromString(stringValue)
         }
         
+        if let numberValue = jsonDictionary["delivery_date_guaranteed"] as? NSNumber {
+            deliveryDateGuaranteed = numberValue.boolValue
+        }
+        
         if let stringValue = jsonDictionary["rate"] as? String {
             rate = stringValue
+        }
+        
+        if let stringValue = jsonDictionary["shipment_id"] as? String {
+            shipmentId = stringValue
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
