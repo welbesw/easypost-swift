@@ -32,6 +32,7 @@ public class EasyPostAddress {
         //Load the JSON dictionary
         
         let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {
