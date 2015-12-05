@@ -147,7 +147,7 @@ public class EasyPostApi {
         if let fromAddressId = fromAddress.id {
             parameters.updateValue(fromAddressId, forKey: "shipment[from_address][id]")
         } else {
-            parameters += paramtersFromAddress(toAddress, keyStringFormat: "shipment[from_address][%ELEMENT%]")
+            parameters += paramtersFromAddress(fromAddress, keyStringFormat: "shipment[from_address][%ELEMENT%]")
         }
         
         if let parcelId = parcel.id {
