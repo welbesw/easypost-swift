@@ -195,7 +195,13 @@ class ViewController: UIViewController {
                         
                         self.currentShipment = shipment
                         
-                        self.performSegueWithIdentifier("ModalShowRatesSegue", sender: nil)
+                        if(shipment.rates.count < 1 && shipment.messages.count > 0) {
+                            let alert = UIAlertController(title: "Error Getting Rates", message: shipment.messages[0].message, preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        } else {
+                            self.performSegueWithIdentifier("ModalShowRatesSegue", sender: nil)
+                        }
                     }
                     
                 case .Failure(let error):

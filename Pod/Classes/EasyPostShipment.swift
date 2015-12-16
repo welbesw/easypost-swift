@@ -9,8 +9,8 @@
 import Foundation
 
 public struct EasyPostShipmentMessage {
-    var carrier:String = ""
-    var message:String = ""
+    public var carrier:String = ""
+    public var message:String = ""
 }
 
 public class EasyPostShipment {
