@@ -8,6 +8,11 @@
 
 import Foundation
 
+public struct EasyPostShipmentMessage {
+    var carrier:String = ""
+    var message:String = ""
+}
+
 public class EasyPostShipment {
     public var id:String?
     
@@ -32,6 +37,8 @@ public class EasyPostShipment {
     
     public var createdAt:NSDate?
     public var updatedAt:NSDate?
+    
+    public var messages:[EasyPostShipmentMessage] = []
     
     public init() {
         
@@ -99,6 +106,21 @@ public class EasyPostShipment {
         
         if let rateDict = jsonDictionary["selected_rate"] as? NSDictionary {
             selectedRate = EasyPostRate(jsonDictionary: rateDict)
+        }
+        
+        if let messagesArray = jsonDictionary["messages"] as? NSArray {
+            for messageElement in messagesArray {
+                if let messageDict = messageElement as? NSDictionary {
+                    var message = EasyPostShipmentMessage()
+                    if let stringValue = messageDict["carrier"] as? String {
+                        message.carrier = stringValue
+                    }
+                    if let stringValue = messageDict["message"] as? String {
+                        message.message = stringValue
+                    }
+                    self.messages.append(message)
+                }
+            }
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
