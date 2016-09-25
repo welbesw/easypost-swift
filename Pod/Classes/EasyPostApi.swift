@@ -9,51 +9,27 @@
 import Foundation
 import Alamofire
 
-public class EasyPostApi {
+open class EasyPostApi {
+    
+    //Define a shared instance method to return a singleton of the API manager
+    open static var sharedInstance = EasyPostApi()
     
     let errorDomain = "com.technomagination.EasyPostApi"
     
     var apiToken = ""               //Pass in via setCredentials
     var apiBaseUrl = ""             //Pass in via setCredentials
     
-    var alamofireManager: Alamofire.Manager!
-    
-    //Define a shared instance method to return a singleton of the API manager
-    public class var sharedInstance : EasyPostApi {
-        struct Static {
-            static var onceToken : dispatch_once_t = 0
-            static var instance : EasyPostApi? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = EasyPostApi()
-        }
-        return Static.instance!
-    }
-    
     public init() {
-        
-        initializeAlamofire()
+        //Nothing more to do here now
     }
     
     public init(token: String, baseUrl: String) {
         
         setCredentials(token, baseUrl: baseUrl)
-        
-        initializeAlamofire()
-    }
-    
-    func initializeAlamofire() {
-        var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
-        defaultHeaders["Accept"] = "application/json"
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.HTTPAdditionalHeaders = defaultHeaders
-        
-        self.alamofireManager = Alamofire.Manager(configuration: configuration)
     }
     
     //Set the credentials to use with the API
-    public func setCredentials(token: String, baseUrl: String) {
+    open func setCredentials(_ token: String, baseUrl: String) {
         self.apiToken = token
         self.apiBaseUrl = baseUrl
     }
@@ -61,123 +37,123 @@ public class EasyPostApi {
     func getAuthHeader() -> [String : String] {
         let user = self.apiToken
         
-        let credentialData = "\(user):".dataUsingEncoding(NSUTF8StringEncoding)!
-        let base64Credentials = credentialData.base64EncodedStringWithOptions([])
+        let credentialData = "\(user):".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
         
-        return ["Authorization": "Basic \(base64Credentials)"]
+        return ["Authorization": "Basic \(base64Credentials)", "Accept" : "application/json"]
     }
     
     //Use key string format for how the keys will be formed: "address[id]" should be address[%ELEMENT%]
-    func paramtersFromAddress(address:EasyPostAddress, keyStringFormat:String) -> [String : AnyObject] {
+    func paramtersFromAddress(_ address:EasyPostAddress, keyStringFormat:String) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let id = address.id {
-            parameters.updateValue(id, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString: "id"))
+            parameters.updateValue(id as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with: "id"))
         }
         if let street1 = address.street1 {
-            parameters.updateValue(street1, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"street1"))
+            parameters.updateValue(street1 as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"street1"))
         }
         if let street2 = address.street2 {
-            parameters.updateValue(street2, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"street2"))
+            parameters.updateValue(street2 as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"street2"))
         }
         if let city = address.city {
-            parameters.updateValue(city, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"city"))
+            parameters.updateValue(city as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"city"))
         }
         if let state = address.state {
-            parameters.updateValue(state, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"state"))
+            parameters.updateValue(state as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"state"))
         }
         if let zip = address.zip {
-            parameters.updateValue(zip, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"zip"))
+            parameters.updateValue(zip as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"zip"))
         }
         if let country = address.country {
-            parameters.updateValue(country, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"country"))
+            parameters.updateValue(country as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"country"))
         }
         if let name = address.name {
-            parameters.updateValue(name, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"name"))
+            parameters.updateValue(name as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"name"))
         }
         if let company = address.company {
-            parameters.updateValue(company, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"company"))
+            parameters.updateValue(company as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"company"))
         }
         if let phone = address.phone {
-            parameters.updateValue(phone, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"phone"))
+            parameters.updateValue(phone as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"phone"))
         }
         if let email = address.email {
-            parameters.updateValue(email, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"email"))
+            parameters.updateValue(email as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"email"))
         }
         if let isResidentatial = address.isResidential {
-            parameters.updateValue(isResidentatial, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"residential"))
+            parameters.updateValue(isResidentatial as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"residential"))
         }
         
         return parameters
     }
     
-    func paramtersFromParcel(parcel:EasyPostParcel, keyStringFormat:String) -> [String : AnyObject] {
+    func paramtersFromParcel(_ parcel:EasyPostParcel, keyStringFormat:String) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let id = parcel.id {
-            parameters.updateValue(id, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"id"))
+            parameters.updateValue(id as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"id"))
         }
         if let length = parcel.length {
-            parameters.updateValue(length, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"length"))
+            parameters.updateValue(length, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"length"))
         }
         if let width = parcel.width {
-            parameters.updateValue(width, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"width"))
+            parameters.updateValue(width, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"width"))
         }
         if let height = parcel.height {
-            parameters.updateValue(height, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"height"))
+            parameters.updateValue(height, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"height"))
         }
         if let predefinedPackaged = parcel.predefinedPackage {
-            parameters.updateValue(predefinedPackaged, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"predefined_package"))
+            parameters.updateValue(predefinedPackaged as AnyObject, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"predefined_package"))
         }
         
-        parameters.updateValue(parcel.weight, forKey: keyStringFormat.stringByReplacingOccurrencesOfString("%ELEMENT%", withString:"weight"))
+        parameters.updateValue(parcel.weight, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"weight"))
         
         return parameters
     }
     
-    func parametersForShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenecNumber:String?) -> [String : AnyObject] {
+    func parametersForShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenecNumber:String?) -> [String : AnyObject] {
         var parameters = [String : AnyObject]()
         
         if let toAddressId = toAddress.id {
-            parameters.updateValue(toAddressId, forKey: "shipment[to_address][id]")
+            parameters.updateValue(toAddressId as AnyObject, forKey: "shipment[to_address][id]")
         } else {
             parameters += paramtersFromAddress(toAddress, keyStringFormat: "shipment[to_address][%ELEMENT%]")
         }
         
         if let fromAddressId = fromAddress.id {
-            parameters.updateValue(fromAddressId, forKey: "shipment[from_address][id]")
+            parameters.updateValue(fromAddressId as AnyObject, forKey: "shipment[from_address][id]")
         } else {
             parameters += paramtersFromAddress(fromAddress, keyStringFormat: "shipment[from_address][%ELEMENT%]")
         }
         
         if let parcelId = parcel.id {
-            parameters.updateValue(parcelId, forKey: "shipment[parcel][id]")
+            parameters.updateValue(parcelId as AnyObject, forKey: "shipment[parcel][id]")
         } else {
             parameters += paramtersFromParcel(parcel, keyStringFormat: "shipment[parcel][%ELEMENT%]")
         }
         
         if let carriers = carrierAccountIds {
-            for var index = 0; index < carriers.count; ++index {
-                parameters.updateValue(carriers[index], forKey: "shipment[carrier_accounts][\(index)][id]")
+            for index in 0 ..< carriers.count {
+                parameters.updateValue(carriers[index] as AnyObject, forKey: "shipment[carrier_accounts][\(index)][id]")
             }
         }
         
         if let reference = referenecNumber {
-            parameters.updateValue(reference, forKey: "shipment[reference]")
+            parameters.updateValue(reference as AnyObject, forKey: "shipment[reference]")
         }
         
         return parameters
     }
     
-    func checkForApiResultError(resultDict:NSDictionary) -> NSError? {
+    func checkForApiResultError(_ resultDict:NSDictionary) -> NSError? {
         var error:NSError? = nil
         if let errorDict = resultDict["error"] as? NSDictionary {
             var userInfo = [String : AnyObject]()
             if let code = errorDict["code"] as? String {
-                userInfo.updateValue(code, forKey: NSLocalizedFailureReasonErrorKey)
+                userInfo.updateValue(code as AnyObject, forKey: NSLocalizedFailureReasonErrorKey)
             }
             if let message = errorDict["message"] as? String {
-                userInfo.updateValue(message, forKey: NSLocalizedDescriptionKey)
+                userInfo.updateValue(message as AnyObject, forKey: NSLocalizedDescriptionKey)
             }
             error = NSError(domain: "com.technomagination.EasyPostApi", code: 1, userInfo: userInfo)
         }
@@ -185,145 +161,145 @@ public class EasyPostApi {
     }
     
     //Post and address model and get an address object with id populated back
-    public func postAddress(address:EasyPostAddress, completion: (result: EasyPostResult<EasyPostAddress>) -> ()) {
+    open func postAddress(_ address:EasyPostAddress, completion: @escaping (_ result: EasyPostResult<EasyPostAddress>) -> ()) {
         
         let parameters = paramtersFromAddress(address, keyStringFormat:"address[%ELEMENT%]")
         
-        alamofireManager.request(.POST, apiBaseUrl + "addresses", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "addresses", method: .post, parameters: parameters, headers:getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             let address = EasyPostAddress(jsonDictionary: resultDict)
                     
-                            completion(result: EasyPostResult.Success(address))
+                            completion(EasyPostResult.success(address))
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func verifyAddress(addressId:String, completion: (result: EasyPostResult<EasyPostAddress>) -> ()) {
+    open func verifyAddress(_ addressId:String, completion: @escaping (_ result: EasyPostResult<EasyPostAddress>) -> ()) {
         
-        alamofireManager.request(.GET, apiBaseUrl + "addresses/\(addressId)/verify", headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "addresses/\(addressId)/verify", method: .get, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             if let addressDict = resultDict["address"] as? NSDictionary {
                                 let address = EasyPostAddress(jsonDictionary: addressDict)
                             
-                                completion(result: EasyPostResult.Success(address))
+                                completion(EasyPostResult.success(address))
                             } else {
                                 let userInfo = [NSLocalizedDescriptionKey : "address element was not found in results"]
-                                completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: userInfo)))
+                                completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: userInfo)))
                             }
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func postParcel(parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostParcel>) -> ()) {
+    open func postParcel(_ parcel:EasyPostParcel, completion: @escaping (_ result: EasyPostResult<EasyPostParcel>) -> ()) {
         let parameters = paramtersFromParcel(parcel, keyStringFormat: "parcel[%ELEMENT%]")
         
-        alamofireManager.request(.POST, apiBaseUrl + "parcels", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "parcels", method: .post, parameters: parameters, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             let parcel = EasyPostParcel(jsonDictionary: resultDict)
                             
-                            completion(result: EasyPostResult.Success(parcel))
+                            completion(EasyPostResult.success(parcel))
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
     //If the shipment and parcel objects you pass in have id's defined, those will be used and the rest of the parameters will be ignored.  If you pass in objects that don't have id's defined, the parameters will be used to create the objects on the back end
-    public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
         postShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: nil, referenceNumber: nil, completion: completion)
     }
     
-    public func postShipment(toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenceNumber:String?, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenceNumber:String?, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
         
         let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: carrierAccountIds, referenecNumber: referenceNumber)
         
-        alamofireManager.request(.POST, apiBaseUrl + "shipments", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "shipments", method: .post, parameters: parameters, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             let shipment = EasyPostShipment(jsonDictionary: resultDict)
                             
-                            completion(result: EasyPostResult.Success(shipment))
+                            completion(EasyPostResult.success(shipment))
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func buyShipment(shipmentId:String, rateId:String, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
+    open func buyShipment(_ shipmentId:String, rateId:String, completion: @escaping (_ result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
         buyShipment(shipmentId, rateId: rateId, labelFormat: nil, completion: completion)
     }
     
-    public func buyShipment(shipmentId:String, rateId:String, labelFormat:String?, completion: (result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
+    open func buyShipment(_ shipmentId:String, rateId:String, labelFormat:String?, completion: @escaping (_ result: EasyPostResult<EasyPostBuyResponse>) -> ()) {
     
         var parameters = ["rate[id]" : rateId]
 
@@ -331,49 +307,49 @@ public class EasyPostApi {
             parameters.updateValue(format, forKey: "label_format")
         }
         
-        alamofireManager.request(.POST, apiBaseUrl + "shipments/\(shipmentId)/buy", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "shipments/\(shipmentId)/buy", method: .post, parameters: parameters, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             let buyResponse = EasyPostBuyResponse(jsonDictionary: resultDict)
                             
-                            completion(result: EasyPostResult.Success(buyResponse))
+                            completion(EasyPostResult.success(buyResponse))
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func getShipments(onlyPurchased onlyPurchased:Bool, pageSize:Int, beforeShipmentId:String?, completion: (result: EasyPostResult<[EasyPostShipment]>) -> ()) {
+    open func getShipments(onlyPurchased:Bool, pageSize:Int, beforeShipmentId:String?, completion: @escaping (_ result: EasyPostResult<[EasyPostShipment]>) -> ()) {
         
-        var parameters:[String : AnyObject] = ["purchased" : NSNumber(bool: onlyPurchased), "page_size" : pageSize]
+        var parameters:[String : AnyObject] = ["purchased" : NSNumber(value: onlyPurchased as Bool), "page_size" : pageSize as AnyObject]
         if let beforeId = beforeShipmentId {
-            parameters.updateValue(beforeId, forKey: "before_id")
+            parameters.updateValue(beforeId as AnyObject, forKey: "before_id")
         }
         
-        alamofireManager.request(.GET, apiBaseUrl + "shipments", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "shipments", method: .get, parameters:parameters, headers:getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             if let shipmentsArray = resultDict["shipments"] as? NSArray {
                                 var shipments = [EasyPostShipment]()
@@ -384,65 +360,65 @@ public class EasyPostApi {
                                         shipments.append(shipment)
                                     }
                                 }
-                                completion(result: EasyPostResult.Success(shipments))
+                                completion(EasyPostResult.success(shipments))
                             } else {
                                 print("getShipments result was successful, but shipments array was not found.")
-                                completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
+                                completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
                             }
                         }
                     } else {
                         print("getShipments result was successful, but not as expected.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 5, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func labelForShipment(shipmentId:String, labelFormat:String, completion: (result: EasyPostResult<EasyPostShipment>) -> ()) {
+    open func labelForShipment(_ shipmentId:String, labelFormat:String, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
         let parameters = ["file_format" : labelFormat]
         
-        alamofireManager.request(.GET, apiBaseUrl + "shipments/\(shipmentId)/label", parameters:parameters, headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "shipments/\(shipmentId)/label", method: .get, parameters: parameters, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             let shipment = EasyPostShipment(jsonDictionary: resultDict)
                             
-                            completion(result: EasyPostResult.Success(shipment))
+                            completion(EasyPostResult.success(shipment))
                         }
                     } else {
                         print("Result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func getCarrierAccounts(completion: (result: EasyPostResult<[EasyPostCarrierAccount]>) -> ()) {
+    open func getCarrierAccounts(_ completion: @escaping (_ result: EasyPostResult<[EasyPostCarrierAccount]>) -> ()) {
         
-        alamofireManager.request(.GET, apiBaseUrl + "carrier_accounts", headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "carrier_accounts", method: .get, headers:getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultArray = result.value as? NSArray {
+                    if let resultArray = response.result.value as? NSArray {
                         
                         var carrierAccounts = [EasyPostCarrierAccount]()
                     
@@ -452,35 +428,35 @@ public class EasyPostApi {
                                 carrierAccounts.append(carrierAccount)
                             }
                         }
-                        completion(result: EasyPostResult.Success(carrierAccounts))
-                    } else if let resultDict = result.value as? NSDictionary {
+                        completion(EasyPostResult.success(carrierAccounts))
+                    } else if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
-                            completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
+                            completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
                         }
                     } else {
                         print("getCarrierAccounts result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 4, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func getCarrierTypes(completion: (result: EasyPostResult<[EasyPostCarrierType]>) -> ()) {
+    open func getCarrierTypes(_ completion: @escaping (_ result: EasyPostResult<[EasyPostCarrierType]>) -> ()) {
         
-        alamofireManager.request(.GET, apiBaseUrl + "carrier_types", headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "carrier_types", method: .get, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultArray = result.value as? NSArray {
+                    if let resultArray = response.result.value as? NSArray {
                         
                         var carrierTypes = [EasyPostCarrierType]()
                         
@@ -490,82 +466,82 @@ public class EasyPostApi {
                                 carrierTypes.append(carrierType)
                             }
                         }
-                        completion(result: EasyPostResult.Success(carrierTypes))
-                    } else if let resultDict = result.value as? NSDictionary {
+                        completion(EasyPostResult.success(carrierTypes))
+                    } else if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
-                            completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
+                            completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
                         }
                     } else {
                         print("getCarrierTypes result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 3, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func getUserApiKeys( completion: (result: EasyPostResult<EasyPostUserApiKeys>) -> ()) {
+    open func getUserApiKeys( _ completion: @escaping (_ result: EasyPostResult<EasyPostUserApiKeys>) -> ()) {
         
-        alamofireManager.request(.GET, apiBaseUrl + "api_keys", headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+        Alamofire.request(apiBaseUrl + "api_keys", method: .get, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             
                             let userApiKeys = EasyPostUserApiKeys(jsonDictionary: resultDict)
-                            completion(result: EasyPostResult.Success(userApiKeys))
+                            completion(EasyPostResult.success(userApiKeys))
                             
                         }
                     } else {
                         print("getUserApiKeys result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 6, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 6, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }
     
-    public func requestRefund(shipmentId:String, completion: (result: EasyPostResult<EasyPostRefund>) -> ()) {
-        alamofireManager.request(.GET, apiBaseUrl + "shipments/\(shipmentId)/refund", headers:getAuthHeader())
-            .responseJSON { (request, response, result) in
+    open func requestRefund(_ shipmentId:String, completion: @escaping (_ result: EasyPostResult<EasyPostRefund>) -> ()) {
+        Alamofire.request(apiBaseUrl + "shipments/\(shipmentId)/refund", method: .get, headers: getAuthHeader())
+            .responseJSON { response in
                 
-                if(result.isSuccess) {
+                if(response.result.isSuccess) {
                     
-                    if let resultDict = result.value as? NSDictionary {
+                    if let resultDict = response.result.value as? NSDictionary {
                         if let error = self.checkForApiResultError(resultDict) {
-                            completion(result: EasyPostResult.Failure(error))
+                            completion(EasyPostResult.failure(error))
                         } else {
                             
                             let refund = EasyPostRefund(jsonDictionary: resultDict)
-                            completion(result: EasyPostResult.Success(refund))
+                            completion(EasyPostResult.success(refund))
                             
                         }
                     } else {
                         print("requestRefund result was successful, but blank.")
-                        completion(result: EasyPostResult.Failure(NSError(domain: self.errorDomain, code: 7, userInfo: nil)))
+                        completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 7, userInfo: nil)))
                     }
                     
                     
                 } else {
-                    print(result.error)
+                    print(response.result.error)
                     
-                    completion(result: EasyPostResult.Failure(result.error!))
+                    completion(EasyPostResult.failure(response.result.error!))
                 }
         }
     }

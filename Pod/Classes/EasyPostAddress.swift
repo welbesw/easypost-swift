@@ -8,21 +8,21 @@
 
 import Foundation
 
-public class EasyPostAddress {
-    public var id:String?
-    public var street1:String?
-    public var street2:String?
-    public var city:String?
-    public var state:String?
-    public var zip:String?
-    public var country:String?
-    public var name:String?
-    public var company:String?
-    public var phone:String?
-    public var email:String?
-    public var isResidential:Bool?
-    public var createdAt:NSDate?
-    public var updatedAt:NSDate?
+open class EasyPostAddress {
+    open var id:String?
+    open var street1:String?
+    open var street2:String?
+    open var city:String?
+    open var state:String?
+    open var zip:String?
+    open var country:String?
+    open var name:String?
+    open var company:String?
+    open var phone:String?
+    open var email:String?
+    open var isResidential:Bool?
+    open var createdAt:Date?
+    open var updatedAt:Date?
     
     public init() {
         
@@ -31,8 +31,8 @@ public class EasyPostAddress {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {
@@ -84,66 +84,66 @@ public class EasyPostAddress {
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
-            createdAt = dateFormatter.dateFromString(stringValue)
+            createdAt = dateFormatter.date(from: stringValue)
         }
         
         if let stringValue = jsonDictionary["updated_at"] as? String {
-            updatedAt = dateFormatter.dateFromString(stringValue)
+            updatedAt = dateFormatter.date(from: stringValue)
         }
     }
     
-    public func jsonDict() -> NSDictionary {
+    open func jsonDict() -> NSDictionary {
         var dict = [String : AnyObject]()
         
         if id != nil {
-            dict.updateValue(id!, forKey: "id")
+            dict.updateValue(id! as AnyObject, forKey: "id")
         }
         
         if street1 != nil {
-            dict.updateValue(street1!, forKey: "street1")
+            dict.updateValue(street1! as AnyObject, forKey: "street1")
         }
         
         if street2 != nil {
-            dict.updateValue(street2!, forKey: "street2")
+            dict.updateValue(street2! as AnyObject, forKey: "street2")
         }
         
         if city != nil {
-            dict.updateValue(city!, forKey: "city")
+            dict.updateValue(city! as AnyObject, forKey: "city")
         }
         
         if state != nil {
-            dict.updateValue(state!, forKey: "state")
+            dict.updateValue(state! as AnyObject, forKey: "state")
         }
         
         if zip != nil {
-            dict.updateValue(zip!, forKey: "zip")
+            dict.updateValue(zip! as AnyObject, forKey: "zip")
         }
         
         if country != nil {
-            dict.updateValue(country!, forKey: "country")
+            dict.updateValue(country! as AnyObject, forKey: "country")
         }
         
         if name != nil {
-            dict.updateValue(name!, forKey: "name")
+            dict.updateValue(name! as AnyObject, forKey: "name")
         }
         
         if company != nil {
-            dict.updateValue(company!, forKey: "company")
+            dict.updateValue(company! as AnyObject, forKey: "company")
         }
         
         if phone != nil {
-            dict.updateValue(phone!, forKey: "phone")
+            dict.updateValue(phone! as AnyObject, forKey: "phone")
         }
         
         if email != nil {
-            dict.updateValue(email!, forKey: "email")
+            dict.updateValue(email! as AnyObject, forKey: "email")
         }
         
         if isResidential != nil {
-            dict.updateValue(isResidential!, forKey: "residential")
+            dict.updateValue(isResidential! as AnyObject, forKey: "residential")
         }
         
-        return dict
+        return dict as NSDictionary
     }
 
 }

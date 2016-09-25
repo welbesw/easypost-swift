@@ -26,12 +26,12 @@ class ShipmentsViewController: UITableViewController {
     
     func loadShipments() {
         EasyPostApi.sharedInstance.getShipments(onlyPurchased:true, pageSize: 50, beforeShipmentId: nil) { (result) -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 switch(result) {
-                case .Success(let resultShipments):
+                case .success(let resultShipments):
                     self.shipments = resultShipments
                     self.tableView.reloadData()
-                case .Failure(let error):
+                case .failure(let error):
                     print("Error getting shipments: \((error as NSError).localizedDescription)")
                 }
             })
@@ -40,22 +40,22 @@ class ShipmentsViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
         return shipments.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("shipmentCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shipmentCell", for: indexPath)
 
         // Configure the cell...
-        let shipment = shipments[indexPath.row]
+        let shipment = shipments[(indexPath as NSIndexPath).row]
         
         if let trackingCode = shipment.trackingCode {
             cell.textLabel!.text = trackingCode
@@ -66,29 +66,29 @@ class ShipmentsViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         
-        let shipment = shipments[indexPath.row]
+        let shipment = shipments[(indexPath as NSIndexPath).row]
         if let shipmentId = shipment.id {
         
             //Ask to refund
-            let alertController = UIAlertController(title: "Request Refund?", message: "Request a refund for this shipment?", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "Request Refund?", message: "Request a refund for this shipment?", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Request Refund", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            alertController.addAction(UIAlertAction(title: "Request Refund", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in
                 //Request the refund
                 EasyPostApi.sharedInstance.requestRefund(shipmentId, completion: { (result) -> () in
                     //Check for error
                     switch(result) {
-                    case .Success(let refund):
+                    case .success(let refund):
                         print("Refund requested: \(refund.id)")
-                    case .Failure(let error):
+                    case .failure(let error):
                         print("Error requesting refund: \((error as NSError).localizedDescription)")
                     }
                 })
             }))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         
         

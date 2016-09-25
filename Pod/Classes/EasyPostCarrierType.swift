@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class EasyPostCarrierType {
-    public var id:String?
-    public var type:String?
-    public var readable:String?
-    public var logo:String?
+open class EasyPostCarrierType {
+    open var id:String?
+    open var type:String?
+    open var readable:String?
+    open var logo:String?
     
     public init() {
         
@@ -21,8 +21,8 @@ public class EasyPostCarrierType {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {

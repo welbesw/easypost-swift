@@ -33,22 +33,22 @@ class ViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         //Check if the API credentials have been set and present the view controller if they have note been set
         let defaultsManager = DefaultsManager.sharedInstance
         if !defaultsManager.apiCredentialsAreSet {
-            self.performSegueWithIdentifier("ModalCredentialsSegue", sender: nil)
+            self.performSegue(withIdentifier: "ModalCredentialsSegue", sender: nil)
         } else {
             //Set the API credentials
             EasyPostApi.sharedInstance.setCredentials(defaultsManager.apiToken!, baseUrl: defaultsManager.apiBaseUrl!)
             
             EasyPostApi.sharedInstance.getUserApiKeys({ (result) -> () in
                 switch(result) {
-                case .Failure(let error):
+                case .failure(let error):
                     print("Error getting user api keys: \((error as NSError).localizedDescription)")
-                case .Success(let keys):
+                case .success(let keys):
                     print("Got API keys: production:\(keys.productionKey) : test: \(keys.testKey)")
                 }
             })
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapVerifyAddress(sender:AnyObject?) {
+    @IBAction func didTapVerifyAddress(_ sender:AnyObject?) {
         let address = EasyPostAddress()
 
         address.name = nameTextField.text
@@ -72,21 +72,21 @@ class ViewController: UIViewController {
         address.zip = zipTextField.text
         
         EasyPostApi.sharedInstance.postAddress(address) { (result) -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 switch(result) {
-                case .Success(let value):
+                case .success(let value):
                     
                     print("Successfully posted address.")
                     
                     if let id = value.id {
                         print("Verifying address: \(id)")
                         EasyPostApi.sharedInstance.verifyAddress(id, completion: { (verifyResult) -> () in
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            DispatchQueue.main.async(execute: { () -> Void in
                                 switch(verifyResult) {
-                                case .Success(let easyPostAddress):
+                                case .success(let easyPostAddress):
                                     print("Successfully verified address.")
                                     self.loadAddress(easyPostAddress)
-                                case .Failure(let error):
+                                case .failure(let error):
                                     print("Error verifying address: \((error as NSError).localizedDescription)")
                                 
                                 }
@@ -94,14 +94,14 @@ class ViewController: UIViewController {
                         })
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print("Error posting address: \((error as NSError).localizedDescription)")
                 }
             })
         }
     }
     
-    func loadAddress(address:EasyPostAddress) {
+    func loadAddress(_ address:EasyPostAddress) {
         if let name = address.name {
             self.nameTextField.text = name
         }
@@ -128,32 +128,32 @@ class ViewController: UIViewController {
     func parcelFromTextFields() -> EasyPostParcel {
         let parcel = EasyPostParcel()
         
-        let numberFormatter = NSNumberFormatter()
+        let numberFormatter = NumberFormatter()
         
         if let stringValue = parcelLength.text {
-            parcel.length = numberFormatter.numberFromString(stringValue)
+            parcel.length = numberFormatter.number(from: stringValue)
         }
         if let stringValue = parcelWidth.text {
-            parcel.width = numberFormatter.numberFromString(stringValue)
+            parcel.width = numberFormatter.number(from: stringValue)
         }
         if let stringValue = parcelHeight.text {
-            parcel.height = numberFormatter.numberFromString(stringValue)
+            parcel.height = numberFormatter.number(from: stringValue)
         }
         if let stringValue = parcelWeight.text {
-            if let numberValue = numberFormatter.numberFromString(stringValue) {
+            if let numberValue = numberFormatter.number(from: stringValue) {
                 parcel.weight = numberValue
             }
         }
         return parcel
     }
     
-    @IBAction func didTapPostParcel(sender:AnyObject?) {
+    @IBAction func didTapPostParcel(_ sender:AnyObject?) {
         let parcel = parcelFromTextFields()
         
         EasyPostApi.sharedInstance.postParcel(parcel) { (result) -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 switch(result) {
-                case .Success(let value):
+                case .success(let value):
                     
                     print("Successfully posted parcel.")
                     
@@ -161,14 +161,14 @@ class ViewController: UIViewController {
                         print("Parcel id: \(id)")
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print("Error posting parcel: \((error as NSError).localizedDescription)")
                 }
             })
         }
     }
     
-    @IBAction func didTapPostShipment(sender:AnyObject?) {
+    @IBAction func didTapPostShipment(_ sender:AnyObject?) {
         let toAddress = EasyPostAddress()
         
         toAddress.name = nameTextField.text
@@ -184,9 +184,9 @@ class ViewController: UIViewController {
         let parcel = parcelFromTextFields()
         
         EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, parcel: parcel) { (result) -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 switch(result) {
-                case .Success(let shipment):
+                case .success(let shipment):
                     
                     print("Successfully posted shipment.")
                     
@@ -196,24 +196,24 @@ class ViewController: UIViewController {
                         self.currentShipment = shipment
                         
                         if(shipment.rates.count < 1 && shipment.messages.count > 0) {
-                            let alert = UIAlertController(title: "Error Getting Rates", message: shipment.messages[0].message, preferredStyle: UIAlertControllerStyle.Alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                            self.presentViewController(alert, animated: true, completion: nil)
+                            let alert = UIAlertController(title: "Error Getting Rates", message: shipment.messages[0].message, preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
                         } else {
-                            self.performSegueWithIdentifier("ModalShowRatesSegue", sender: nil)
+                            self.performSegue(withIdentifier: "ModalShowRatesSegue", sender: nil)
                         }
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print("Error posting shipment: \((error as NSError).localizedDescription)")
                 }
             })
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "ModalShowRatesSegue") {
-            if let navController = segue.destinationViewController as? UINavigationController {
+            if let navController = segue.destination as? UINavigationController {
                 if let ratesViewController = navController.topViewController as? RatesViewController {
                     if let shipment = self.currentShipment {
                         ratesViewController.shipment = shipment

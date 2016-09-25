@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC154FDD017763CD3E60860 /* Pods_EasyPostApi_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDDD9F5153BB5959A2A1B8D /* Pods_EasyPostApi_Example.framework */; };
+		1559302B48B474B2B98B9429 /* Pods_EasyPostApi_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8947C4455C5E2500DA54D7D /* Pods_EasyPostApi_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -21,11 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0264E7137045D2873529F90E /* Pods-EasyPostApi_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Tests/Pods-EasyPostApi_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		16DEDC0AB222902003174A84 /* EasyPostApi.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasyPostApi.podspec; path = ../EasyPostApi.podspec; sourceTree = "<group>"; };
-		4A587B146A298DD597E21877 /* Pods-EasyPostApi_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Tests/Pods-EasyPostApi_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4FDDD9F5153BB5959A2A1B8D /* Pods_EasyPostApi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPostApi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52CA6F114280AA83CA97ED63 /* Pods-EasyPostApi_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EasyPostApi_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyPostApi_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,15 +29,16 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7A440546FC7B3CEC5C32C2F5 /* Pods_EasyPostApi_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPostApi_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D28C20E3BE3654DCA82382D /* Pods-EasyPostApi_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A8947C4455C5E2500DA54D7D /* Pods_EasyPostApi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPostApi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2DE3E91BC2F6E000A7523A /* CredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
 		BE2DE3EA1BC2F6E000A7523A /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		BE2DE3FB1BC449F700A7523A /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		BE2DE3FD1BC44A5B00A7523A /* RateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		BEFFC8151BE14B3C009F51C4 /* ShipmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsViewController.swift; sourceTree = "<group>"; };
+		C9DC4835A752C3D4855BD417 /* Pods-EasyPostApi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F6163745F058E58AABB0163F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F83E0CF2AEEC94DA2A4BD34B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F93A31EA0CE07A4CBC41CFDA /* Pods-EasyPostApi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPostApi_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,29 +46,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC154FDD017763CD3E60860 /* Pods_EasyPostApi_Example.framework in Frameworks */,
+				1559302B48B474B2B98B9429 /* Pods_EasyPostApi_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D3E7834FBFC387712F814EC /* Pods */ = {
+		3AC477CBAF7C937FA84578A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52CA6F114280AA83CA97ED63 /* Pods-EasyPostApi_Example.debug.xcconfig */,
-				F93A31EA0CE07A4CBC41CFDA /* Pods-EasyPostApi_Example.release.xcconfig */,
-				0264E7137045D2873529F90E /* Pods-EasyPostApi_Tests.debug.xcconfig */,
-				4A587B146A298DD597E21877 /* Pods-EasyPostApi_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		45EA5656F60C67BAA08A1E96 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4FDDD9F5153BB5959A2A1B8D /* Pods_EasyPostApi_Example.framework */,
-				7A440546FC7B3CEC5C32C2F5 /* Pods_EasyPostApi_Tests.framework */,
+				A8947C4455C5E2500DA54D7D /* Pods_EasyPostApi_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,8 +67,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for EasyPostApi */,
 				607FACD11AFB9204008FA782 /* Products */,
-				2D3E7834FBFC387712F814EC /* Pods */,
-				45EA5656F60C67BAA08A1E96 /* Frameworks */,
+				6CFE930281FD68EA7419A93A /* Pods */,
+				3AC477CBAF7C937FA84578A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +117,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		6CFE930281FD68EA7419A93A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D28C20E3BE3654DCA82382D /* Pods-EasyPostApi_Example.debug.xcconfig */,
+				C9DC4835A752C3D4855BD417 /* Pods-EasyPostApi_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,12 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPostApi_Example" */;
 			buildPhases = (
-				52DE722FB1413130EE2CA598 /* Check Pods Manifest.lock */,
+				6E9A5CD6A9E7EC53BC701638 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				C262B837B3BBF0A327AB190D /* Embed Pods Frameworks */,
-				D53AF6E2A40C169CC4204002 /* Copy Pods Resources */,
+				C6E54A9409935B0E036258C8 /* [CP] Embed Pods Frameworks */,
+				04B5BD7B059D2F6602D06283 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,11 +156,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -202,14 +197,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52DE722FB1413130EE2CA598 /* Check Pods Manifest.lock */ = {
+		04B5BD7B059D2F6602D06283 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E9A5CD6A9E7EC53BC701638 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,34 +227,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C262B837B3BBF0A327AB190D /* Embed Pods Frameworks */ = {
+		C6E54A9409935B0E036258C8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D53AF6E2A40C169CC4204002 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -299,8 +294,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -323,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -344,8 +341,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -361,36 +360,41 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52CA6F114280AA83CA97ED63 /* Pods-EasyPostApi_Example.debug.xcconfig */;
+			baseConfigurationReference = 9D28C20E3BE3654DCA82382D /* Pods-EasyPostApi_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EasyPostApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F93A31EA0CE07A4CBC41CFDA /* Pods-EasyPostApi_Example.release.xcconfig */;
+			baseConfigurationReference = C9DC4835A752C3D4855BD417 /* Pods-EasyPostApi_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EasyPostApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

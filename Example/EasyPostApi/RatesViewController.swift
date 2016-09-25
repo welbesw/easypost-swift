@@ -22,28 +22,28 @@ class RatesViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapCancelButton(sender:AnyObject?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didTapCancelButton(_ sender:AnyObject?) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
         return shipment.rates.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("rateCell", forIndexPath: indexPath) as! RateCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rateCell", for: indexPath) as! RateCell
 
         // Configure the cell...
-        let rate = self.shipment.rates[indexPath.row]
+        let rate = self.shipment.rates[(indexPath as NSIndexPath).row]
         
         cell.carrierLabel.text = rate.carrier
         cell.serviceLabel.text = rate.service
@@ -52,18 +52,18 @@ class RatesViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         //Buy the postage that has been selected
-        let rate = self.shipment.rates[indexPath.row]
+        let rate = self.shipment.rates[(indexPath as NSIndexPath).row]
         
         if let rateId = rate.id {
-            let alertController = UIAlertController(title: "Buy Postage", message: "Do you want to buy this postage for \(rate.rate!)", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Buy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            let alertController = UIAlertController(title: "Buy Postage", message: "Do you want to buy this postage for \(rate.rate!)", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Buy", style: UIAlertActionStyle.default, handler: { (action) -> Void in
                 EasyPostApi.sharedInstance.buyShipment(self.shipment.id!, rateId: rateId, completion: { (result) -> () in
                     //Handle results
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
                         if(result.isSuccess) {
                             print("Successfully bought shipment.")
                             if let buyResponse = result.value {
@@ -73,14 +73,14 @@ class RatesViewController: UITableViewController {
                                     }
                                 }
                             }
-                            self.dismissViewControllerAnimated(true, completion: nil)
+                            self.dismiss(animated: true, completion: nil)
                         } else {
                             print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
                         }
                     })
                 })
             }))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 

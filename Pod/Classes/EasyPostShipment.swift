@@ -13,32 +13,32 @@ public struct EasyPostShipmentMessage {
     public var message:String = ""
 }
 
-public class EasyPostShipment {
-    public var id:String?
+open class EasyPostShipment {
+    open var id:String?
     
-    public var mode:String?
+    open var mode:String?
     
-    public var toAddress:EasyPostAddress?
-    public var fromAddress:EasyPostAddress?
+    open var toAddress:EasyPostAddress?
+    open var fromAddress:EasyPostAddress?
     
-    public var parcel:EasyPostParcel?
+    open var parcel:EasyPostParcel?
     
-    public var rates:[EasyPostRate] = []
+    open var rates:[EasyPostRate] = []
     
-    public var postageLabel:EasyPostLabel?
+    open var postageLabel:EasyPostLabel?
     
-    public var trackingCode:String?
-    public var referenceNumber:String?
-    public var refundStatus:String?
-    public var batchStatus:String?
-    public var batchMessage:String?
+    open var trackingCode:String?
+    open var referenceNumber:String?
+    open var refundStatus:String?
+    open var batchStatus:String?
+    open var batchMessage:String?
     
-    public var selectedRate:EasyPostRate?
+    open var selectedRate:EasyPostRate?
     
-    public var createdAt:NSDate?
-    public var updatedAt:NSDate?
+    open var createdAt:Date?
+    open var updatedAt:Date?
     
-    public var messages:[EasyPostShipmentMessage] = []
+    open var messages:[EasyPostShipmentMessage] = []
     
     public init() {
         
@@ -47,8 +47,8 @@ public class EasyPostShipment {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {
@@ -124,11 +124,11 @@ public class EasyPostShipment {
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
-            createdAt = dateFormatter.dateFromString(stringValue)
+            createdAt = dateFormatter.date(from: stringValue)
         }
         
         if let stringValue = jsonDictionary["updated_at"] as? String {
-            updatedAt = dateFormatter.dateFromString(stringValue)
+            updatedAt = dateFormatter.date(from: stringValue)
         }
     }
 }

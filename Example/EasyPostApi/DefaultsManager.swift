@@ -8,15 +8,18 @@
 
 import UIKit
 
-public class DefaultsManager: NSObject {
+open class DefaultsManager: NSObject {
    
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    //Define a shared instance method to return a singleton of the manager
+    open static var sharedInstance = DefaultsManager()
+   
+    let userDefaults = UserDefaults.standard
     
     var orderStatusIdFilter: Int? = nil //Allows the user to filter based on a specific order status
     
     var apiToken: String? {
         get {
-            return userDefaults.stringForKey("ApiToken")
+            return userDefaults.string(forKey: "ApiToken")
         }
         set(newValue) {
             userDefaults.setValue(newValue, forKey: "ApiToken")
@@ -25,7 +28,7 @@ public class DefaultsManager: NSObject {
     
     var apiBaseUrl: String? {
         get {
-            return userDefaults.stringForKey("ApiBaseUrl")
+            return userDefaults.string(forKey: "ApiBaseUrl")
         }
         set(newValue) {
             userDefaults.setValue(newValue, forKey: "ApiBaseUrl")
@@ -37,16 +40,5 @@ public class DefaultsManager: NSObject {
             return self.apiToken != nil && self.apiBaseUrl != nil
         }
     }
-    
-    //Define a shared instance method to return a singleton of the manager
-    public class var sharedInstance : DefaultsManager {
-        struct Static {
-            static var onceToken : dispatch_once_t = 0
-            static var instance : DefaultsManager? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = DefaultsManager()
-        }
-        return Static.instance!
-    }
+
 }

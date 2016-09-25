@@ -13,10 +13,10 @@ enum EasyPostUserApiKeyMode : String {
     case Test = "test"
 }
 
-public class EasyPostUserApiKeys {
-    public var userId:String?
-    public var productionKey:String?
-    public var testKey:String?
+open class EasyPostUserApiKeys {
+    open var userId:String?
+    open var productionKey:String?
+    open var testKey:String?
     
     public init() {
         

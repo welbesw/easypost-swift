@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class EasyPostBuyResponse {
+open class EasyPostBuyResponse {
     
-    public var postageLabel:EasyPostLabel?
+    open var postageLabel:EasyPostLabel?
     
-    public var trackingCode:String?
+    open var trackingCode:String?
     
-    public var selectedRate:EasyPostRate?
+    open var selectedRate:EasyPostRate?
     
     public init() {
         
@@ -23,8 +23,8 @@ public class EasyPostBuyResponse {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let postageLabelDict = jsonDictionary["postage_label"] as? NSDictionary {

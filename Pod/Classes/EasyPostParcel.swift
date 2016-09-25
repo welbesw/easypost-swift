@@ -8,19 +8,19 @@
 
 import Foundation
 
-public class EasyPostParcel {
-    public var id:String?
+open class EasyPostParcel {
+    open var id:String?
 
-    public var length:NSNumber?     //Float in inches
-    public var width:NSNumber?      //Float in inches
-    public var height:NSNumber?     //Float in inches
+    open var length:NSNumber?     //Float in inches
+    open var width:NSNumber?      //Float in inches
+    open var height:NSNumber?     //Float in inches
     
-    public var predefinedPackage:String?     //Predefined package types as defined by EasyPost for carriers
+    open var predefinedPackage:String?     //Predefined package types as defined by EasyPost for carriers
     
-    public var weight:NSNumber = 0.0    //Float in ounces
+    open var weight:NSNumber = 0.0    //Float in ounces
     
-    public var createdAt:NSDate?
-    public var updatedAt:NSDate?
+    open var createdAt:Date?
+    open var updatedAt:Date?
     
     public init() {
         
@@ -29,8 +29,8 @@ public class EasyPostParcel {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {
@@ -58,11 +58,11 @@ public class EasyPostParcel {
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
-            createdAt = dateFormatter.dateFromString(stringValue)
+            createdAt = dateFormatter.date(from: stringValue)
         }
         
         if let stringValue = jsonDictionary["updated_at"] as? String {
-            updatedAt = dateFormatter.dateFromString(stringValue)
+            updatedAt = dateFormatter.date(from: stringValue)
         }
     }
     

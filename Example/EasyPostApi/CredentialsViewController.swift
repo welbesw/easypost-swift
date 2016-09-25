@@ -46,7 +46,7 @@ class CredentialsViewController: UITableViewController {
             EasyPostApi.sharedInstance.setCredentials(defaultsManager.apiToken!, baseUrl: defaultsManager.apiBaseUrl!)
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTapCancelButton() {
@@ -54,7 +54,7 @@ class CredentialsViewController: UITableViewController {
         dismissKeyboard()
         
         //Close the view controller
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     func dismissKeyboard() {

@@ -8,22 +8,22 @@
 
 import Foundation
 
-public class EasyPostLabel {
-    public var id:String?
+open class EasyPostLabel {
+    open var id:String?
     
-    public var integratedForm:String?
-    public var labelDate:NSDate?
-    public var labelResolution:NSNumber?
-    public var labelSize:String?
-    public var labelType:String?
-    public var labelFileType:String?
-    public var labelUrl:String?
-    public var labelPdfUrl:String?
-    public var labelEpl2Url:String?
-    public var labelZplUrl:String?
+    open var integratedForm:String?
+    open var labelDate:Date?
+    open var labelResolution:NSNumber?
+    open var labelSize:String?
+    open var labelType:String?
+    open var labelFileType:String?
+    open var labelUrl:String?
+    open var labelPdfUrl:String?
+    open var labelEpl2Url:String?
+    open var labelZplUrl:String?
     
-    public var createdAt:NSDate?
-    public var updatedAt:NSDate?
+    open var createdAt:Date?
+    open var updatedAt:Date?
     
     public init() {
         
@@ -32,8 +32,8 @@ public class EasyPostLabel {
     public init(jsonDictionary:NSDictionary) {
         //Load the JSON dictionary
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"   //2013-04-22T05:40:57Z
         
         if let stringValue = jsonDictionary["id"] as? String {
@@ -45,7 +45,7 @@ public class EasyPostLabel {
         }
         
         if let stringValue = jsonDictionary["label_date"] as? String {
-            labelDate = dateFormatter.dateFromString(stringValue)
+            labelDate = dateFormatter.date(from: stringValue)
         }
         
         if let numberValue = jsonDictionary["label_resolution"] as? NSNumber {
@@ -81,11 +81,11 @@ public class EasyPostLabel {
         }
         
         if let stringValue = jsonDictionary["created_at"] as? String {
-            createdAt = dateFormatter.dateFromString(stringValue)
+            createdAt = dateFormatter.date(from: stringValue)
         }
         
         if let stringValue = jsonDictionary["updated_at"] as? String {
-            updatedAt = dateFormatter.dateFromString(stringValue)
+            updatedAt = dateFormatter.date(from: stringValue)
         }
     }
 }
