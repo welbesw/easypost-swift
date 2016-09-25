@@ -6,8 +6,9 @@
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.9+
-- Xcode 7.0+
+- iOS 9.0+ / Mac OS X 10.11+
+- Xcode 8.0+
+- Swift 3.0+
 
 ## Installation
 
@@ -15,7 +16,7 @@ EasyPostApi is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'EasyPostApi',  '~> 0.1'
+pod 'EasyPostApi',  '~> 1.0'
 ```
 
 ## Usage
