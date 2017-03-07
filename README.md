@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/EasyPostApi.svg?style=flat)](http://cocoapods.org/pods/EasyPostApi)
 [![License](https://img.shields.io/cocoapods/l/EasyPostApi.svg?style=flat)](http://cocoapods.org/pods/EasyPostApi)
 [![Platform](https://img.shields.io/cocoapods/p/EasyPostApi.svg?style=flat)](http://cocoapods.org/pods/EasyPostApi)
+[![API Testing](https://img.shields.io/badge/API%20Test-RapidAPI-blue.svg)](https://rapidapi.com/package/EasyPostTracking/functions?utm_source=EasyPostGithub&utm_medium=button&utm_content=Vender_GitHub)
 
 ## Requirements
 
