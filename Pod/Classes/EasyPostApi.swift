@@ -186,7 +186,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -220,7 +222,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -251,7 +255,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -288,7 +294,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -328,7 +336,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -373,7 +383,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -404,7 +416,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -442,7 +456,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -480,7 +496,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -510,7 +528,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
@@ -539,7 +559,9 @@ open class EasyPostApi {
                     
                     
                 } else {
-                    print(response.result.error)
+                    if let error = response.result.error {
+                        print(error)
+                    }
                     
                     completion(EasyPostResult.failure(response.result.error!))
                 }
