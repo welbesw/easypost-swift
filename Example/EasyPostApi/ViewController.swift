@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 case .failure(let error):
                     print("Error getting user api keys: \((error as NSError).localizedDescription)")
                 case .success(let keys):
-                    print("Got API keys: production:\(keys.productionKey) : test: \(keys.testKey)")
+                    print("Got API keys: production:\(keys.productionKey ?? "") : test: \(keys.testKey ?? "")")
                 }
             })
         }

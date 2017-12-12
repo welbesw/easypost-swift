@@ -75,7 +75,7 @@ class RatesViewController: UITableViewController {
                             }
                             self.dismiss(animated: true, completion: nil)
                         } else {
-                            print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
+                            print("Error buying shipment: \(result.error?.localizedDescription ?? "")")
                         }
                     })
                 })
