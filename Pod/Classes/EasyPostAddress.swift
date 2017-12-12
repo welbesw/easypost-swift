@@ -28,7 +28,7 @@ open class EasyPostAddress {
         
     }
     
-    public init(jsonDictionary:NSDictionary) {
+    public init(jsonDictionary: [String: Any]) {
         //Load the JSON dictionary
         
         let dateFormatter = DateFormatter()
@@ -92,8 +92,8 @@ open class EasyPostAddress {
         }
     }
     
-    open func jsonDict() -> NSDictionary {
-        var dict = [String : AnyObject]()
+    open func jsonDict() -> [String: Any] {
+        var dict = [String: Any]()
         
         if id != nil {
             dict.updateValue(id! as AnyObject, forKey: "id")
@@ -143,7 +143,7 @@ open class EasyPostAddress {
             dict.updateValue(isResidential! as AnyObject, forKey: "residential")
         }
         
-        return dict as NSDictionary
+        return dict
     }
 
 }

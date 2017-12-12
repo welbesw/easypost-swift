@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EasyPostApi"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "A simple Swift library to access the Easypost API."
 
 # This description is used to generate tags and improve search results.
@@ -39,5 +39,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation'
-  s.dependency 'Alamofire', '~> 4.0'
+  # s.dependency 'Pod', '~> 1.0'
 end

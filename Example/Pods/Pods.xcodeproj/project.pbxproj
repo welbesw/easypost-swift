@@ -7,243 +7,129 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0453DCE93CDAB70DEA5FA7BC45AE2D1A /* EasyPostUserApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBFEDEF8BACCBF309EACADA1ACB01D /* EasyPostUserApiKeys.swift */; };
-		0AC23BB4B4CBCE978AAF63ECBF9B881F /* EasyPostRefund.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AD75F71BB7C21BA1A70D1CB09EE45F /* EasyPostRefund.swift */; };
-		0C75DE1EBCB86BE338BB885733BEE219 /* EasyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC1A2E953EA555DE49E464AE0F08FD /* EasyPostApi.swift */; };
-		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87882A1F5A92C8138D54545E51D51E6F /* Timeline.swift */; };
-		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EFFE1A145807F357BA2EA87CC5ADA8E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */; };
-		3289DDD98B45FD7839EEB64089B3D0F7 /* Pods-EasyPostApi_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21245E9FBAE24353627A5A93FAECDEF5 /* Pods-EasyPostApi_Example-dummy.m */; };
-		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */; };
-		4B20302BFDE89E1C7A3A47972408F814 /* EasyPostCarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334B54B37E5588639BCD12E995EAD27 /* EasyPostCarrierType.swift */; };
-		4C24ED6F2FF030CE4E519A4B71C589FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */; };
-		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E230A0448B394DE26E688DAC8E6201E /* Request.swift */; };
-		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBF1EED873F61C6D46CE37FA5C39D3 /* DispatchQueue+Alamofire.swift */; };
-		61E1250B77B5798B9F1B224507FA93B1 /* EasyPostApi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E75BBEF50DA607F6FFB26E6C4F48D0 /* EasyPostApi-dummy.m */; };
-		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B030D27CAC730C5EB0F22390645310 /* ServerTrustPolicy.swift */; };
-		657B0227132688668391D374F8754DF3 /* EasyPostRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF38A6944F64996FD3E18E4586C3046 /* EasyPostRate.swift */; };
-		691BC9FF04A1EA6F546C70C1CCD49030 /* EasyPostCarrierAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6EA78FD55071C896E388A89A2E0A4 /* EasyPostCarrierAccount.swift */; };
-		6A1E7DE7462DC99F9B0D0BBA0BEC55F7 /* EasyPostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852BA52E40CDD9536FADC4826FF15BF9 /* EasyPostResult.swift */; };
-		7398624137F0035BB1603C74C854594F /* EasyPostBuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D3071853E4F89B37B2075BF03128B /* EasyPostBuyResponse.swift */; };
-		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */; };
-		74C220BE03676F6086DBDA60721EC4EF /* EasyPostParcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9C2D20A304BDAA487ED5F5126DCCC5 /* EasyPostParcel.swift */; };
-		790570BF5830BE65FADE594D025779E1 /* EasyPostShipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E567B102D87D469359ADBCCE81B2A45 /* EasyPostShipment.swift */; };
-		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D73DD9EF275A3C56569E2B1CA8026 /* SessionDelegate.swift */; };
-		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60BC9955B4F7FFA62D7440CB385C11 /* Result.swift */; };
-		9D7CABD841A07F52A4138A3271BE73C6 /* Pods-EasyPostApi_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF006B0AD5765D1BFA8253C2DCBB126 /* AFError.swift */; };
-		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8AA5F9EDED0A0BDDE7E830BF4AEE0 /* NetworkReachabilityManager.swift */; };
-		A2C6922BD8ED74541D9B88E65C7B467E /* EasyPostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE09B7CE9B1C14C3ED21A84E5BA26F /* EasyPostLabel.swift */; };
-		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */; };
-		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */; };
-		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */; };
-		B6EE638B53E037A243AC45188B6C042F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */; };
-		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */; };
-		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6639346628280A0D0FAD35196BF56108 /* ParameterEncoding.swift */; };
-		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F47F5C9CDB035C5AFADEBA5BF44F1C /* Response.swift */; };
-		E019EEE18AE48AD7E94C72AAB91844A0 /* EasyPostApi-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71C472C7DC1BD27AEB7AFAF3C6196B4F /* EasyPostApi-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA8D9FA7B8772F201D29F644EF08DDE1 /* EasyPostAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C18F2F219F97BF2E16DCC54B41988 /* EasyPostAddress.swift */; };
-		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A46F517F0AF7E85A16D723F6406896 /* Notifications.swift */; };
-		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F9510473F6FFD7AA66524DB16C2263 /* ResponseSerialization.swift */; };
-		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB8C44DE758E906C0BCDA455937B85 /* Alamofire.swift */; };
-		FD613D3FE283268ED617BFAF0CACDBA6 /* EasyPostExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F611E8CAF44FFF95DE9043E32D0E2ED /* EasyPostExtensions.swift */; };
+		040C8917EC92D9BABBA66FA8E49F4F93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0CDCA5FE550D2B9E5322A58A2383741E /* EasyPostApi-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF823C0C189C82E97858C057259CF367 /* EasyPostApi-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		198A87C439CC6FA5B51CC8340E57EFBC /* EasyPostParcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508AFB212A83894B4A63D5524DDC0F24 /* EasyPostParcel.swift */; };
+		1D4C06F0C1F8E5CA489D73650412221F /* EasyPostCarrierAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C29AB69143B0654DCEC59273B5A729 /* EasyPostCarrierAccount.swift */; };
+		1E2F5109A63855DB0C1AA3C2441B9F53 /* EasyPostRefund.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3000501A12C90812CF9FB22FB6A23D /* EasyPostRefund.swift */; };
+		405AF9160EA004CE796F20E9DC75E81B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BC40AB0A71BD3CE25C54FC13589434 /* Utility.swift */; };
+		42CD4F9DCAD85E8C79963C15DBAF243E /* EasyPostRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0067415AA7A07E6C4EBD379F573731B /* EasyPostRate.swift */; };
+		52914273B56F98C5B6B6A39C1B48308B /* EasyPostAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF373F2289A81DD75C542D8C0A66B60 /* EasyPostAddress.swift */; };
+		89F5FB9026605B1EB6B66B43929F748C /* Pods-EasyPostApi_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		971EC8DCDB5FBC0FE4DF978A36781917 /* EasyPostCarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EB55CD3D5266BC1B83FA55CDF5B6F /* EasyPostCarrierType.swift */; };
+		9B35AC735BBF70D2070F36D259A3183C /* EasyPostApi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA07F9E5F97741690EA462D0A9A7AE6 /* EasyPostApi-dummy.m */; };
+		9EEC617036075FC1B17927D1C092D5D4 /* EasyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFDF0B7B8EC81B7F53206B3748A75C6 /* EasyPostApi.swift */; };
+		A284BBA4D0C22479FE87D9BC97F70618 /* EasyPostExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313622E9C0C80577CD4837E481F947D8 /* EasyPostExtensions.swift */; };
+		A7D725F4B238A5BE1C0827EA3183F14A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AA1B5521799E653EDFCFDA224AF9928D /* EasyPostShipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CDEA0FD9AF8EC6808DB0ABF1F72FCF /* EasyPostShipment.swift */; };
+		B511BC9E6C23AE10F6EBDF3ACEE8214C /* EasyPostBuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCFA59A1D544B111FEAD13AB518F515 /* EasyPostBuyResponse.swift */; };
+		C54326795F72583D18ED15DD61F1DEC5 /* Pods-EasyPostApi_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21245E9FBAE24353627A5A93FAECDEF5 /* Pods-EasyPostApi_Example-dummy.m */; };
+		C8798721C6AAC29DD06D542F30C90134 /* EasyPostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF62F7048F6643A0416BFC9891A16F /* EasyPostLabel.swift */; };
+		CCD690B7A78DD789CD5AD6C4251BCDEE /* UrlRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB343825A405089F677227A40CDAC55D /* UrlRequestExtensions.swift */; };
+		D2BCEC4076BFB1207F721F748C627918 /* EasyPostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBADF1073D72C2081EEB4075052A2DC /* EasyPostResult.swift */; };
+		DA8A9494A676E85BF16FA10907912131 /* UrlSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA607AFCCCE30A8D31B6E966C665B375 /* UrlSessionExtensions.swift */; };
+		DC31AA34E2BBE60E7296B4087191D917 /* EasyPostUserApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E81C8DF3DF058950B8B3B8366FA03 /* EasyPostUserApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		37442EA76ACDA06AA3E292F4239D10B6 /* PBXContainerItemProxy */ = {
+		A2EF3B27DC55D92B3B0CDC62C21761B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
-		};
-		3D4C3F6CC53D2BC6D8186B27F248EFF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F682A5704C595EFB8BAAF13B68A0F3FF;
+			remoteGlobalIDString = 33B466BE6E6C0E9608F34E236FF66BDF;
 			remoteInfo = EasyPostApi;
-		};
-		7948A82383384BEACBFB249625E002FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F47F5C9CDB035C5AFADEBA5BF44F1C /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		069353E016302D165ABBFCF8482F97E1 /* EasyPostApi-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPostApi-prefix.pch"; sourceTree = "<group>"; };
-		0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0F611E8CAF44FFF95DE9043E32D0E2ED /* EasyPostExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostExtensions.swift; path = Pod/Classes/EasyPostExtensions.swift; sourceTree = "<group>"; };
-		0FCBF1EED873F61C6D46CE37FA5C39D3 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		13A0A663B36A229C69D5274A83E93F88 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		195D73DD9EF275A3C56569E2B1CA8026 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		1E230A0448B394DE26E688DAC8E6201E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		1E9C2D20A304BDAA487ED5F5126DCCC5 /* EasyPostParcel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostParcel.swift; path = Pod/Classes/EasyPostParcel.swift; sourceTree = "<group>"; };
+		02CDEA0FD9AF8EC6808DB0ABF1F72FCF /* EasyPostShipment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostShipment.swift; path = Pod/Classes/EasyPostShipment.swift; sourceTree = "<group>"; };
+		046903B00E02ED7520ECEA150705E5EC /* Pods_EasyPostApi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EasyPostApi_Example.framework; path = "Pods-EasyPostApi_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BAF179A7E2A9AA8649A4A53EC0EDCA1 /* EasyPostApi-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPostApi-prefix.pch"; sourceTree = "<group>"; };
+		10C29AB69143B0654DCEC59273B5A729 /* EasyPostCarrierAccount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostCarrierAccount.swift; path = Pod/Classes/EasyPostCarrierAccount.swift; sourceTree = "<group>"; };
 		21245E9FBAE24353627A5A93FAECDEF5 /* Pods-EasyPostApi_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPostApi_Example-dummy.m"; sourceTree = "<group>"; };
-		22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		25AD75F71BB7C21BA1A70D1CB09EE45F /* EasyPostRefund.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostRefund.swift; path = Pod/Classes/EasyPostRefund.swift; sourceTree = "<group>"; };
-		2E567B102D87D469359ADBCCE81B2A45 /* EasyPostShipment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostShipment.swift; path = Pod/Classes/EasyPostShipment.swift; sourceTree = "<group>"; };
 		2E813EEC5D1C6ABB6D769611EA1C3195 /* Pods-EasyPostApi_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyPostApi_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		32B030D27CAC730C5EB0F22390645310 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		2FBADF1073D72C2081EEB4075052A2DC /* EasyPostResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostResult.swift; path = Pod/Classes/EasyPostResult.swift; sourceTree = "<group>"; };
+		313622E9C0C80577CD4837E481F947D8 /* EasyPostExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostExtensions.swift; path = Pod/Classes/EasyPostExtensions.swift; sourceTree = "<group>"; };
+		38698FA05171C246D2C4F6363339735B /* EasyPostApi.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPostApi.xcconfig; sourceTree = "<group>"; };
 		38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EasyPostApi_Example-umbrella.h"; sourceTree = "<group>"; };
-		3D60BC9955B4F7FFA62D7440CB385C11 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		3DD753B1FE45BEFD8389F0B4933E4607 /* Pods-EasyPostApi_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPostApi_Example-resources.sh"; sourceTree = "<group>"; };
-		46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		4AF006B0AD5765D1BFA8253C2DCBB126 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		53FE33B18746431262910683EE075257 /* Pods_EasyPostApi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EasyPostApi_Example.framework; path = "Pods-EasyPostApi_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		508AFB212A83894B4A63D5524DDC0F24 /* EasyPostParcel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostParcel.swift; path = Pod/Classes/EasyPostParcel.swift; sourceTree = "<group>"; };
 		57C8E9E21F97F028E18614F9FFA3FB4B /* Pods-EasyPostApi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPostApi_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5ECF5B8970B48E855A58A30B15502706 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6334B54B37E5588639BCD12E995EAD27 /* EasyPostCarrierType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostCarrierType.swift; path = Pod/Classes/EasyPostCarrierType.swift; sourceTree = "<group>"; };
+		5A8F1FA843CA5F837B27EAD7E2158D63 /* EasyPostApi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EasyPostApi.modulemap; sourceTree = "<group>"; };
+		5C5E81C8DF3DF058950B8B3B8366FA03 /* EasyPostUserApiKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostUserApiKeys.swift; path = Pod/Classes/EasyPostUserApiKeys.swift; sourceTree = "<group>"; };
 		63CC9D39BC3371A483BF311B0E9C36E4 /* Pods-EasyPostApi_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPostApi_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6639346628280A0D0FAD35196BF56108 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		66A46F517F0AF7E85A16D723F6406896 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		692DEB205D1EFE4B51CB26CE5C95376B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		71C472C7DC1BD27AEB7AFAF3C6196B4F /* EasyPostApi-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPostApi-umbrella.h"; sourceTree = "<group>"; };
-		72344EB4914BC88599F64B4FA97C2EE5 /* EasyPostApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyPostApi.framework; path = EasyPostApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AF38A6944F64996FD3E18E4586C3046 /* EasyPostRate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostRate.swift; path = Pod/Classes/EasyPostRate.swift; sourceTree = "<group>"; };
-		7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		8289BEED997597240C1952432120BD13 /* Pods-EasyPostApi_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EasyPostApi_Example.modulemap"; sourceTree = "<group>"; };
-		852BA52E40CDD9536FADC4826FF15BF9 /* EasyPostResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostResult.swift; path = Pod/Classes/EasyPostResult.swift; sourceTree = "<group>"; };
-		86CE09B7CE9B1C14C3ED21A84E5BA26F /* EasyPostLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostLabel.swift; path = Pod/Classes/EasyPostLabel.swift; sourceTree = "<group>"; };
-		87882A1F5A92C8138D54545E51D51E6F /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		AF7C18F2F219F97BF2E16DCC54B41988 /* EasyPostAddress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostAddress.swift; path = Pod/Classes/EasyPostAddress.swift; sourceTree = "<group>"; };
-		B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		B1C6EA78FD55071C896E388A89A2E0A4 /* EasyPostCarrierAccount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostCarrierAccount.swift; path = Pod/Classes/EasyPostCarrierAccount.swift; sourceTree = "<group>"; };
-		B2E75BBEF50DA607F6FFB26E6C4F48D0 /* EasyPostApi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPostApi-dummy.m"; sourceTree = "<group>"; };
-		B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		B0067415AA7A07E6C4EBD379F573731B /* EasyPostRate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostRate.swift; path = Pod/Classes/EasyPostRate.swift; sourceTree = "<group>"; };
 		B9BF2F5218910E40FBE54E314E615601 /* Pods-EasyPostApi_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPostApi_Example-frameworks.sh"; sourceTree = "<group>"; };
-		BCCA9CA7D9C1A2047BB93336C5708DFD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		D1EC1A2E953EA555DE49E464AE0F08FD /* EasyPostApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostApi.swift; path = Pod/Classes/EasyPostApi.swift; sourceTree = "<group>"; };
-		D4DBFEDEF8BACCBF309EACADA1ACB01D /* EasyPostUserApiKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostUserApiKeys.swift; path = Pod/Classes/EasyPostUserApiKeys.swift; sourceTree = "<group>"; };
-		D8AD7208D15A8BE31B958C15B3A40E80 /* EasyPostApi.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPostApi.xcconfig; sourceTree = "<group>"; };
-		DB92A42D492EC0439373ECE1A2975D80 /* EasyPostApi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EasyPostApi.modulemap; sourceTree = "<group>"; };
-		DFCB8C44DE758E906C0BCDA455937B85 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		E2F9510473F6FFD7AA66524DB16C2263 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		E5A8AA5F9EDED0A0BDDE7E830BF4AEE0 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		E6F34CCF86067ED508C12C676E298C69 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		E75D3071853E4F89B37B2075BF03128B /* EasyPostBuyResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostBuyResponse.swift; path = Pod/Classes/EasyPostBuyResponse.swift; sourceTree = "<group>"; };
-		EFAE5189EEB7FF29E5075C46D08CDB37 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA47F7B6C473ADD3C9CD1E91184C9D7F /* EasyPostApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyPostApi.framework; path = EasyPostApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA607AFCCCE30A8D31B6E966C665B375 /* UrlSessionExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrlSessionExtensions.swift; path = Pod/Classes/UrlSessionExtensions.swift; sourceTree = "<group>"; };
+		CBCFA59A1D544B111FEAD13AB518F515 /* EasyPostBuyResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostBuyResponse.swift; path = Pod/Classes/EasyPostBuyResponse.swift; sourceTree = "<group>"; };
+		D1BC40AB0A71BD3CE25C54FC13589434 /* Utility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Pod/Classes/Utility.swift; sourceTree = "<group>"; };
+		D7DF62F7048F6643A0416BFC9891A16F /* EasyPostLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostLabel.swift; path = Pod/Classes/EasyPostLabel.swift; sourceTree = "<group>"; };
+		DA3000501A12C90812CF9FB22FB6A23D /* EasyPostRefund.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostRefund.swift; path = Pod/Classes/EasyPostRefund.swift; sourceTree = "<group>"; };
+		DB343825A405089F677227A40CDAC55D /* UrlRequestExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrlRequestExtensions.swift; path = Pod/Classes/UrlRequestExtensions.swift; sourceTree = "<group>"; };
+		DBFDF0B7B8EC81B7F53206B3748A75C6 /* EasyPostApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostApi.swift; path = Pod/Classes/EasyPostApi.swift; sourceTree = "<group>"; };
+		DF823C0C189C82E97858C057259CF367 /* EasyPostApi-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPostApi-umbrella.h"; sourceTree = "<group>"; };
 		F8111079078480C6A290EE04F50636BD /* Pods-EasyPostApi_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EasyPostApi_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F81EB55CD3D5266BC1B83FA55CDF5B6F /* EasyPostCarrierType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostCarrierType.swift; path = Pod/Classes/EasyPostCarrierType.swift; sourceTree = "<group>"; };
+		F8754858DCEC1B002F481A0BED9FB26E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA07F9E5F97741690EA462D0A9A7AE6 /* EasyPostApi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPostApi-dummy.m"; sourceTree = "<group>"; };
+		FEF373F2289A81DD75C542D8C0A66B60 /* EasyPostAddress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostAddress.swift; path = Pod/Classes/EasyPostAddress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5F0D37614867EA3A687225175C35B69B /* Frameworks */ = {
+		1312D5A9D9D4BF89F4492FADBAD4A22E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EFFE1A145807F357BA2EA87CC5ADA8E /* Alamofire.framework in Frameworks */,
-				B6EE638B53E037A243AC45188B6C042F /* Foundation.framework in Frameworks */,
+				040C8917EC92D9BABBA66FA8E49F4F93 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7837DDFFB15D957FBCFAC9C80B2EFDCF /* Frameworks */ = {
+		C315EDCAC140AFEAE6CE254A1CFB7BCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C24ED6F2FF030CE4E519A4B71C589FA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99195E4207764744AEC07ECCBCD550EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */,
+				A7D725F4B238A5BE1C0827EA3183F14A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		200D10EB20F0397D47F022B50CF0433F /* Alamofire */ = {
+		07E0829C1C6C9733D1BB70198433B55F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4AF006B0AD5765D1BFA8253C2DCBB126 /* AFError.swift */,
-				DFCB8C44DE758E906C0BCDA455937B85 /* Alamofire.swift */,
-				0FCBF1EED873F61C6D46CE37FA5C39D3 /* DispatchQueue+Alamofire.swift */,
-				155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */,
-				E5A8AA5F9EDED0A0BDDE7E830BF4AEE0 /* NetworkReachabilityManager.swift */,
-				66A46F517F0AF7E85A16D723F6406896 /* Notifications.swift */,
-				6639346628280A0D0FAD35196BF56108 /* ParameterEncoding.swift */,
-				1E230A0448B394DE26E688DAC8E6201E /* Request.swift */,
-				04F47F5C9CDB035C5AFADEBA5BF44F1C /* Response.swift */,
-				E2F9510473F6FFD7AA66524DB16C2263 /* ResponseSerialization.swift */,
-				3D60BC9955B4F7FFA62D7440CB385C11 /* Result.swift */,
-				32B030D27CAC730C5EB0F22390645310 /* ServerTrustPolicy.swift */,
-				195D73DD9EF275A3C56569E2B1CA8026 /* SessionDelegate.swift */,
-				46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */,
-				A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */,
-				87882A1F5A92C8138D54545E51D51E6F /* Timeline.swift */,
-				B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */,
-				55F14F994FE7AB51F028BFE66CEF3106 /* Support Files */,
-			);
-			name = Alamofire;
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		35F128EB69B6F7FB7DA93BBF6C130FAE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				200D10EB20F0397D47F022B50CF0433F /* Alamofire */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		51A9B78D6A7E7FB5A465754528750815 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		54B0EB58D54C3E16729073D26E4D3382 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4359992CD49E0674CD66F3CC9539318 /* EasyPostApi */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		55F14F994FE7AB51F028BFE66CEF3106 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */,
-				E6F34CCF86067ED508C12C676E298C69 /* Alamofire.xcconfig */,
-				22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */,
-				BCCA9CA7D9C1A2047BB93336C5708DFD /* Alamofire-prefix.pch */,
-				B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */,
-				13A0A663B36A229C69D5274A83E93F88 /* Info.plist */,
+				5A8F1FA843CA5F837B27EAD7E2158D63 /* EasyPostApi.modulemap */,
+				38698FA05171C246D2C4F6363339735B /* EasyPostApi.xcconfig */,
+				FAA07F9E5F97741690EA462D0A9A7AE6 /* EasyPostApi-dummy.m */,
+				0BAF179A7E2A9AA8649A4A53EC0EDCA1 /* EasyPostApi-prefix.pch */,
+				DF823C0C189C82E97858C057259CF367 /* EasyPostApi-umbrella.h */,
+				F8754858DCEC1B002F481A0BED9FB26E /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
+			path = "Example/Pods/Target Support Files/EasyPostApi";
 			sourceTree = "<group>";
 		};
-		59B91F212518421F271EBA85D5530651 /* Frameworks */ = {
+		24C74AE2F6C46931A9D9375341757614 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */,
-				51A9B78D6A7E7FB5A465754528750815 /* iOS */,
+				CA47F7B6C473ADD3C9CD1E91184C9D7F /* EasyPostApi.framework */,
+				046903B00E02ED7520ECEA150705E5EC /* Pods_EasyPostApi_Example.framework */,
 			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				54B0EB58D54C3E16729073D26E4D3382 /* Development Pods */,
-				59B91F212518421F271EBA85D5530651 /* Frameworks */,
-				35F128EB69B6F7FB7DA93BBF6C130FAE /* Pods */,
-				AA812BAAF1D99961A9385C7D975E056E /* Products */,
+				E021E0EA25EB57BFAA6E03FF429CC324 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				24C74AE2F6C46931A9D9375341757614 /* Products */,
 				ACD76A7D94022293284C30C8E7E93BEE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -266,30 +152,6 @@
 			path = "Target Support Files/Pods-EasyPostApi_Example";
 			sourceTree = "<group>";
 		};
-		AA812BAAF1D99961A9385C7D975E056E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EFAE5189EEB7FF29E5075C46D08CDB37 /* Alamofire.framework */,
-				72344EB4914BC88599F64B4FA97C2EE5 /* EasyPostApi.framework */,
-				53FE33B18746431262910683EE075257 /* Pods_EasyPostApi_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		ABCEAF07C726CD36AC88CD58F236092D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB92A42D492EC0439373ECE1A2975D80 /* EasyPostApi.modulemap */,
-				D8AD7208D15A8BE31B958C15B3A40E80 /* EasyPostApi.xcconfig */,
-				B2E75BBEF50DA607F6FFB26E6C4F48D0 /* EasyPostApi-dummy.m */,
-				069353E016302D165ABBFCF8482F97E1 /* EasyPostApi-prefix.pch */,
-				71C472C7DC1BD27AEB7AFAF3C6196B4F /* EasyPostApi-umbrella.h */,
-				5ECF5B8970B48E855A58A30B15502706 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/EasyPostApi";
-			sourceTree = "<group>";
-		};
 		ACD76A7D94022293284C30C8E7E93BEE /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,23 +160,50 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C4359992CD49E0674CD66F3CC9539318 /* EasyPostApi */ = {
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF7C18F2F219F97BF2E16DCC54B41988 /* EasyPostAddress.swift */,
-				D1EC1A2E953EA555DE49E464AE0F08FD /* EasyPostApi.swift */,
-				E75D3071853E4F89B37B2075BF03128B /* EasyPostBuyResponse.swift */,
-				B1C6EA78FD55071C896E388A89A2E0A4 /* EasyPostCarrierAccount.swift */,
-				6334B54B37E5588639BCD12E995EAD27 /* EasyPostCarrierType.swift */,
-				0F611E8CAF44FFF95DE9043E32D0E2ED /* EasyPostExtensions.swift */,
-				86CE09B7CE9B1C14C3ED21A84E5BA26F /* EasyPostLabel.swift */,
-				1E9C2D20A304BDAA487ED5F5126DCCC5 /* EasyPostParcel.swift */,
-				7AF38A6944F64996FD3E18E4586C3046 /* EasyPostRate.swift */,
-				25AD75F71BB7C21BA1A70D1CB09EE45F /* EasyPostRefund.swift */,
-				852BA52E40CDD9536FADC4826FF15BF9 /* EasyPostResult.swift */,
-				2E567B102D87D469359ADBCCE81B2A45 /* EasyPostShipment.swift */,
-				D4DBFEDEF8BACCBF309EACADA1ACB01D /* EasyPostUserApiKeys.swift */,
-				ABCEAF07C726CD36AC88CD58F236092D /* Support Files */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E021E0EA25EB57BFAA6E03FF429CC324 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8782AB31C94DF0D8EF6FB2B5FD062B3 /* EasyPostApi */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F8782AB31C94DF0D8EF6FB2B5FD062B3 /* EasyPostApi */ = {
+			isa = PBXGroup;
+			children = (
+				FEF373F2289A81DD75C542D8C0A66B60 /* EasyPostAddress.swift */,
+				DBFDF0B7B8EC81B7F53206B3748A75C6 /* EasyPostApi.swift */,
+				CBCFA59A1D544B111FEAD13AB518F515 /* EasyPostBuyResponse.swift */,
+				10C29AB69143B0654DCEC59273B5A729 /* EasyPostCarrierAccount.swift */,
+				F81EB55CD3D5266BC1B83FA55CDF5B6F /* EasyPostCarrierType.swift */,
+				313622E9C0C80577CD4837E481F947D8 /* EasyPostExtensions.swift */,
+				D7DF62F7048F6643A0416BFC9891A16F /* EasyPostLabel.swift */,
+				508AFB212A83894B4A63D5524DDC0F24 /* EasyPostParcel.swift */,
+				B0067415AA7A07E6C4EBD379F573731B /* EasyPostRate.swift */,
+				DA3000501A12C90812CF9FB22FB6A23D /* EasyPostRefund.swift */,
+				2FBADF1073D72C2081EEB4075052A2DC /* EasyPostResult.swift */,
+				02CDEA0FD9AF8EC6808DB0ABF1F72FCF /* EasyPostShipment.swift */,
+				5C5E81C8DF3DF058950B8B3B8366FA03 /* EasyPostUserApiKeys.swift */,
+				DB343825A405089F677227A40CDAC55D /* UrlRequestExtensions.swift */,
+				CA607AFCCCE30A8D31B6E966C665B375 /* UrlSessionExtensions.swift */,
+				D1BC40AB0A71BD3CE25C54FC13589434 /* Utility.swift */,
+				07E0829C1C6C9733D1BB70198433B55F /* Support Files */,
 			);
 			name = EasyPostApi;
 			path = ../..;
@@ -323,85 +212,58 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4B5F30DCDBCD940FA2A110693BF777B7 /* Headers */ = {
+		18E517CAFD7CC180CB4DA0E9308ABE5F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E019EEE18AE48AD7E94C72AAB91844A0 /* EasyPostApi-umbrella.h in Headers */,
+				89F5FB9026605B1EB6B66B43929F748C /* Pods-EasyPostApi_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4002B6E97835FDCCAA5963EFE09A3E0 /* Headers */ = {
+		C4242B9FBA9CE4AB1CC832036DFBE362 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E85BBB46D2B0AFFEA67E6C21445E17A7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D7CABD841A07F52A4138A3271BE73C6 /* Pods-EasyPostApi_Example-umbrella.h in Headers */,
+				0CDCA5FE550D2B9E5322A58A2383741E /* EasyPostApi-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7E9647B8A5E5A7C31B340FA4E65DC8BC /* Pods-EasyPostApi_Example */ = {
+		33B466BE6E6C0E9608F34E236FF66BDF /* EasyPostApi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7134A80A2E49CF5CB7B42BF8D5906587 /* Build configuration list for PBXNativeTarget "Pods-EasyPostApi_Example" */;
+			buildConfigurationList = 608B6332355BA618607C09A0D4932DBD /* Build configuration list for PBXNativeTarget "EasyPostApi" */;
 			buildPhases = (
-				DBA92E73200A0849C9C2F5A0D6DCBC9E /* Sources */,
-				7837DDFFB15D957FBCFAC9C80B2EFDCF /* Frameworks */,
-				E85BBB46D2B0AFFEA67E6C21445E17A7 /* Headers */,
+				A7359AA6014D0A7FC04BCD1D6EC7317A /* Sources */,
+				1312D5A9D9D4BF89F4492FADBAD4A22E /* Frameworks */,
+				C4242B9FBA9CE4AB1CC832036DFBE362 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2EAE2F25B4533A3D019758C24F93ABFB /* PBXTargetDependency */,
-				0C9DB3BF3DB5CEB8CC2961BCDE9B4F74 /* PBXTargetDependency */,
-			);
-			name = "Pods-EasyPostApi_Example";
-			productName = "Pods-EasyPostApi_Example";
-			productReference = 53FE33B18746431262910683EE075257 /* Pods_EasyPostApi_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */;
-			buildPhases = (
-				32B9974868188C4803318E36329C87FE /* Sources */,
-				99195E4207764744AEC07ECCBCD550EB /* Frameworks */,
-				B4002B6E97835FDCCAA5963EFE09A3E0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Alamofire;
-			productName = Alamofire;
-			productReference = EFAE5189EEB7FF29E5075C46D08CDB37 /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F682A5704C595EFB8BAAF13B68A0F3FF /* EasyPostApi */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8F79AD4FA15923389C9C4DC9518D7858 /* Build configuration list for PBXNativeTarget "EasyPostApi" */;
-			buildPhases = (
-				A6F568BF1CB8B976ED104AD5F0AD773E /* Sources */,
-				5F0D37614867EA3A687225175C35B69B /* Frameworks */,
-				4B5F30DCDBCD940FA2A110693BF777B7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0FD548DCF099E505F8C5CFF03A1FF582 /* PBXTargetDependency */,
 			);
 			name = EasyPostApi;
 			productName = EasyPostApi;
-			productReference = 72344EB4914BC88599F64B4FA97C2EE5 /* EasyPostApi.framework */;
+			productReference = CA47F7B6C473ADD3C9CD1E91184C9D7F /* EasyPostApi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34552FB4584D846C8C49256934EAA12F /* Pods-EasyPostApi_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF6D8341D1E8C103DB85402EC854623 /* Build configuration list for PBXNativeTarget "Pods-EasyPostApi_Example" */;
+			buildPhases = (
+				DDFEE33732A1991698AB2BAC6E5A34F8 /* Sources */,
+				C315EDCAC140AFEAE6CE254A1CFB7BCA /* Frameworks */,
+				18E517CAFD7CC180CB4DA0E9308ABE5F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8A1B6FA070311D3CCE038CCD7913B44 /* PBXTargetDependency */,
+			);
+			name = "Pods-EasyPostApi_Example";
+			productName = "Pods-EasyPostApi_Example";
+			productReference = 046903B00E02ED7520ECEA150705E5EC /* Pods_EasyPostApi_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -421,169 +283,64 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = AA812BAAF1D99961A9385C7D975E056E /* Products */;
+			productRefGroup = 24C74AE2F6C46931A9D9375341757614 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */,
-				F682A5704C595EFB8BAAF13B68A0F3FF /* EasyPostApi */,
-				7E9647B8A5E5A7C31B340FA4E65DC8BC /* Pods-EasyPostApi_Example */,
+				33B466BE6E6C0E9608F34E236FF66BDF /* EasyPostApi */,
+				34552FB4584D846C8C49256934EAA12F /* Pods-EasyPostApi_Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32B9974868188C4803318E36329C87FE /* Sources */ = {
+		A7359AA6014D0A7FC04BCD1D6EC7317A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */,
-				A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */,
-				F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */,
-				61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */,
-				B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */,
-				A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */,
-				EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */,
-				BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */,
-				5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */,
-				CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */,
-				F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */,
-				7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */,
-				62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */,
-				7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */,
-				AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */,
-				3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */,
-				10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */,
-				BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */,
+				52914273B56F98C5B6B6A39C1B48308B /* EasyPostAddress.swift in Sources */,
+				9B35AC735BBF70D2070F36D259A3183C /* EasyPostApi-dummy.m in Sources */,
+				9EEC617036075FC1B17927D1C092D5D4 /* EasyPostApi.swift in Sources */,
+				B511BC9E6C23AE10F6EBDF3ACEE8214C /* EasyPostBuyResponse.swift in Sources */,
+				1D4C06F0C1F8E5CA489D73650412221F /* EasyPostCarrierAccount.swift in Sources */,
+				971EC8DCDB5FBC0FE4DF978A36781917 /* EasyPostCarrierType.swift in Sources */,
+				A284BBA4D0C22479FE87D9BC97F70618 /* EasyPostExtensions.swift in Sources */,
+				C8798721C6AAC29DD06D542F30C90134 /* EasyPostLabel.swift in Sources */,
+				198A87C439CC6FA5B51CC8340E57EFBC /* EasyPostParcel.swift in Sources */,
+				42CD4F9DCAD85E8C79963C15DBAF243E /* EasyPostRate.swift in Sources */,
+				1E2F5109A63855DB0C1AA3C2441B9F53 /* EasyPostRefund.swift in Sources */,
+				D2BCEC4076BFB1207F721F748C627918 /* EasyPostResult.swift in Sources */,
+				AA1B5521799E653EDFCFDA224AF9928D /* EasyPostShipment.swift in Sources */,
+				DC31AA34E2BBE60E7296B4087191D917 /* EasyPostUserApiKeys.swift in Sources */,
+				CCD690B7A78DD789CD5AD6C4251BCDEE /* UrlRequestExtensions.swift in Sources */,
+				DA8A9494A676E85BF16FA10907912131 /* UrlSessionExtensions.swift in Sources */,
+				405AF9160EA004CE796F20E9DC75E81B /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6F568BF1CB8B976ED104AD5F0AD773E /* Sources */ = {
+		DDFEE33732A1991698AB2BAC6E5A34F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8D9FA7B8772F201D29F644EF08DDE1 /* EasyPostAddress.swift in Sources */,
-				61E1250B77B5798B9F1B224507FA93B1 /* EasyPostApi-dummy.m in Sources */,
-				0C75DE1EBCB86BE338BB885733BEE219 /* EasyPostApi.swift in Sources */,
-				7398624137F0035BB1603C74C854594F /* EasyPostBuyResponse.swift in Sources */,
-				691BC9FF04A1EA6F546C70C1CCD49030 /* EasyPostCarrierAccount.swift in Sources */,
-				4B20302BFDE89E1C7A3A47972408F814 /* EasyPostCarrierType.swift in Sources */,
-				FD613D3FE283268ED617BFAF0CACDBA6 /* EasyPostExtensions.swift in Sources */,
-				A2C6922BD8ED74541D9B88E65C7B467E /* EasyPostLabel.swift in Sources */,
-				74C220BE03676F6086DBDA60721EC4EF /* EasyPostParcel.swift in Sources */,
-				657B0227132688668391D374F8754DF3 /* EasyPostRate.swift in Sources */,
-				0AC23BB4B4CBCE978AAF63ECBF9B881F /* EasyPostRefund.swift in Sources */,
-				6A1E7DE7462DC99F9B0D0BBA0BEC55F7 /* EasyPostResult.swift in Sources */,
-				790570BF5830BE65FADE594D025779E1 /* EasyPostShipment.swift in Sources */,
-				0453DCE93CDAB70DEA5FA7BC45AE2D1A /* EasyPostUserApiKeys.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBA92E73200A0849C9C2F5A0D6DCBC9E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3289DDD98B45FD7839EEB64089B3D0F7 /* Pods-EasyPostApi_Example-dummy.m in Sources */,
+				C54326795F72583D18ED15DD61F1DEC5 /* Pods-EasyPostApi_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C9DB3BF3DB5CEB8CC2961BCDE9B4F74 /* PBXTargetDependency */ = {
+		B8A1B6FA070311D3CCE038CCD7913B44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EasyPostApi;
-			target = F682A5704C595EFB8BAAF13B68A0F3FF /* EasyPostApi */;
-			targetProxy = 3D4C3F6CC53D2BC6D8186B27F248EFF3 /* PBXContainerItemProxy */;
-		};
-		0FD548DCF099E505F8C5CFF03A1FF582 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = 37442EA76ACDA06AA3E292F4239D10B6 /* PBXContainerItemProxy */;
-		};
-		2EAE2F25B4533A3D019758C24F93ABFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = 7948A82383384BEACBFB249625E002FF /* PBXContainerItemProxy */;
+			target = 33B466BE6E6C0E9608F34E236FF66BDF /* EasyPostApi */;
+			targetProxy = A2EF3B27DC55D92B3B0CDC62C21761B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1B846FE14D7AC00E5484E838996B68BD /* Debug */ = {
+		31539E0F7273A5319654D94E935145EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F34CCF86067ED508C12C676E298C69 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		51962A598B255E00EAF7D4762EB9FEF8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AD7208D15A8BE31B958C15B3A40E80 /* EasyPostApi.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EasyPostApi/EasyPostApi-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EasyPostApi/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EasyPostApi/EasyPostApi.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EasyPostApi;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		636EAE629A9B49F52F5C75212F89E944 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AD7208D15A8BE31B958C15B3A40E80 /* EasyPostApi.xcconfig */;
+			baseConfigurationReference = 38698FA05171C246D2C4F6363339735B /* EasyPostApi.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -616,7 +373,7 @@
 			};
 			name = Release;
 		};
-		7EDC1EA298E8295EC6E5F8E373471C65 /* Release */ = {
+		5FABB55EE717CBACD89CC51C4188F4B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57C8E9E21F97F028E18614F9FFA3FB4B /* Pods-EasyPostApi_Example.release.xcconfig */;
 			buildSettings = {
@@ -747,42 +504,7 @@
 			};
 			name = Release;
 		};
-		CA754A5A94E916FCAD142DD1F56431B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F34CCF86067ED508C12C676E298C69 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DA899F7E1A10F5D88EB58B7456DDC2B0 /* Debug */ = {
+		DD4A4271730FB9313A7498263F65BC98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63CC9D39BC3371A483BF311B0E9C36E4 /* Pods-EasyPostApi_Example.debug.xcconfig */;
 			buildSettings = {
@@ -821,6 +543,41 @@
 			};
 			name = Debug;
 		};
+		FDBA5ED45C50BD4113A675B734C80838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38698FA05171C246D2C4F6363339735B /* EasyPostApi.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EasyPostApi/EasyPostApi-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EasyPostApi/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EasyPostApi/EasyPostApi.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = EasyPostApi;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -833,29 +590,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		4DF6D8341D1E8C103DB85402EC854623 /* Build configuration list for PBXNativeTarget "Pods-EasyPostApi_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B846FE14D7AC00E5484E838996B68BD /* Debug */,
-				CA754A5A94E916FCAD142DD1F56431B3 /* Release */,
+				DD4A4271730FB9313A7498263F65BC98 /* Debug */,
+				5FABB55EE717CBACD89CC51C4188F4B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7134A80A2E49CF5CB7B42BF8D5906587 /* Build configuration list for PBXNativeTarget "Pods-EasyPostApi_Example" */ = {
+		608B6332355BA618607C09A0D4932DBD /* Build configuration list for PBXNativeTarget "EasyPostApi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA899F7E1A10F5D88EB58B7456DDC2B0 /* Debug */,
-				7EDC1EA298E8295EC6E5F8E373471C65 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8F79AD4FA15923389C9C4DC9518D7858 /* Build configuration list for PBXNativeTarget "EasyPostApi" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51962A598B255E00EAF7D4762EB9FEF8 /* Debug */,
-				636EAE629A9B49F52F5C75212F89E944 /* Release */,
+				FDBA5ED45C50BD4113A675B734C80838 /* Debug */,
+				31539E0F7273A5319654D94E935145EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

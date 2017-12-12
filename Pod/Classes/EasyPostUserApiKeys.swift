@@ -22,7 +22,7 @@ open class EasyPostUserApiKeys {
         
     }
     
-    public init(jsonDictionary:NSDictionary) {
+    public init(jsonDictionary: [String: Any]) {
         //Load the JSON dictionary
         
         if let stringValue = jsonDictionary["id"] as? String {

@@ -1,7 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
-  - EasyPostApi (1.0.0):
-    - Alamofire (~> 4.0)
+  - EasyPostApi (1.1.0)
 
 DEPENDENCIES:
   - EasyPostApi (from `../`)
@@ -11,9 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  EasyPostApi: cf2662aec612e1d75a0bc18622210dbf68676150
+  EasyPostApi: 0ac5e8aa06eb53babf426e098e09f4553de6c5b1
 
-PODFILE CHECKSUM: be9c794db854d93793f3799d7137432046f7690c
+PODFILE CHECKSUM: 2047fd36952983e34c2090778c22701a1df328a2
 
 COCOAPODS: 1.3.1

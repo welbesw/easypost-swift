@@ -26,7 +26,7 @@ open class EasyPostParcel {
         
     }
     
-    public init(jsonDictionary:NSDictionary) {
+    public init(jsonDictionary: [String: Any]) {
         //Load the JSON dictionary
         
         let dateFormatter = DateFormatter()
