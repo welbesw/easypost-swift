@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 case .failure(let error):
                     print("Error getting user api keys: \((error as NSError).localizedDescription)")
                 case .success(let keys):
-                    print("Got API keys: production:\(keys.productionKey) : test: \(keys.testKey)")
+                    print("Got API keys: production:\(keys.productionKey ?? "") : test: \(keys.testKey ?? "")")
                 }
             })
         }
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
         address.city = cityTextField.text
         address.state = stateTextField.text
         address.zip = zipTextField.text
+        address.country = "US"
         
         EasyPostApi.sharedInstance.postAddress(address) { (result) -> () in
             DispatchQueue.main.async(execute: { () -> Void in
@@ -178,6 +179,7 @@ class ViewController: UIViewController {
         toAddress.city = cityTextField.text
         toAddress.state = stateTextField.text
         toAddress.zip = zipTextField.text
+        toAddress.country = "US"
         
         let fromAddress = toAddress
         

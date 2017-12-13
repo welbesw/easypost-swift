@@ -81,7 +81,7 @@ class ShipmentsViewController: UITableViewController {
                     //Check for error
                     switch(result) {
                     case .success(let refund):
-                        print("Refund requested: \(refund.id)")
+                        print("Refund requested: \(refund.id ?? "")")
                     case .failure(let error):
                         print("Error requesting refund: \((error as NSError).localizedDescription)")
                     }

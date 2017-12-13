@@ -44,7 +44,7 @@ open class EasyPostShipment {
         
     }
     
-    public init(jsonDictionary:NSDictionary) {
+    public init(jsonDictionary: [String: Any]) {
         //Load the JSON dictionary
         
         let dateFormatter = DateFormatter()
@@ -59,15 +59,15 @@ open class EasyPostShipment {
             mode = stringValue
         }
         
-        if let addressDict = jsonDictionary["to_address"] as? NSDictionary {
+        if let addressDict = jsonDictionary["to_address"] as? [String: Any] {
             self.toAddress = EasyPostAddress(jsonDictionary: addressDict)
         }
         
-        if let addressDict = jsonDictionary["from_address"] as? NSDictionary {
+        if let addressDict = jsonDictionary["from_address"] as? [String: Any] {
             self.fromAddress = EasyPostAddress(jsonDictionary: addressDict)
         }
         
-        if let parcelDict = jsonDictionary["parcel"] as? NSDictionary {
+        if let parcelDict = jsonDictionary["parcel"] as? [String: Any] {
             self.parcel = EasyPostParcel(jsonDictionary: parcelDict)
         }
         
