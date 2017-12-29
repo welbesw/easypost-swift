@@ -31,13 +31,9 @@ extension URLSession {
 
                 //Try to convert response to JSON
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                        completion(EasyPostResult.success(json))
-                    } else {
-                        completion(EasyPostResult.success(nil))
-                    }
-                }
-                catch let error {
+                    let json = try JSONSerialization.jsonObject(with: data)
+                    completion(EasyPostResult.success(json))
+                } catch let error {
                     completion(EasyPostResult.failure(error))
                 }
 
