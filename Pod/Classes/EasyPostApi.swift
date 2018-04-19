@@ -154,7 +154,11 @@ open class EasyPostApi {
         if let customItems = customInfo.customItems {
             var index = 0
             for customItem in customItems {
-                parameters.updateValue(customItem, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"customs_items").appending("[\(index)][id])"))
+                if let customItemId = customItem.id {
+                    parameters.updateValue(customItemId, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"custom_items").appending("[\(index)][id]"))
+                } else {
+                    parameters += parametersForCustomItem(customItem, keyStringFormat: "customs_info[customs_items][\(index)][%ELEMENT%]")
+                }
                 index += 1
             }
         }

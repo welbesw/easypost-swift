@@ -31,7 +31,7 @@ open class EasyPostCustomInfo {
     }
     
     open var id: String?
-    open var customItems: [String]?
+    open var customItems: [EasyPostCustomItem]?
     open var contentsType: ContentType?
     open var contentsExplanation: String?
     open var restrictionType: RestrictionType?
@@ -56,10 +56,10 @@ open class EasyPostCustomInfo {
             id = stringValue
         }
         
-        if let arrayValue = jsonDictionary["customs_items"] as? Array<String> {
+        if let arrayValue = jsonDictionary["customs_items"] as? Array<Dictionary<String, Any>> {
             customItems = []
             for value in arrayValue {
-                customItems?.append(value)
+                customItems?.append(EasyPostCustomItem(jsonDictionary: value))
             }
         }
         
@@ -103,8 +103,12 @@ open class EasyPostCustomInfo {
             dict.updateValue(id! as AnyObject, forKey: "id")
         }
         
-        if customItems != nil {
-            dict.updateValue(customItems! as AnyObject, forKey: "customs_items")
+        if let custom_items = customItems  {
+            var jsonDict: [[String: Any]] = []
+            for custom_item in custom_items {
+                jsonDict.append(custom_item.jsonDict())
+            }
+            dict.updateValue(jsonDict as AnyObject, forKey: "customs_items")
         }
         
         if contentsType != nil {
