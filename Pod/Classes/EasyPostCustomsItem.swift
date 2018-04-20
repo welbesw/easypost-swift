@@ -1,5 +1,5 @@
 //
-//  EasyPostCustomItem.swift
+//  EasyPostCustomsItem.swift
 //  EasyPostApi
 //
 //  Created by Sachin Vas on 19/04/18.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class EasyPostCustomItem {
+open class EasyPostCustomsItem {
     open var id: String?
     open var itemDescription: String?
     open var quantity: NSNumber?

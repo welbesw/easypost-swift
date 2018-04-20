@@ -1,5 +1,5 @@
 //
-//  EasyPostCustomInfo.swift
+//  EasyPostCustomsInfo.swift
 //  EasyPostApi
 //
 //  Created by Sachin Vas on 19/04/18.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class EasyPostCustomInfo {
+open class EasyPostCustomsInfo {
     
     public enum ContentType: String {
         case other
@@ -31,7 +31,7 @@ open class EasyPostCustomInfo {
     }
     
     open var id: String?
-    open var customItems: [EasyPostCustomItem]?
+    open var customsItems: [EasyPostCustomsItem]?
     open var contentsType: ContentType?
     open var contentsExplanation: String?
     open var restrictionType: RestrictionType?
@@ -40,6 +40,8 @@ open class EasyPostCustomInfo {
     open var customsSigner: String?
     open var nonDeliveryOption: NonDeliveryOption = .return
     open var eelPfc: String?
+    open var createdAt: Date?
+    open var updatedAt: Date?
     
     public init() {
         
@@ -57,9 +59,9 @@ open class EasyPostCustomInfo {
         }
         
         if let arrayValue = jsonDictionary["customs_items"] as? Array<Dictionary<String, Any>> {
-            customItems = []
+            customsItems = []
             for value in arrayValue {
-                customItems?.append(EasyPostCustomItem(jsonDictionary: value))
+                customsItems?.append(EasyPostCustomsItem(jsonDictionary: value))
             }
         }
         
@@ -94,6 +96,14 @@ open class EasyPostCustomInfo {
         if let stringValue = jsonDictionary["eel_pfc"] as? String {
             eelPfc = stringValue
         }
+        
+        if let stringValue = jsonDictionary["created_at"] as? String {
+            createdAt = dateFormatter.date(from: stringValue)
+        }
+        
+        if let stringValue = jsonDictionary["updated_at"] as? String {
+            updatedAt = dateFormatter.date(from: stringValue)
+        }
     }
     
     open func jsonDict() -> [String: Any] {
@@ -103,7 +113,7 @@ open class EasyPostCustomInfo {
             dict.updateValue(id! as AnyObject, forKey: "id")
         }
         
-        if let custom_items = customItems  {
+        if let custom_items = customsItems  {
             var jsonDict: [[String: Any]] = []
             for custom_item in custom_items {
                 jsonDict.append(custom_item.jsonDict())

@@ -22,16 +22,21 @@ open class EasyPostShipment {
     open var fromAddress:EasyPostAddress?
     
     open var parcel:EasyPostParcel?
+    open var customsInfo:EasyPostCustomsInfo?
     
     open var rates:[EasyPostRate] = []
     
     open var postageLabel:EasyPostLabel?
     
     open var trackingCode:String?
+    open var tracker:EasyPostTracker?
+    
     open var referenceNumber:String?
     open var refundStatus:String?
     open var batchStatus:String?
     open var batchMessage:String?
+    
+    open var forms:[EasyPostForm]?
     
     open var selectedRate:EasyPostRate?
     
@@ -71,6 +76,10 @@ open class EasyPostShipment {
             self.parcel = EasyPostParcel(jsonDictionary: parcelDict)
         }
         
+        if let customsInfoDict = jsonDictionary["customs_info"] as? [String: Any] {
+            self.customsInfo = EasyPostCustomsInfo(jsonDictionary: customsInfoDict)
+        }
+        
         if let ratesArray = jsonDictionary["rates"] as? NSArray {
             for rateElement in ratesArray {
                 if let rateDict = rateElement as? NSDictionary {
@@ -88,6 +97,10 @@ open class EasyPostShipment {
             trackingCode = stringValue
         }
         
+        if let trackerValue = jsonDictionary["tracker"] as? Dictionary<String, Any> {
+            tracker = EasyPostTracker(jsonDictionary: trackerValue)
+        }
+        
         if let stringValue = jsonDictionary["reference"] as? String {
             referenceNumber = stringValue
         }
@@ -102,6 +115,14 @@ open class EasyPostShipment {
         
         if let stringValue = jsonDictionary["batch_message"] as? String {
             batchMessage = stringValue
+        }
+        
+        if let arrayValue = jsonDictionary["forms"] as? Array<Dictionary<String, Any>> {
+            forms = []
+            for value in arrayValue {
+                let form = EasyPostForm(jsonDictionary: value)
+                forms?.append(form)
+            }
         }
         
         if let rateDict = jsonDictionary["selected_rate"] as? NSDictionary {

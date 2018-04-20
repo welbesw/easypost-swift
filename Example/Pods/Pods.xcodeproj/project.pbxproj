@@ -15,6 +15,10 @@
 		405AF9160EA004CE796F20E9DC75E81B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BC40AB0A71BD3CE25C54FC13589434 /* Utility.swift */; };
 		42CD4F9DCAD85E8C79963C15DBAF243E /* EasyPostRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0067415AA7A07E6C4EBD379F573731B /* EasyPostRate.swift */; };
 		52914273B56F98C5B6B6A39C1B48308B /* EasyPostAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF373F2289A81DD75C542D8C0A66B60 /* EasyPostAddress.swift */; };
+		54D613672089B107008D7BB6 /* EasyPostCustomsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D613652089B107008D7BB6 /* EasyPostCustomsItem.swift */; };
+		54D613682089B107008D7BB6 /* EasyPostCustomsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D613662089B107008D7BB6 /* EasyPostCustomsInfo.swift */; };
+		54D6136C2089BDB2008D7BB6 /* EasyPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6136B2089BDB2008D7BB6 /* EasyPostForm.swift */; };
+		54D6136E2089C03B008D7BB6 /* EasyPostTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6136D2089C03B008D7BB6 /* EasyPostTracker.swift */; };
 		89F5FB9026605B1EB6B66B43929F748C /* Pods-EasyPostApi_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		971EC8DCDB5FBC0FE4DF978A36781917 /* EasyPostCarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EB55CD3D5266BC1B83FA55CDF5B6F /* EasyPostCarrierType.swift */; };
 		9B35AC735BBF70D2070F36D259A3183C /* EasyPostApi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA07F9E5F97741690EA462D0A9A7AE6 /* EasyPostApi-dummy.m */; };
@@ -54,6 +58,10 @@
 		38B785F995F58FFB91FDB24D4186741B /* Pods-EasyPostApi_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EasyPostApi_Example-umbrella.h"; sourceTree = "<group>"; };
 		3DD753B1FE45BEFD8389F0B4933E4607 /* Pods-EasyPostApi_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPostApi_Example-resources.sh"; sourceTree = "<group>"; };
 		508AFB212A83894B4A63D5524DDC0F24 /* EasyPostParcel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostParcel.swift; path = Pod/Classes/EasyPostParcel.swift; sourceTree = "<group>"; };
+		54D613652089B107008D7BB6 /* EasyPostCustomsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPostCustomsItem.swift; path = Pod/Classes/EasyPostCustomsItem.swift; sourceTree = "<group>"; };
+		54D613662089B107008D7BB6 /* EasyPostCustomsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPostCustomsInfo.swift; path = Pod/Classes/EasyPostCustomsInfo.swift; sourceTree = "<group>"; };
+		54D6136B2089BDB2008D7BB6 /* EasyPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyPostForm.swift; path = Pod/Classes/EasyPostForm.swift; sourceTree = "<group>"; };
+		54D6136D2089C03B008D7BB6 /* EasyPostTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyPostTracker.swift; path = Pod/Classes/EasyPostTracker.swift; sourceTree = "<group>"; };
 		57C8E9E21F97F028E18614F9FFA3FB4B /* Pods-EasyPostApi_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPostApi_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5A8F1FA843CA5F837B27EAD7E2158D63 /* EasyPostApi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EasyPostApi.modulemap; sourceTree = "<group>"; };
 		5C5E81C8DF3DF058950B8B3B8366FA03 /* EasyPostUserApiKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostUserApiKeys.swift; path = Pod/Classes/EasyPostUserApiKeys.swift; sourceTree = "<group>"; };
@@ -187,6 +195,8 @@
 		F8782AB31C94DF0D8EF6FB2B5FD062B3 /* EasyPostApi */ = {
 			isa = PBXGroup;
 			children = (
+				54D613662089B107008D7BB6 /* EasyPostCustomsInfo.swift */,
+				54D613652089B107008D7BB6 /* EasyPostCustomsItem.swift */,
 				FEF373F2289A81DD75C542D8C0A66B60 /* EasyPostAddress.swift */,
 				DBFDF0B7B8EC81B7F53206B3748A75C6 /* EasyPostApi.swift */,
 				CBCFA59A1D544B111FEAD13AB518F515 /* EasyPostBuyResponse.swift */,
@@ -198,6 +208,8 @@
 				B0067415AA7A07E6C4EBD379F573731B /* EasyPostRate.swift */,
 				DA3000501A12C90812CF9FB22FB6A23D /* EasyPostRefund.swift */,
 				2FBADF1073D72C2081EEB4075052A2DC /* EasyPostResult.swift */,
+				54D6136D2089C03B008D7BB6 /* EasyPostTracker.swift */,
+				54D6136B2089BDB2008D7BB6 /* EasyPostForm.swift */,
 				02CDEA0FD9AF8EC6808DB0ABF1F72FCF /* EasyPostShipment.swift */,
 				5C5E81C8DF3DF058950B8B3B8366FA03 /* EasyPostUserApiKeys.swift */,
 				DB343825A405089F677227A40CDAC55D /* UrlRequestExtensions.swift */,
@@ -310,6 +322,7 @@
 				1D4C06F0C1F8E5CA489D73650412221F /* EasyPostCarrierAccount.swift in Sources */,
 				971EC8DCDB5FBC0FE4DF978A36781917 /* EasyPostCarrierType.swift in Sources */,
 				A284BBA4D0C22479FE87D9BC97F70618 /* EasyPostExtensions.swift in Sources */,
+				54D613672089B107008D7BB6 /* EasyPostCustomsItem.swift in Sources */,
 				C8798721C6AAC29DD06D542F30C90134 /* EasyPostLabel.swift in Sources */,
 				198A87C439CC6FA5B51CC8340E57EFBC /* EasyPostParcel.swift in Sources */,
 				42CD4F9DCAD85E8C79963C15DBAF243E /* EasyPostRate.swift in Sources */,
@@ -318,7 +331,10 @@
 				AA1B5521799E653EDFCFDA224AF9928D /* EasyPostShipment.swift in Sources */,
 				DC31AA34E2BBE60E7296B4087191D917 /* EasyPostUserApiKeys.swift in Sources */,
 				CCD690B7A78DD789CD5AD6C4251BCDEE /* UrlRequestExtensions.swift in Sources */,
+				54D613682089B107008D7BB6 /* EasyPostCustomsInfo.swift in Sources */,
+				54D6136C2089BDB2008D7BB6 /* EasyPostForm.swift in Sources */,
 				DA8A9494A676E85BF16FA10907912131 /* UrlSessionExtensions.swift in Sources */,
+				54D6136E2089C03B008D7BB6 /* EasyPostTracker.swift in Sources */,
 				405AF9160EA004CE796F20E9DC75E81B /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
