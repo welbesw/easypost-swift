@@ -131,7 +131,7 @@ Once you've created a shipment record, the rates records are returned inside the
 ```swift
 EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", completion: { (result) -> () in
 	//Handle results
-	dispatch_async(dispatch_get_main_queue(), { () -> Void in
+	DispatchQueue.main.async {
 	    if(result.isSuccess) {
 	        print("Successfully bought shipment.")
 	        if let buyResponse = result.value {
@@ -142,9 +142,9 @@ EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", complet
 	            }
 	        }
 	    } else {
-	        print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
+	        print("Error buying shipment: \((result.error! as NSError).localizedDescription)")
 	    }
-	})
+	}
 })
 ```
 
