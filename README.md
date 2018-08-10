@@ -102,15 +102,15 @@ fromAddress.city = "Cupertino"
 fromAddress.state = "CA"
 
 let parcel = EasyPostParcel()
-parcel.length = NSNumber(float:10.0)	//inches
-parcel.width = NSNumber(float:10.0)		//inches
-parcel.height = NSNumber(float:10.0)	//inches
-parcel.weight = NSNumber(float:10.0)	//ounces
+parcel.length = NSNumber(value:10.0)	//inches
+parcel.width = NSNumber(value:10.0)		//inches
+parcel.height = NSNumber(value:10.0)	//inches
+parcel.weight = NSNumber(value:10.0)	//ounces
 
 EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, parcel: parcel) { (result) -> () in
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    DispatchQueue.main.async {
         switch(result) {
-        case .Success(let shipment):
+        case .success(let shipment):
             
             print("Successfully posted shipment.")
             
@@ -118,10 +118,10 @@ EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, par
                 print("Shipment id: \(id)")
             }
             
-        case .Failure(let error):
+        case .failure(let error):
             print("Error posting shipment: \((error as NSError).localizedDescription)")
         }
-    })
+    }
 }
 ```
 ### Buy Shipment
@@ -131,7 +131,7 @@ Once you've created a shipment record, the rates records are returned inside the
 ```swift
 EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", completion: { (result) -> () in
 	//Handle results
-	dispatch_async(dispatch_get_main_queue(), { () -> Void in
+	DispatchQueue.main.async {
 	    if(result.isSuccess) {
 	        print("Successfully bought shipment.")
 	        if let buyResponse = result.value {
@@ -142,9 +142,9 @@ EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", complet
 	            }
 	        }
 	    } else {
-	        print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
+	        print("Error buying shipment: \((result.error! as NSError).localizedDescription)")
 	    }
-	})
+	}
 })
 ```
 
