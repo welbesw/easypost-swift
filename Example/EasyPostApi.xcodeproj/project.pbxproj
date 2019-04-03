@@ -138,7 +138,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				C6E54A9409935B0E036258C8 /* [CP] Embed Pods Frameworks */,
-				04B5BD7B059D2F6602D06283 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,21 +197,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04B5BD7B059D2F6602D06283 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyPostApi_Example/Pods-EasyPostApi_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6E9A5CD6A9E7EC53BC701638 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
