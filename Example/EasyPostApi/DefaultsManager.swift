@@ -11,7 +11,7 @@ import UIKit
 open class DefaultsManager: NSObject {
    
     //Define a shared instance method to return a singleton of the manager
-    open static var sharedInstance = DefaultsManager()
+    public static var sharedInstance = DefaultsManager()
    
     let userDefaults = UserDefaults.standard
     

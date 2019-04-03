@@ -73,9 +73,9 @@ class ShipmentsViewController: UITableViewController {
         if let shipmentId = shipment.id {
         
             //Ask to refund
-            let alertController = UIAlertController(title: "Request Refund?", message: "Request a refund for this shipment?", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Request Refund?", message: "Request a refund for this shipment?", preferredStyle: UIAlertController.Style.alert)
             
-            alertController.addAction(UIAlertAction(title: "Request Refund", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in
+            alertController.addAction(UIAlertAction(title: "Request Refund", style: UIAlertAction.Style.destructive, handler: { (action) -> Void in
                 //Request the refund
                 EasyPostApi.sharedInstance.requestRefund(shipmentId, completion: { (result) -> () in
                     //Check for error

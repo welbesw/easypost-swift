@@ -198,7 +198,7 @@ class ViewController: UIViewController {
                         self.currentShipment = shipment
                         
                         if(shipment.rates.count < 1 && shipment.messages.count > 0) {
-                            let alert = UIAlertController(title: "Error Getting Rates", message: shipment.messages[0].message, preferredStyle: UIAlertControllerStyle.alert)
+                            let alert = UIAlertController(title: "Error Getting Rates", message: shipment.messages[0].message, preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                         } else {
