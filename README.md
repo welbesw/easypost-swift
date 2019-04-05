@@ -7,8 +7,8 @@
 ## Requirements
 
 - iOS 9.0+ / Mac OS X 10.11+
-- Xcode 8.0+
-- Swift 3.0+
+- Xcode 10.2+
+- Swift 5.0+
 
 ## Installation
 
@@ -16,7 +16,7 @@ EasyPostApi is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'EasyPostApi',  '~> 1.0'
+pod 'EasyPostApi',  '~> 1.2'
 ```
 
 ## Usage
@@ -102,15 +102,15 @@ fromAddress.city = "Cupertino"
 fromAddress.state = "CA"
 
 let parcel = EasyPostParcel()
-parcel.length = NSNumber(float:10.0)	//inches
-parcel.width = NSNumber(float:10.0)		//inches
-parcel.height = NSNumber(float:10.0)	//inches
-parcel.weight = NSNumber(float:10.0)	//ounces
+parcel.length = NSNumber(value:10.0)	//inches
+parcel.width = NSNumber(value:10.0)		//inches
+parcel.height = NSNumber(value:10.0)	//inches
+parcel.weight = NSNumber(value:10.0)	//ounces
 
 EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, parcel: parcel) { (result) -> () in
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    DispatchQueue.main.async {
         switch(result) {
-        case .Success(let shipment):
+        case .success(let shipment):
             
             print("Successfully posted shipment.")
             
@@ -118,10 +118,10 @@ EasyPostApi.sharedInstance.postShipment(toAddress, fromAddress: fromAddress, par
                 print("Shipment id: \(id)")
             }
             
-        case .Failure(let error):
+        case .failure(let error):
             print("Error posting shipment: \((error as NSError).localizedDescription)")
         }
-    })
+    }
 }
 ```
 ### Buy Shipment
@@ -131,7 +131,7 @@ Once you've created a shipment record, the rates records are returned inside the
 ```swift
 EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", completion: { (result) -> () in
 	//Handle results
-	dispatch_async(dispatch_get_main_queue(), { () -> Void in
+	DispatchQueue.main.async {
 	    if(result.isSuccess) {
 	        print("Successfully bought shipment.")
 	        if let buyResponse = result.value {
@@ -142,9 +142,9 @@ EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", complet
 	            }
 	        }
 	    } else {
-	        print("Error buying shipment: \((result.error as! NSError).localizedDescription)")
+	        print("Error buying shipment: \((result.error! as NSError).localizedDescription)")
 	    }
-	})
+	}
 })
 ```
 
@@ -153,20 +153,8 @@ EasyPostApi.sharedInstance.buyShipment("shipment-id", rateId: "rate-id", complet
 [William Welbes](http://www.twitter.com/welbes)
 
 ## License
-
 EasyPostApi is available under the MIT license. See the LICENSE file for more info.
-=======
-# The CocoaPods Master Repo
+
+## The CocoaPods Master Repo
 
 This repository contains the public [CocoaPods](https://github.com/CocoaPods/CocoaPods) specifications.
-
-## Links
-
-- [Specs and the Specs Repo](http://guides.cocoapods.org/making/specs-and-specs-repo.html): Learn about creating Podspec's and the Spec repo.
-- [Getting setup with Trunk](http://guides.cocoapods.org/making/getting-setup-with-trunk.html): Instructions for creating a CocoaPods user account
-
-
-## License
-
-These specifications and CocoaPods are available under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
-

@@ -11,7 +11,7 @@ import Foundation
 open class EasyPostApi {
     
     //Define a shared instance method to return a singleton of the API manager
-    open static var sharedInstance = EasyPostApi()
+    public static var sharedInstance = EasyPostApi()
     
     let errorDomain = "com.technomagination.EasyPostApi"
     

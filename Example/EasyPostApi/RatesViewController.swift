@@ -59,8 +59,8 @@ class RatesViewController: UITableViewController {
         let rate = self.shipment.rates[(indexPath as NSIndexPath).row]
         
         if let rateId = rate.id {
-            let alertController = UIAlertController(title: "Buy Postage", message: "Do you want to buy this postage for \(rate.rate!)", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Buy", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            let alertController = UIAlertController(title: "Buy Postage", message: "Do you want to buy this postage for \(rate.rate!)", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Buy", style: UIAlertAction.Style.default, handler: { (action) -> Void in
                 EasyPostApi.sharedInstance.buyShipment(self.shipment.id!, rateId: rateId, completion: { (result) -> () in
                     //Handle results
                     DispatchQueue.main.async(execute: { () -> Void in
