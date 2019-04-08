@@ -5,7 +5,7 @@
 //  Created by Sachin Vas on 19/04/18.
 //
 
-import UIKit
+import Foundation
 
 open class EasyPostCustomsItem {
     open var id: String?
