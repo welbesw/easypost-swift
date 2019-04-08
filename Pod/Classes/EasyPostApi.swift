@@ -110,7 +110,93 @@ open class EasyPostApi {
         return parameters
     }
     
-    func parametersForShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenecNumber:String?) -> [String : String] {
+    func parametersForCustomsItem(_ customsItem: EasyPostCustomsItem, keyStringFormat:String) -> [String : String] {
+        var parameters = [String : String]()
+        
+        if let id = customsItem.id {
+            parameters.updateValue(id, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"id"))
+        }
+        
+        if let description = customsItem.itemDescription {
+            parameters.updateValue(description, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"description"))
+        }
+        
+        if let quantity = customsItem.quantity {
+            parameters.updateValue(quantity.stringValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"quantity"))
+        }
+        
+        if let weight = customsItem.weight {
+            parameters.updateValue(weight.stringValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"weight"))
+        }
+        
+        if let value = customsItem.value {
+            parameters.updateValue(value.stringValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"weight"))
+        }
+        
+        if let hs_tariff_number = customsItem.hsTariffNumber {
+            parameters.updateValue(hs_tariff_number.stringValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"hs_tariff_number"))
+        }
+        
+        if let origin_country = customsItem.originCountry {
+            parameters.updateValue(origin_country, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"origin_country"))
+        }
+                
+        return parameters
+    }
+    
+    func parametersForCustomsInfo(_ customsInfo: EasyPostCustomsInfo, keyStringFormat:String) -> [String : String] {
+        var parameters = [String : String]()
+        
+        if let id = customsInfo.id {
+            parameters.updateValue(id, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"id"))
+        }
+        
+        if let customsItems = customsInfo.customsItems {
+            var index = 0
+            for customsItem in customsItems {
+                if let customsItemId = customsItem.id {
+                    parameters.updateValue(customsItemId, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"custom_items").appending("[\(index)][id]"))
+                } else {
+                    parameters += parametersForCustomsItem(customsItem, keyStringFormat: "customs_info[customs_items][\(index)][%ELEMENT%]")
+                }
+                index += 1
+            }
+        }
+        
+        if let contentsType = customsInfo.contentsType?.rawValue {
+            parameters.updateValue(contentsType, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"contents_type"))
+        }
+        
+        if let contentsExplanation = customsInfo.contentsExplanation {
+            parameters.updateValue(contentsExplanation, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"contents_explanation"))
+        }
+        
+        if let restrictionType = customsInfo.restrictionType?.rawValue {
+            parameters.updateValue(restrictionType, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"restriction_type"))
+        }
+        
+        if let restrictionComments = customsInfo.restrictionComments {
+            parameters.updateValue(restrictionComments, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"restriction_comments"))
+        }
+        
+        if let customsCertify = customsInfo.customsCertify {
+            parameters.updateValue(customsCertify.stringValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"customs_certify"))
+        }
+        
+        if let customsSigner = customsInfo.customsSigner {
+            parameters.updateValue(customsSigner, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"customs_signer"))
+        }
+        
+        parameters.updateValue(customsInfo.nonDeliveryOption.rawValue, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"non_delivery_option"))
+
+        if let eelPfc = customsInfo.eelPfc {
+            parameters.updateValue(eelPfc, forKey: keyStringFormat.replacingOccurrences(of: "%ELEMENT%", with:"eel_pfc"))
+        }
+        
+        return parameters
+    }
+    
+    func parametersForShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, customsInfo:EasyPostCustomsInfo?, carrierAccountIds:[String]?, referenecNumber:String?) -> [String : String] {
         var parameters = [String : String]()
         
         if let toAddressId = toAddress.id {
@@ -129,6 +215,14 @@ open class EasyPostApi {
             parameters.updateValue(parcelId, forKey: "shipment[parcel][id]")
         } else {
             parameters += paramtersFromParcel(parcel, keyStringFormat: "shipment[parcel][%ELEMENT%]")
+        }
+        
+        if let customs_info = customsInfo {
+            if let customs_info_id = customs_info.id {
+                parameters.updateValue(customs_info_id, forKey: "shipment[customs_info][id]")
+            } else {
+                parameters += parametersForCustomsInfo(customs_info, keyStringFormat: "shipment[customs_info][%ELEMENT%]")
+            }
         }
         
         if let carriers = carrierAccountIds {
@@ -231,14 +325,66 @@ open class EasyPostApi {
         }
     }
     
-    //If the shipment and parcel objects you pass in have id's defined, those will be used and the rest of the parameters will be ignored.  If you pass in objects that don't have id's defined, the parameters will be used to create the objects on the back end
-    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
-        postShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: nil, referenceNumber: nil, completion: completion)
+    open func postCustomsItem(_ customsItem: EasyPostCustomsItem, completion: @escaping (_ result: EasyPostResult<EasyPostCustomsItem>) -> ()) {
+        let parameters = parametersForCustomsItem(customsItem, keyStringFormat: "customs_item[%ELEMENT%]")
+        
+        guard let request = URLRequest.newRequest(urlString: apiBaseUrl + "customs_items", method: .post, parameters: parameters, headers: getAuthHeader()) else {
+            return
+        }
+        
+        URLSession.newSession().apiDataTask(with: request) { (result) in
+            switch result {
+            case .success (let json):
+                if let resultDict = json as? [String: Any] {
+                    let customItem = EasyPostCustomsItem(jsonDictionary: resultDict)
+                    completion(EasyPostResult.success(customItem))
+                } else {
+                    print("Result was successful, but blank.")
+                    completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                }
+                break
+            case .failure (let error):
+                print(error)
+                completion(EasyPostResult.failure(error))
+                break
+            }
+        }
     }
     
-    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenceNumber:String?, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
+    open func postCustomsInfo(_ customsInfo: EasyPostCustomsInfo, completion: @escaping (_ result: EasyPostResult<EasyPostCustomsInfo>) -> ()) {
+        let parameters = parametersForCustomsInfo(customsInfo, keyStringFormat: "customs_info[%ELEMENT%]")
         
-        let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: carrierAccountIds, referenecNumber: referenceNumber)
+        guard let request = URLRequest.newRequest(urlString: apiBaseUrl + "customs_items", method: .post, parameters: parameters, headers: getAuthHeader()) else {
+            return
+        }
+        
+        URLSession.newSession().apiDataTask(with: request) { (result) in
+            switch result {
+            case .success (let json):
+                if let resultDict = json as? [String: Any] {
+                    let customInfo = EasyPostCustomsInfo(jsonDictionary: resultDict)
+                    completion(EasyPostResult.success(customInfo))
+                } else {
+                    print("Result was successful, but blank.")
+                    completion(EasyPostResult.failure(NSError(domain: self.errorDomain, code: 2, userInfo: nil)))
+                }
+                break
+            case .failure (let error):
+                print(error)
+                completion(EasyPostResult.failure(error))
+                break
+            }
+        }
+    }
+    
+    //If the shipment and parcel objects you pass in have id's defined, those will be used and the rest of the parameters will be ignored.  If you pass in objects that don't have id's defined, the parameters will be used to create the objects on the back end
+    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, customsInfo:EasyPostCustomsInfo? = nil, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
+        postShipment(toAddress, fromAddress: fromAddress, parcel: parcel, carrierAccountIds: nil, referenceNumber: nil, customsInfo: customsInfo, completion: completion)
+    }
+    
+    open func postShipment(_ toAddress:EasyPostAddress, fromAddress:EasyPostAddress, parcel:EasyPostParcel, carrierAccountIds:[String]?, referenceNumber:String?, customsInfo:EasyPostCustomsInfo? = nil, completion: @escaping (_ result: EasyPostResult<EasyPostShipment>) -> ()) {
+        
+        let parameters = parametersForShipment(toAddress, fromAddress: fromAddress, parcel: parcel, customsInfo: customsInfo, carrierAccountIds: carrierAccountIds, referenecNumber: referenceNumber)
 
         guard let request = URLRequest.newRequest(urlString: apiBaseUrl + "shipments", method: .post, parameters: parameters, headers: getAuthHeader()) else {
             return

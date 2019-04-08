@@ -1,5 +1,5 @@
 PODS:
-  - EasyPostApi (1.1.1)
+  - EasyPostApi (1.2.0)
 
 DEPENDENCIES:
   - EasyPostApi (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyPostApi: ef8d00625586cf2396bb1f128e11caf7dd224e92
+  EasyPostApi: 4d33ca5283c6adaf2d3b310edb1359c3fefbf7ab
 
 PODFILE CHECKSUM: 2047fd36952983e34c2090778c22701a1df328a2
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
