@@ -29,7 +29,7 @@
 		A4A871337BB39155F05C89C5DFE90457 /* EasyPostCarrierAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DC4E73D41A8F339F67DBB031B5F8DA /* EasyPostCarrierAccount.swift */; };
 		AE08A62C74509D33470E2C409DE7DEFD /* EasyPostCarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13549C238E776AC078E5C30264F86740 /* EasyPostCarrierType.swift */; };
 		B5C667758553BFC3AC474901918FA54A /* EasyPostCustomsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55936CF5AB9C77F598C5AAB8CFE5849 /* EasyPostCustomsInfo.swift */; };
-		BE8628312368A3D100E33FCD /* EasyPostParcelPredefinedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8628302368A3D100E33FCD /* EasyPostParcelPredefinedPackage.swift */; };
+		BE8628332368C39A00E33FCD /* EasyPostParcelPredefinedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8628322368C39A00E33FCD /* EasyPostParcelPredefinedPackage.swift */; };
 		BF200F069F76CA659EAE13BF6773DB96 /* UrlSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153FC4E0898B92007E637D06AA70469 /* UrlSessionExtensions.swift */; };
 		BFE3C4093F901C300DC01A9271D2A0B7 /* EasyPostCustomsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04054B0E0F82B9563FCF5ABEDB3A5E87 /* EasyPostCustomsItem.swift */; };
 		C025A4E5F1781565CAB94AA7FAC735B4 /* EasyPostExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C166A39B4E13E14B0C1D6C0B130C82 /* EasyPostExtensions.swift */; };
@@ -76,7 +76,7 @@
 		B235951702523B7C785EB21E542C4D85 /* EasyPostBuyResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostBuyResponse.swift; path = Pod/Classes/EasyPostBuyResponse.swift; sourceTree = "<group>"; };
 		B3BD9A9187D96FBD9017AD4963078FA5 /* Pods_EasyPostApi_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPostApi_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8957B77B5346A90E3D17723D47478D7 /* EasyPostApi.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = EasyPostApi.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BE8628302368A3D100E33FCD /* EasyPostParcelPredefinedPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyPostParcelPredefinedPackage.swift; sourceTree = "<group>"; };
+		BE8628322368C39A00E33FCD /* EasyPostParcelPredefinedPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyPostParcelPredefinedPackage.swift; path = Pod/Classes/EasyPostParcelPredefinedPackage.swift; sourceTree = "<group>"; };
 		C7A27F0A2EC4F1E528644E9BD2D5ADF0 /* EasyPostResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPostResult.swift; path = Pod/Classes/EasyPostResult.swift; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D56A45AF317B412E3DBCC36748E4A031 /* EasyPostApi.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPostApi.xcconfig; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				2FA0F6630B0B4C61CAE3B83A1C7E0DA0 /* EasyPostForm.swift */,
 				AAEE061BB66F9806674D50F13D6F678C /* EasyPostLabel.swift */,
 				8E343F2C87FCD538E3CFA07D290C1C72 /* EasyPostParcel.swift */,
-				BE8628302368A3D100E33FCD /* EasyPostParcelPredefinedPackage.swift */,
+				BE8628322368C39A00E33FCD /* EasyPostParcelPredefinedPackage.swift */,
 				EB437BC2DBDFEDDB2D47953B5AC29C14 /* EasyPostRate.swift */,
 				A5DE470187F9592DAABCA6D1DADD5FE3 /* EasyPostRefund.swift */,
 				C7A27F0A2EC4F1E528644E9BD2D5ADF0 /* EasyPostResult.swift */,
@@ -355,6 +355,7 @@
 			files = (
 				DA306A73C1BF998E49D8E0B4F9E24676 /* EasyPostAddress.swift in Sources */,
 				2D78E341112BB759C59388F2AA9E4336 /* EasyPostApi-dummy.m in Sources */,
+				BE8628332368C39A00E33FCD /* EasyPostParcelPredefinedPackage.swift in Sources */,
 				8B2753C7E914974F304A5D36D4EE9C33 /* EasyPostApi.swift in Sources */,
 				984A0060C2A301D9FAEC80A66D7B8055 /* EasyPostBuyResponse.swift in Sources */,
 				A4A871337BB39155F05C89C5DFE90457 /* EasyPostCarrierAccount.swift in Sources */,
@@ -364,7 +365,6 @@
 				C025A4E5F1781565CAB94AA7FAC735B4 /* EasyPostExtensions.swift in Sources */,
 				A195D1F589DCDB48ED99E08BFACE69AC /* EasyPostForm.swift in Sources */,
 				11933F4ABA682D70A60EFBC25FE2153D /* EasyPostLabel.swift in Sources */,
-				BE8628312368A3D100E33FCD /* EasyPostParcelPredefinedPackage.swift in Sources */,
 				8DA6ED0F329DCA970282F982A525F0D5 /* EasyPostParcel.swift in Sources */,
 				2AEBC13EDED92F81BADEFEA5186EB6D4 /* EasyPostRate.swift in Sources */,
 				9D78246C9D4EB158844F7C4523FC48EC /* EasyPostRefund.swift in Sources */,
