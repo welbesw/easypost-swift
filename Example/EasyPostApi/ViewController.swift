@@ -60,6 +60,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapLogPredefinedPackageTypes() {
+        for predefinedPackage in easyPostParcelPredefinedPackages {
+            print("\(predefinedPackage.type) - \(predefinedPackage.typeDescription) - \(predefinedPackage.sizeDescription)")
+        }
+    }
+    
     @IBAction func didTapVerifyAddress(_ sender:AnyObject?) {
         let address = EasyPostAddress()
 
