@@ -17,10 +17,18 @@ extension URLSession {
         return URLSession(configuration: urlconfig, delegate: nil, delegateQueue: OperationQueue.main)
     }
 
-    func apiDataTask(with request: URLRequest, completion: @escaping (_ result: EasyPostResult<Any?>) -> Void) {
+    func apiDataTask(with request: URLRequest, logRequestAndResponse: Bool, completion: @escaping (_ result: EasyPostResult<Any?>) -> Void) {
 
+        if logRequestAndResponse {
+            Utility.logRequest(request)
+        }
+        
         let task = self.dataTask(with: request) { (data, response, error) in
 
+            if logRequestAndResponse {
+                Utility.logResponse(data: data, response: response, error: error)
+            }
+            
             guard let err = self.processError(data: data, response: response, method: request.httpMethod!, error: error as NSError?) else {
 
                 // Check for empty response

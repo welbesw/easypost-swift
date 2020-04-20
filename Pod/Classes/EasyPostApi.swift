@@ -18,6 +18,8 @@ open class EasyPostApi {
     var apiToken = ""               //Pass in via setCredentials
     var apiBaseUrl = ""             //Pass in via setCredentials
     
+    public var logHTTPRequestAndResponse = false
+    
     public init() {
         //Nothing more to do here now
     }
@@ -247,7 +249,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -273,7 +275,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -305,7 +307,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -332,7 +334,7 @@ open class EasyPostApi {
             return
         }
         
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -358,7 +360,7 @@ open class EasyPostApi {
             return
         }
         
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -390,7 +392,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -426,7 +428,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -457,7 +459,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -495,7 +497,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -521,7 +523,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultArray = json as? [Any] {
@@ -553,7 +555,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultArray = json as? [Any] {
@@ -585,7 +587,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
@@ -610,7 +612,7 @@ open class EasyPostApi {
             return
         }
 
-        URLSession.newSession().apiDataTask(with: request) { (result) in
+        URLSession.newSession().apiDataTask(with: request, logRequestAndResponse: logHTTPRequestAndResponse) { (result) in
             switch result {
             case .success (let json):
                 if let resultDict = json as? [String: Any] {
