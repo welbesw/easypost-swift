@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.11"
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Sources/EasyPostApi/**/*'
   s.swift_version = '5.0'
   # s.resource_bundles = {
   #  'EasypostApi' => ['Pod/Assets/*.png']
